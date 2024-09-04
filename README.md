@@ -5,7 +5,7 @@
   git clone ตัว Repository 
 
 ```bash
-  composer install
+  composer install ที่ nail_project
 ```
 ลง Database ลงใน XAMPP ตั้งชื่อ database ว่า nail
 ```bash
