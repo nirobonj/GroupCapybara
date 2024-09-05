@@ -1,4 +1,10 @@
 <?php
+<<<<<<< Updated upstream
+=======
+
+//require __DIR__.'/../vendor/autoload.php';
+
+>>>>>>> Stashed changes
 
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
