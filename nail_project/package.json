@@ -9,5 +9,9 @@
         "axios": "^1.7.4",
         "laravel-vite-plugin": "^1.0",
         "vite": "^5.0"
+    },
+    "dependencies": {
+        "slick-carousel": "^1.8.1",
+        "vue-slick": "^1.2.0"
     }
 }
