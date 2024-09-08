@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SalonReservationController;
 // use App\Http\Controllers\homeController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\HomeController;
@@ -12,4 +13,4 @@ Route::get('/shops', [HomeController::class, 'index']);
 Route::get('/', [HomeController::class, 'index']);
 // Route::get('/', function () {
 //     return view('shop.home');
-// });
+// });Route::get('/manage_reservations', [SalonReservationController::class, 'index'])->name('manage_reservations');
