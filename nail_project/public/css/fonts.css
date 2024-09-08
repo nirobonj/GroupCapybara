@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap');
 
 .pacifico-regular {
     font-family: "Pacifico", cursive;
@@ -11,8 +12,6 @@
     margin-left: 15px;  /* ระยะห่างจากด้านขวา */
     
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&display=swap');
 
 .noto-sans-thai {
     font-family: "Noto Sans Thai", sans-serif;

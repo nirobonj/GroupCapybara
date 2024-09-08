@@ -1,6 +1,15 @@
-@import '~slick-carousel/slick/slick.css';
-@import '~slick-carousel/slick/slick-theme.css';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Pacifico&display=swap');
 
+body {
+    font-family: 'Noto Sans Thai', sans-serif;
+    background-color: #FEEBC1;
+}
+
+.noto-sans-thai {
+    font-family: "Noto Sans Thai", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
 
 main {
     margin-top: 50px; /* เพิ่มระยะห่างจากด้านบน */
@@ -143,15 +152,3 @@ main {
     right: 0;
   }
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Pacifico&display=swap');
-
-body {
-    font-family: 'Noto Sans Thai', sans-serif;
-    background-color: #FEEBC1;
-}
-
-.noto-sans-thai {
-    font-family: "Noto Sans Thai", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-  }

@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-<!-- <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/> -->
       <!-- Swiper CSS -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
       <style>
@@ -32,6 +30,7 @@
             color: #000;
         } */
     .swiper-container {
+        position: relative;
         width: 100%;
         height: auto; /* หรือกำหนดความสูงที่ต้องการ */
         padding: 10px; /* หรือกำหนด padding ตามต้องการ */
@@ -48,6 +47,58 @@
         flex-shrink: 0; /* ทำให้ทุกไอเท็มมีขนาดคงที่ */
         font-family: 'Noto Sans Thai', sans-serif;
     }
+
+    .swiper-container {
+    width: 100%;
+    height: auto; /* หรือกำหนดความสูงตามต้องการ */
+    padding: 10px;
+}
+
+.swiper-slide {
+    background-color: #ffe4f8;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    width: 380px;
+    height: auto; /* ปรับเป็น auto เพื่อให้ขนาดปรับตามข้อมูล */
+    flex-shrink: 0; /* ทำให้ทุกไอเท็มมีขนาดคงที่ */
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+  /* Fix positions for next/prev buttons */
+  .swiper-button-next, .swiper-button-prev {
+    position: fixed; 
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 44px;
+        height: 44px;
+        background-color: rgba(0, 0, 0, 0.5); /* สีพื้นหลังปุ่ม */
+        border-radius: 50%; /* ทำให้ปุ่มกลม */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-button-next {
+        right: 10px; /* ตำแหน่งปุ่ม next ด้านขวา */
+    }
+
+    .swiper-button-prev {
+        left: 10px; /* ตำแหน่งปุ่ม prev ด้านซ้าย */
+    }
+
+    /* ป้องกันไม่ให้ปุ่มเคลื่อนที่ตามการสไลด์ */
+    .swiper-button-next:hover, .swiper-button-prev:hover {
+        background-color: rgba(0, 0, 0, 0.7); /* สีเมื่อ hover */
+    }
+
+    /* Optional: กำหนดสีไอคอนในปุ่ม */
+    .swiper-button-next::after, .swiper-button-prev::after {
+        color: white;
+        font-size: 18px;
+    }
+
     </style>
 </head>
 
@@ -68,12 +119,13 @@
     </header>
 
     <main>
-      <div class="responsive">
+      <div class="">
+    
    
       <section class="tabs">
             <div class="itemsection">
                 <h2>ใกล้ฉัน</h2>
-                    <div class="carousel responsive">
+                    <div class="carousel">
                         <div class="item">
                             <div class="image-placeholder"></div>
                             <div class="stars">⭐⭐⭐⭐⭐</div>
@@ -115,36 +167,37 @@
         </section>
 
         <section class="promotions">
-    <div class="itemsection swiper-container">
-        <h2>โปรโมชั่น⚡⚡⚡</h2>
+            <div class="itemsection swiper-container">
+            <h2>โปรโมชั่น⚡⚡⚡</h2>
 
-        <!-- Swiper Wrapper -->
-        <div class="carousel swiper-wrapper">
-            @foreach($homes as $shop)
-                <!-- Each Slide -->
-                <div class="swiper-slide">
-                    <div class="image-placeholder"></div>
-                    <button class="details-btn">รายละเอียด</button>
-                    <div style="text-align: left;">
-                        <h3>{{ $shop->shop_name }}</h3>
-                        <p>Promotion: {{ $shop->promotion_detail }}</p>
-                        <p>{{ $shop->shop_address }}</p>
-                        <p>{{ $shop->shop_description }}</p>
-                        <p>PVC: {{ $shop->pvc }}</p>
-                        <p>Clean Nail: {{ $shop->clean_nail }}</p>
+            <!-- Swiper Wrapper carousel -->
+            <div class="swiper-wrapper">
+                @foreach($homes as $shop)
+                    <!-- Each Slide -->
+                    <div class="swiper-slide">
+                        <div class="image-placeholder"></div>
+                        <button class="details-btn">รายละเอียด</button>
+                        <div style="text-align: left;">
+                            <h3>{{ $shop->shop_name }}</h3>
+                            <p>Promotion: {{ $shop->promotion_detail }}</p>
+                            <p>{{ $shop->shop_address }}</p>
+                            <p>{{ $shop->shop_description }}</p>
+                            <p>PVC: {{ $shop->pvc }}</p>
+                            <p>Clean Nail: {{ $shop->clean_nail }}</p>
+                        </div>
                     </div>
-                </div>
-            @endforeach
-                  <!-- Add Pagination -->
-                  <div class="swiper-pagination"></div>
-            <!-- Add Navigation -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
+                @endforeach
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
      
+            </div>
 
-    </div>
-</section>
+        </section>
+        
 
 
         <section class="recommended-shops">
@@ -190,26 +243,34 @@
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-        slidesPerView: 5,
-        spaceBetween: 10,
-        breakpoints: {
-            600: {
-                slidesPerView: 1,
-                spaceBetween: 5,
-            },
-            700: {
-                slidesPerView: 2,
-                spaceBetween: 5,
-            },
-            800: {
-                slidesPerView: 3,
-                spaceBetween: 5,
-            },
-            // 1300: {
-            //     slidesPerView: 4,
-            //     spaceBetween: 5,
-            // }
+        slidesPerView: 3, // Show 3 slides at a time
+    spaceBetween: 10,
+    slidesPerGroup: 3, // Move in groups of 3
+    breakpoints: {
+        600: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 5,
+        },
+        700: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            spaceBetween: 5,
+        },
+        800: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            spaceBetween: 10,
         }
+    },
+    on: {
+        init: function () {
+            this.update(); // Ensure swiper is updated on initialization
+        },
+        resize: function () {
+            this.update(); // Ensure swiper is updated on window resize
+        }
+    }
     });
 </script>
 </body>
