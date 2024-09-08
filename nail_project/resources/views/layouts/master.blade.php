@@ -11,7 +11,7 @@
 
     <body>
           <div>
-            @include('layouts.navbar')
+            @include('layouts.navbar_manicurist')
                 <div>
                     @yield('content')
                 </div>

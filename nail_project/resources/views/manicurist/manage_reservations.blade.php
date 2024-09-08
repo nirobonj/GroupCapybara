@@ -52,7 +52,7 @@
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50 background-color">
 
-        @include('layouts.navbar')
+        @include('layouts.navbar_manicurist')
         <div class="box1">
             <p class="text">bua</p>
         </div>
