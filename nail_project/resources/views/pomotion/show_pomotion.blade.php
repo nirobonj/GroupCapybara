@@ -54,23 +54,7 @@
 
         @include('layouts.navbar_manicurist')
         <div class="box1">
-            <p class="text">bua</p>
-        </div>
-        <div class="container1">
-        <!-- <div class="btn">
-            <p class="text">แก้ไขร้าน</p>
-        </div>
-        <div class="btn">
-            <p class="text">เพิ่มโปรโมชัน</p>
-        </div> -->
-        <div class="container1">
-            <!-- Add links to respective pages -->
-            <a href="#" class="btn">
-                <p class="text">แก้ไขร้าน</p>
-            </a>
-            <a href="{{ route('add_pomotion') }}"class="btn">
-                <p class="text">เพิ่มโปรโมชัน</p>
-            </a>
+            <p class="text">show pomotion</p>
         </div>
     </div>
     </body>

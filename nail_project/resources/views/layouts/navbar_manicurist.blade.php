@@ -17,13 +17,17 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
+                    <a class="nav-link" href="#">edit_shop(emma)</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('manage_reservations') }}">manage_reservations</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">add_pomotion</a>
+                    <a class="nav-link" href="{{ route('add_pomotion') }}">add_pomotion</a>
                 </li>
+                <!-- อันนี้ของผู้ใช้ปกติ -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#">show_pomotion</a>
+                    <a class="nav-link" href="{{ route('show_pomotion') }}">show_pomotion</a>
                 </li>
             </ul>
         </div>

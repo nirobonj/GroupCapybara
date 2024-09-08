@@ -10,13 +10,17 @@
     </head>
 
     <body>
-          <div>
-            @include('layouts.navbar_manicurist')
-                <div>
-                    @yield('content')
-                </div>
-                <!-- container-fluid -->
-            <!-- end main content-->
-    </div>
+        <div>
+            <!-- ตรวจสอบว่าผู้ใช้งานเป็นแม่ค้าหรือไม่ -->
+            @if(Auth::user() && Auth::user()->isManicurist())
+                @include('layouts.navbar_manicurist')
+            @else
+                @include('layouts.navbar')
+            @endif
+
+            <div>
+                @yield('content')
+            </div>
+        </div>
     </body>
 </html>
