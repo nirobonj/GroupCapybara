@@ -20,7 +20,7 @@
                     <a class="nav-link" href="#">edit_shop(emma)</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('manage_reservations') }}">manage_reservations</a>
+                    <a class="nav-link" href="{{ route('booking') }}">manage_booking</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('add_pomotion') }}">add_pomotion</a>

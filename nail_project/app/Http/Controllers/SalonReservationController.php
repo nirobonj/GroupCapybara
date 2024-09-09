@@ -9,6 +9,6 @@ class SalonReservationController extends Controller
     public function index()
     {
         
-        return view('manicurist.manage_reservations');
+        return view('manage.booking');
     }
 }
