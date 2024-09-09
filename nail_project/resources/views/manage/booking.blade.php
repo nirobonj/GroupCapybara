@@ -15,23 +15,80 @@
 
         @include('layouts.navbar_manicurist')
         <div class="box1">
-            <p class="text">bua</p>
+            <p class="text1">bua</p>
         </div>
         <div class="container1">
-            <div class="container1">
                 <a href="#" class="btn">
-                    <p class="text">แก้ไขร้าน</p>
+                    <p class="text1">แก้ไขร้าน</p>
                 </a>
                 <a href="{{ route('add_pomotion') }}"class="btn">
-                    <p class="text">เพิ่มโปรโมชัน</p>
+                    <p class="text1">เพิ่มโปรโมชัน</p>
                 </a>
-            </div>
         </div>
         <div class="container1">
-            <div class="btn">
-                <p class="text">รายการจอง</p>
+            <div class="textbox1">
+                <p class="text1">รายการจอง</p>
             </div>
-            <input class="btn" type="date" id="start" name="trip-start" value="<?= date('Y-m-d'); ?>" />
+                <input class="btn" type="date" id="start" name="trip-start" value="<?= date('Y-m-d'); ?>" />
         </div>
+
+        <div class="container mt-5">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ชื่อ</th>
+                        <th>เบอร์โทร</th>
+                        <th>เวลา</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ข้อมูล 1-1</td>
+                        <td>ข้อมูล 1-2</td>
+                        <td>ข้อมูล 1-3</td>
+                    </tr>
+                    <tr>
+                        <td>ข้อมูล 2-1</td>
+                        <td>ข้อมูล 2-2</td>
+                        <td>ข้อมูล 2-3</td>
+                    </tr>
+                    <tr>
+                        <td>ข้อมูล 3-1</td>
+                        <td>ข้อมูล 3-2</td>
+                        <td>ข้อมูล 3-3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- <h1>Calendar for {{ \Carbon\Carbon::create($currentYear, $currentMonth)->format('F Y') }}</h1>
+        <table>
+            <thead>
+                <tr>
+                    @foreach(['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] as $day)
+                        <th>{{ $day }}</th>
+                    @endforeach
+                </tr>
+            </thead>
+            <tbody>
+                @php
+                    $currentDay = 1;
+                    $totalDays = $daysInMonth + $startDay;
+                @endphp
+                @for($i = 0; $i < ceil($totalDays / 7); $i++)
+                    <tr>
+                        @for($j = 0; $j < 7; $j++)
+                            @if($i == 0 && $j < $startDay)
+                                <td></td>
+                            @elseif($currentDay <= $daysInMonth)
+                                <td>{{ $currentDay }}</td>
+                                @php $currentDay++ @endphp
+                            @else
+                                <td></td>
+                            @endif
+                        @endfor
+                    </tr>
+                @endfor
+            </tbody>
+        </table> -->
     </body>
 </html>

@@ -45,6 +45,7 @@
 <style>
     .navbar {
         background-color: rgb(212, 234, 232);
+        /* background-color: #9FEFEBFF; */
         height: 80px;
         position: relative;
         z-index: 1;
@@ -63,6 +64,7 @@
         width: 77px;
         height: 35px;
         background-color: rgb(212, 234, 232);
+        /* background-color: #9FEFEBFF; */
         border-bottom-left-radius: 80px;
         border-bottom-right-radius: 80px;
     }

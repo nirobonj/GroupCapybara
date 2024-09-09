@@ -1,11 +1,14 @@
 .container1 {
+    margin-left: 80px;
     display: flex; 
-    gap: 10px; 
+    gap: 5px; 
     flex-direction: row;
+    justify-content: flex-start; 
 }
+
 .box1 {
-    margin-top: 60px;
-    margin-left: 40px;
+    margin-top: 80px;
+    margin-left: 115px;
     width: 650px;
     height: 50px;
     background-color: #fff;
@@ -15,7 +18,8 @@
     align-items: center; 
     justify-content: center; 
 }
-.btn {
+
+.box2 {
     margin-top: 20px;
     margin-left: 40px;
     width: 300px;
@@ -27,8 +31,9 @@
     align-items: center; 
     justify-content: center; 
 }
+
 .btn {
-    margin-top: 20px;
+    margin-top: 25px;
     margin-left: 40px;
     width: 300px;
     height: 50px;
@@ -37,13 +42,35 @@
     padding-top: 10px;
     display: flex;
     align-items: center; 
-    justify-content: center; 
+    justify-content: center;
+    font-size: 20px;
+    color: #333; 
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; 
 }
+
 .background-color {
     background-color: #FFEABD;
+    /* background-color: #F4DDFCFF; */
 }
-.text {
-    /* margin-top: 40px; */
-    margin-left: 20px;
+
+.text1 {
+    margin-top: 10px;
     font-size: 20px;
+}
+
+.textbox1 {
+    margin-top: 20px;
+    margin-left: 40px;
+    width: 300px;
+    height: 50px;
+    background-color: #FFEABD;
+    border-radius: 16px;
+    padding-top: 10px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
 }
