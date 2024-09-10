@@ -25,7 +25,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('add_pomotion') }}">add_pomotion</a>
                 </li>
-                <!-- อันนี้ของผู้ใช้ปกติ -->
+                <!-- อันนี้ของผู้ใช้ปกติ เดะต้องไปใส่ใน navbar.php -->
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('show_pomotion') }}">show_pomotion</a>
                 </li>

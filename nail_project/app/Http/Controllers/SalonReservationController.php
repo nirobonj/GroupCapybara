@@ -12,13 +12,13 @@ class SalonReservationController extends Controller
         
         return view('manage.booking');
     }
-    public function show()
-    {
-        $currentMonth = Carbon::now()->month;
-        $currentYear = Carbon::now()->year;
-        $daysInMonth = Carbon::create($currentYear, $currentMonth)->daysInMonth;
-        $startDay = Carbon::create($currentYear, $currentMonth, 1)->dayOfWeek;
+    // public function show()
+    // {
+    //     $currentMonth = Carbon::now()->month;
+    //     $currentYear = Carbon::now()->year;
+    //     $daysInMonth = Carbon::create($currentYear, $currentMonth)->daysInMonth;
+    //     $startDay = Carbon::create($currentYear, $currentMonth, 1)->dayOfWeek;
 
-        return view('manage.booking', compact('currentMonth', 'currentYear', 'daysInMonth', 'startDay'));
-    }
+    //     return view('manage.booking', compact('currentMonth', 'currentYear', 'daysInMonth', 'startDay'));
+    // }
 }
