@@ -9,7 +9,7 @@ use App\Http\Controllers\SalonReservationController;
 use App\Http\Controllers\AddPomotionController;
 use App\Http\Controllers\ShowPomotionController;
 use App\Http\Controllers\CalendarController;
-
+use App\Http\Controllers\ListNailShopController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/history', [HistoryController::class, 'index']);
@@ -21,3 +21,6 @@ Route::get('/booking', [SalonReservationController::class, 'index'])->name('book
 // Route::get('/booking', [SalonReservationController::class, 'show'])->name('booking');
 Route::get('/add_pomotion', [AddPomotionController::class, 'index'])->name('add_pomotion');
 Route::get('/show_pomotion', [ShowPomotionController::class, 'index'])->name('show_pomotion');
+
+// nearbyShops 
+Route::get('/nearbyShops', [ListNailShopController::class, 'nearbyShops']);
