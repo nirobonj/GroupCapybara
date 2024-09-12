@@ -8,4 +8,4 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/shop-detail', [ShopController::class, 'shopDetail'])->name('shopDetail');
+Route::get('/shopDetails', [ShopController::class, 'shopDetail'])->name('shopDetail');

@@ -12,6 +12,10 @@ class ShopController extends Controller
 {
     public function shopDetail()
     {
-        return view('shop.shop');
+        $shop = Shop::where('shop_id', 'S0001')->first();
+
+        Log::debug($shop);
+        return view('shop.shopDetails', compact('shop'));  // Use compact() as the second argument
     }
+
 }

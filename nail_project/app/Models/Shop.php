@@ -13,6 +13,9 @@ class Shop extends Model
      *
      * @var array<int, string>
      */
+    protected $table = 'shops';
+
+
     protected $fillable = [
         'shop_id',
         'shop_name',
