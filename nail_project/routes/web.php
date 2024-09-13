@@ -11,6 +11,7 @@ use App\Http\Controllers\ShowPomotionController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\ListNailShopController;
 
+//Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/history', [HistoryController::class, 'index']);
 // Route::get('/history', function () {
