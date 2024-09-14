@@ -1,0 +1,34 @@
+.fa-house-chimney {
+    font-size: 35px; /* กำหนดขนาดไอคอน */
+    color: black; /* เปลี่ยนสีไอคอน */
+
+  }
+  
+  .fa-house-chimney:hover {
+    color: red; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
+  }
+
+  .fa-clipboard {
+    font-size: 35px; /* กำหนดขนาดไอคอน */
+    color: black; /* เปลี่ยนสีไอคอน */
+    
+  }
+  
+  .fa-clipboard:hover {
+    color: red; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
+  }
+
+  .fa-sistrix {
+    font-size: 35px; /* กำหนดขนาดไอคอน */
+    color: black; /* เปลี่ยนสีไอคอน */
+    
+  }
+  
+  .fa-sistrix:hover {
+    color: red; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
+  }
+
+  

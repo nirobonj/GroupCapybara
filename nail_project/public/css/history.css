@@ -1,0 +1,33 @@
+body {
+    font-family: 'Kanit', sans-serif; /* เปลี่ยนฟอนต์ตามต้องการ */
+    background-color: #F5F5F5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.appointments {
+    margin-top: 20px;
+}
+
+.appointment {
+    background-color: #FFEDED;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.edit-btn {
+    background-color: #FFC107;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
