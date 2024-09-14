@@ -20,8 +20,21 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'is_admin',
+        'phone_number',
+        'province_id',
+        'district_id',
+        'user_type',
     ];
+
+    public function province()
+    {
+        return $this->belongsTo(Province::class, 'province_id');
+    }
+
+    public function district()
+    {
+        return $this->belongsTo(District::class, 'district_id');
+    }
 
     /**
      * The attributes that should be hidden for serialization.
@@ -43,6 +56,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'phone_number' => 'string',
         ];
     }
 }
