@@ -12,7 +12,7 @@ use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\ListNailShopController;
 
 //Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/history', [HistoryController::class, 'index']);
 // Route::get('/history', function () {
 //     return view('his.history');
@@ -23,5 +23,8 @@ Route::get('/mbooking', [SalonReservationController::class, 'index'])->name('mbo
 Route::get('/add_pomotion', [AddPomotionController::class, 'index'])->name('add_pomotion');
 Route::get('/show_pomotion', [ShowPomotionController::class, 'index'])->name('show_pomotion');
 
-// nearbyShops 
+// nearbyShops
 Route::get('/nearbyShops', [ListNailShopController::class, 'nearbyShops']);
+
+//shop details
+Route::get('/shopDetails', [HomeController::class, 'shopDetail'])->name('shopDetail');

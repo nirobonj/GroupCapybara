@@ -67,7 +67,7 @@
 
   /* Fix positions for next/prev buttons */
   .swiper-button-next, .swiper-button-prev {
-    position: fixed; 
+    position: fixed;
         top: 50%;
         transform: translateY(-50%);
         z-index: 10;
@@ -120,8 +120,8 @@
 
     <main>
       <div class="">
-    
-   
+
+
       <section class="tabs">
             <div class="itemsection">
                 <h2>ใกล้ฉัน</h2>
@@ -129,17 +129,23 @@
                         <div class="item">
                             <div class="image-placeholder"></div>
                             <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <button class="details-btn ">รายละเอียด</button>
+                            <a href=" {{ route('shopDetail') }} ">
+                                <button class="details-btn ">รายละเอียด</button>
+                            </a>
                         </div>
                         <div class="item">
                             <div class="image-placeholder"></div>
                             <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <button class="details-btn">รายละเอียด</button>
+                            <a href=" {{ route('shopDetail') }} ">
+                                <button class="details-btn ">รายละเอียด</button>
+                            </a>
                         </div>
                         <div class="item">
                             <div class="image-placeholder"></div>
                             <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <button class="details-btn">รายละเอียด</button>
+                            <a href=" {{ route('shopDetail') }} ">
+                                <button class="details-btn ">รายละเอียด</button>
+                            </a>
                         </div>
                     </div>
             </div>
@@ -150,18 +156,24 @@
                         <div class="item">
                             <div class="image-placeholder"></div>
                             <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <button class="details-btn">รายละเอียด</button>
+                            <a href=" {{ route('shopDetail') }} ">
+                                <button class="details-btn ">รายละเอียด</button>
+                            </a>
                         </div>
                         <div class="item">
                             <div class="image-placeholder"></div>
                             <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <button class="details-btn">รายละเอียด</button>
+                            <a href=" {{ route('shopDetail') }} ">
+                                <button class="details-btn ">รายละเอียด</button>
+                            </a>
                         </div>
                         <div class="item">
                             <div class="image-placeholder"></div>
                             <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <button class="details-btn">รายละเอียด</button>
-                        </div> 
+                            <a href=" {{ route('shopDetail') }} ">
+                                <button class="details-btn ">รายละเอียด</button>
+                            </a>
+                        </div>
                     </div>
             </div>
         </section>
@@ -193,11 +205,11 @@
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
-     
+
             </div>
 
         </section>
-        
+
 
 
         <section class="recommended-shops">
@@ -207,24 +219,30 @@
                     <div class="item">
                         <div class="image-placeholder"></div>
                         <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <button class="details-btn">รายละเอียด</button>
+                        <a href=" {{ route('shopDetail') }} ">
+                            <button class="details-btn ">รายละเอียด</button>
+                        </a>
                     </div>
                     <div class="item">
                         <div class="image-placeholder"></div>
                         <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <button class="details-btn">รายละเอียด</button>
+                        <a href=" {{ route('shopDetail') }} ">
+                            <button class="details-btn ">รายละเอียด</button>
+                        </a>
                     </div>
                     <div class="item">
                         <div class="image-placeholder"></div>
                         <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <button class="details-btn">รายละเอียด</button>
+                        <a href=" {{ route('shopDetail') }} ">
+                            <button class="details-btn ">รายละเอียด</button>
+                        </a>
                     </div>
                 </div>
             </div>
-          
+
         </section>
 
-        
+
       </div>
     </main>
 
