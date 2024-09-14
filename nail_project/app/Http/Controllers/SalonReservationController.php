@@ -10,7 +10,7 @@ class SalonReservationController extends Controller
     public function index()
     {
         
-        return view('manage.booking');
+        return view('manage.mbooking');
     }
     // public function show()
     // {

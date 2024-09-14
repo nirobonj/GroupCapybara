@@ -9,7 +9,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="{{ asset('css/booking.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/mbooking.css') }}">
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50 background-color">
 
@@ -27,7 +27,7 @@
         </div>
         <div class="container1">
             <div class="textbox1">
-                <p class="text1">รายการจอง</p>
+                <p class="text2">รายการจอง</p>
             </div>
                 <input class="btn" type="date" id="start" name="trip-start" value="<?= date('Y-m-d'); ?>" />
         </div>

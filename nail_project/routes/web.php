@@ -18,7 +18,7 @@ Route::get('/history', [HistoryController::class, 'index']);
 //     return view('his.history');
 // });
 // Route::get('/', [SalonReservationController::class, 'index'])->name('booking');
-Route::get('/booking', [SalonReservationController::class, 'index'])->name('booking');
+Route::get('/mbooking', [SalonReservationController::class, 'index'])->name('mbooking');
 // Route::get('/booking', [SalonReservationController::class, 'show'])->name('booking');
 Route::get('/add_pomotion', [AddPomotionController::class, 'index'])->name('add_pomotion');
 Route::get('/show_pomotion', [ShowPomotionController::class, 'index'])->name('show_pomotion');
