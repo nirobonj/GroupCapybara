@@ -13,7 +13,7 @@ class Shop extends Model
      *
      * @var array<int, string>
      */
-    protected $table = 'shops';
+    protected $table = 'shop';
 
 
     protected $fillable = [

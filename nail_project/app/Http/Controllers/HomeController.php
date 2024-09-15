@@ -7,7 +7,9 @@ use App\Models\Shop;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Auth;
-use Log;
+// use Log;
+use Illuminate\Support\Facades\Log;
+
 
 class HomeController extends Controller
 {
