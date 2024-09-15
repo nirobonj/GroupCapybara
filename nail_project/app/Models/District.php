@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class District extends Model
 {
-    // สร้างความสัมพันธ์กับ User (หลายคนสามารถอยู่ในอำเภอเดียวกันได้)
+    use HasFactory;
+
+    protected $table = 'district';
     public function users()
     {
         return $this->hasMany(User::class, 'district_id');

@@ -23,7 +23,7 @@ class User extends Authenticatable
         'phone_number',
         'province_id',
         'district_id',
-        'user_type',
+        'role',
     ];
 
     public function province()
