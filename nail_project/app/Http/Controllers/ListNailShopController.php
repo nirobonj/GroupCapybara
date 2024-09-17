@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Shop;
 use Illuminate\Http\Request;
 
 class ListNailShopController extends Controller
 {
     public function nearbyShops()
     {
-        // ส่งข้อมูลไปที่หน้า view (ถ้ามี)
-        return view('listShop.nearby');
+        // ดึงข้อมูลร้านค้าและรีวิวที่เกี่ยวข้อง
+        $shops = Shop::with('reviews')->get();
+
+        
+        return view('listShop.nearby', compact('shops'));
     }
 }
+

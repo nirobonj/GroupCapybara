@@ -1,5 +1,6 @@
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+
 </head>
 
 <nav class="navbar navbar-expand-lg">
@@ -16,21 +17,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                
-                {{-- <li class="nav-item">
-                    <a class="nav-link" href="#">edit_shop(emma)</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('booking') }}">manage_booking</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('add_pomotion') }}">add_pomotion</a>
-                </li>
-                <!-- อันนี้ของผู้ใช้ปกติ เดะต้องไปใส่ใน navbar.php -->
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('show_pomotion') }}">show_pomotion</a>
-                </li> --}}
-
+                {{-- ICON --}}
             </ul>
         </div>
     </div>
