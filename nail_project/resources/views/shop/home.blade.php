@@ -6,65 +6,27 @@
     <title>NailySlay Booking</title>
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
       <!-- Swiper CSS -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+      <link rel="stylesheet" href="{{ asset('css/swipe.css') }}">
+
       <style>
-        /* .swiper-container {
-            width: 100%;
-            height: 300px;
-        }
-
-        .swiper-slide {
-            background-color: #f1f1f1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 18px;
-            color: #000;
-        } */
-    .swiper-container {
-        position: relative;
-        width: 100%;
-        height: auto; /* หรือกำหนดความสูงที่ต้องการ */
-        padding: 10px; /* หรือกำหนด padding ตามต้องการ */
-    }
-
-    .swiper-slide {
-        background-color: #ffe4f8;
-        padding: 15px;
-        border-radius: 15px;
-        /* border: 2px solid  #808080; */
-        text-align: center;
-        width: 380px;
-        height: 310px;
-        flex-shrink: 0; /* ทำให้ทุกไอเท็มมีขนาดคงที่ */
-        font-family: 'Noto Sans Thai', sans-serif;
-    }
-
-    .swiper-container {
-    width: 100%;
-    height: auto; /* หรือกำหนดความสูงตามต้องการ */
-    padding: 10px;
-}
-
-.swiper-slide {
-    background-color: #ffe4f8;
-    padding: 15px;
-    border-radius: 15px;
+        /* สไตล์ pagination (จุดด้านล่าง) */
+.pagination {
     text-align: center;
-    width: 380px;
-    height: auto; /* ปรับเป็น auto เพื่อให้ขนาดปรับตามข้อมูล */
-    flex-shrink: 0; /* ทำให้ทุกไอเท็มมีขนาดคงที่ */
-    font-family: 'Noto Sans Thai', sans-serif;
+    margin-top: 10px;
 }
 
+<<<<<<< Updated upstream
   /* Fix positions for next/prev buttons */
   .swiper-button-next, .swiper-button-prev {
     position: fixed;
@@ -79,27 +41,24 @@
         justify-content: center;
         align-items: center;
     }
+=======
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+>>>>>>> Stashed changes
 
-    .swiper-button-next {
-        right: 10px; /* ตำแหน่งปุ่ม next ด้านขวา */
-    }
+.dot.active {
+    background-color: #717171;
+}
 
-    .swiper-button-prev {
-        left: 10px; /* ตำแหน่งปุ่ม prev ด้านซ้าย */
-    }
-
-    /* ป้องกันไม่ให้ปุ่มเคลื่อนที่ตามการสไลด์ */
-    .swiper-button-next:hover, .swiper-button-prev:hover {
-        background-color: rgba(0, 0, 0, 0.7); /* สีเมื่อ hover */
-    }
-
-    /* Optional: กำหนดสีไอคอนในปุ่ม */
-    .swiper-button-next::after, .swiper-button-prev::after {
-        color: white;
-        font-size: 18px;
-    }
-
-    </style>
+      </style>
+   
 </head>
 
 <body>
@@ -125,31 +84,76 @@
       <section class="tabs">
             <div class="itemsection">
                 <h2>ใกล้ฉัน</h2>
-                    <div class="carousel">
-                        <div class="item">
+                    <div class="carousels">
+                        <div class="itemsecond">
                             <div class="image-placeholder"></div>
+<<<<<<< Updated upstream
                             <div class="stars">⭐⭐⭐⭐⭐</div>
                             <a href=" {{ route('shopDetail') }} ">
                                 <button class="details-btn ">รายละเอียด</button>
                             </a>
+=======
+                            <div class="textnearme">ที่อยู่1</div>
+                            
+>>>>>>> Stashed changes
                         </div>
-                        <div class="item">
+                        <div class="itemsecond">
                             <div class="image-placeholder"></div>
+<<<<<<< Updated upstream
                             <div class="stars">⭐⭐⭐⭐⭐</div>
                             <a href=" {{ route('shopDetail') }} ">
                                 <button class="details-btn ">รายละเอียด</button>
                             </a>
+=======
+                            <div class="textnearme">ที่อยู่2</div>
+                           
+>>>>>>> Stashed changes
                         </div>
-                        <div class="item">
+                        <div class="itemsecond">
                             <div class="image-placeholder"></div>
+<<<<<<< Updated upstream
                             <div class="stars">⭐⭐⭐⭐⭐</div>
                             <a href=" {{ route('shopDetail') }} ">
                                 <button class="details-btn ">รายละเอียด</button>
                             </a>
+=======
+                            <div class="textnearme">ที่อยู่3</div>
+                           
+>>>>>>> Stashed changes
                         </div>
                     </div>
             </div>
+        <div class="itemsections">
+            <h2>ร้านยอดนิยม Top 3</h2>
+            <div class="nexts carousel">
+                <div class="items-wrapper">
+                    <div class="items">
+                        <div class="image-placeholder"></div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <button class="details-btn">click1</button>
+                    </div>
+                    <div class="items">
+                        <div class="image-placeholder"></div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <button class="details-btn">click2</button>
+                    </div>
+                    <div class="items">
+                        <div class="image-placeholder"></div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <button class="details-btn">click3</button>
+                    </div>
+  
+                </div>
+                    <!-- เพิ่มจุด pagination -->
+                    <div class="pagination">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    </div>
+            </div>
+        </div>
 
+<<<<<<< Updated upstream
             <div class="itemsection responsive">
                 <h2>ร้านยอดนิยม Top 3</h2>
                     <div class="carousel">
@@ -176,35 +180,46 @@
                         </div>
                     </div>
             </div>
+=======
+>>>>>>> Stashed changes
         </section>
 
         <section class="promotions">
-            <div class="itemsection swiper-container">
-            <h2>โปรโมชั่น⚡⚡⚡</h2>
+            <div class="swiper-container">
+                <h2 style=" font-size: 30px; text-align: left; margin-left: 10px;margin-top: 5px;">โปรโมชั่น⚡⚡⚡</h2>
 
-            <!-- Swiper Wrapper carousel -->
-            <div class="swiper-wrapper">
+                <!-- Swiper Wrapper carousel -->
+                <div class="swiper-wrapper">
                 @foreach($homes as $shop)
                     <!-- Each Slide -->
                     <div class="swiper-slide">
-                        <div class="image-placeholder"></div>
-                        <button class="details-btn">รายละเอียด</button>
-                        <div style="text-align: left;">
+
+                        <div class="image-placeholder">
+                        <img src="{{ asset('images/' . $shop->images_name) }}" alt="Shop Image">
+                        </div>
+                        <a href="/history" class="details-btn">รายละเอียด</a>
+                        <button class="details-btn" onclick="window.location.href='/history'">รายละเอียด</button>
+                        <div class="discount">-50%</div>
+                        <div style=" font-size: 18px; text-align: left; margin-left: 10px;">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
                             <h3>{{ $shop->shop_name }}</h3>
                             <p>Promotion: {{ $shop->promotion_detail }}</p>
-                            <p>{{ $shop->shop_address }}</p>
                             <p>{{ $shop->shop_description }}</p>
                             <p>PVC: {{ $shop->pvc }}</p>
                             <p>Clean Nail: {{ $shop->clean_nail }}</p>
+                            <p><i class="fa-solid fa-location-dot" style="color: red;"></i> {{ $shop->shop_address }}</p>
                         </div>
                     </div>
                 @endforeach
+                </div>
+
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
                 <!-- Add Navigation -->
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
+<<<<<<< Updated upstream
 
             </div>
 
@@ -212,13 +227,28 @@
 
 
 
+=======
+        </section>
+        
+>>>>>>> Stashed changes
         <section class="recommended-shops">
-            <div class="itemsection responsive">
-                <h2>ร้านแนะนำ</h2>
-                <div class="carousel responsive">
-                    <div class="item">
-                        <div class="image-placeholder"></div>
+        <div class="swiper-container">
+                <h2 style=" font-size: 30px; text-align: left; margin-left: 10px;margin-top: 5px;">ร้านแนะนำ</h2>
+
+                <!-- Swiper Wrapper carousel -->
+                <div class="swiper-wrapper">
+                @foreach($homes as $shop)
+                    <!-- Each Slide -->
+                    <div class="swiper-slide">
+
+                        <div class="image-placeholder">
+                        <img src="{{ asset('images/' . $shop->images_name) }}" alt="Shop Image">
+                        </div>
+                        <a href="/history" class="details-btn">รายละเอียด</a>
+                        <button class="details-btn" onclick="window.location.href='/history'">รายละเอียด</button>
+                        <div style=" font-size: 18px; text-align: left; margin-left: 10px;">
                         <div class="stars">⭐⭐⭐⭐⭐</div>
+<<<<<<< Updated upstream
                         <a href=" {{ route('shopDetail') }} ">
                             <button class="details-btn ">รายละเอียด</button>
                         </a>
@@ -236,60 +266,43 @@
                         <a href=" {{ route('shopDetail') }} ">
                             <button class="details-btn ">รายละเอียด</button>
                         </a>
+=======
+                            <h3>{{ $shop->shop_name }}</h3>
+                            <p>Promotion: {{ $shop->promotion_detail }}</p>
+                            <p>{{ $shop->shop_description }}</p>
+                            <p>PVC: {{ $shop->pvc }}</p>
+                            <p>Clean Nail: {{ $shop->clean_nail }}</p>
+                            <p><i class="fa-solid fa-location-dot" style="color: red;"></i> {{ $shop->shop_address }}</p>
+                        </div>
+>>>>>>> Stashed changes
                     </div>
+                @endforeach
                 </div>
+
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Navigation -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
+<<<<<<< Updated upstream
 
         </section>
 
 
+=======
+        </section>
+
+>>>>>>> Stashed changes
       </div>
     </main>
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <!-- Swiper JS ถ้าเรียกจาก asset ต้องเอาไว้ที่ public-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="{{ asset('js/slideone.js') }}"></script>
+    <script src="{{ asset('js/swipe.js') }}"></script>
+   
 
-<script>
-    // Initialize Swiper
-    const swiper = new Swiper('.swiper-container', {
-        loop: false,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        slidesPerView: 3, // Show 3 slides at a time
-    spaceBetween: 10,
-    slidesPerGroup: 3, // Move in groups of 3
-    breakpoints: {
-        600: {
-            slidesPerView: 1,
-            slidesPerGroup: 1,
-            spaceBetween: 5,
-        },
-        700: {
-            slidesPerView: 2,
-            slidesPerGroup: 2,
-            spaceBetween: 5,
-        },
-        800: {
-            slidesPerView: 3,
-            slidesPerGroup: 3,
-            spaceBetween: 10,
-        }
-    },
-    on: {
-        init: function () {
-            this.update(); // Ensure swiper is updated on initialization
-        },
-        resize: function () {
-            this.update(); // Ensure swiper is updated on window resize
-        }
-    }
-    });
-</script>
+
 </body>
 </html>

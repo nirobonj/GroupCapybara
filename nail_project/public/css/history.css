@@ -3,8 +3,13 @@ body {
     background-color: #F5F5F5;
 }
 
+main {
+    margin-top: 50px; /* เพิ่มระยะห่างจากด้านบน */
+    margin-bottom: 50px;
+}
+
 .container {
-    max-width: 800px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
     background-color: #FFF;
@@ -19,8 +24,8 @@ body {
 .appointment {
     background-color: #FFEDED;
     padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 .edit-btn {

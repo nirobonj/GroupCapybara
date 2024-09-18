@@ -5,12 +5,6 @@ body {
     background-color: #FEEBC1;
 }
 
-.noto-sans-thai {
-    font-family: "Noto Sans Thai", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-  }
-
 main {
     margin-top: 50px; /* เพิ่มระยะห่างจากด้านบน */
 }
@@ -18,16 +12,8 @@ main {
 .tabs {
     display: flex;
     justify-content: center;
-    margin: 40px;
-    gap: 60px;
-}
-
-.tab {
-    background-color: #FFE3B3;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
+    margin: 40px auto;
+    gap: 20px;
 }
 
 .promotions, .recommended-shops {
@@ -39,35 +25,25 @@ main {
     margin-bottom: 10px;
 }
 
-.carousel {
-    display: flex;
-    gap: 20px;
-    transition: transform 0.3s ease; /* เพิ่มเอฟเฟกต์การเลื่อน */
-    overflow-x: auto; /* เพิ่มแถบเลื่อนในแนวนอน */
-    scroll-behavior: smooth; /* เพิ่มการเลื่อนที่นุ่มนวล */
-}
-
-.carousel::-webkit-scrollbar {
-    height: 8px; /* ความสูงของแถบเลื่อน */
-}
-
-.carousel::-webkit-scrollbar-thumb {
-    background-color: #888; /* สีของตัวเลื่อน */
-    border-radius: 10px;
-}
-
-.carousel::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* สีเมื่อเอาเมาส์ไปชี้ */
-}
-
 .itemsection {
+    position: relative;
+    overflow: hidden;
     background-color: #FFF;
-    padding: 25px;
-    border-radius: 10px;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 20px;
-    height: 400px; กำหนดความสูง
+    width: 900px;
+    height: 380px; /* หรือกำหนดความสูงตามต้องการ */
+    padding: 10px;
+    border-radius: 15px;
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+.itemsections {
+    position: relative;
+    overflow: hidden;
+    background-color: #FFF;
+    width: 900px;
+    height: 380px; /* หรือกำหนดความสูงตามต้องการ */
+    padding: 10px;
+    border-radius: 15px;
     font-family: 'Noto Sans Thai', sans-serif;
 }
 
@@ -77,23 +53,120 @@ main {
     padding-down: 20px;
 }
 
-.item {
+.itemsecond {
     background-color: #ffe4f8;
     padding: 15px;
     border-radius: 15px;
     /* border: 2px solid  #808080; */
     text-align: center;
-    width: 380px;
-    height: 310px;
+    width: 280px;
+    height: 300px;
     flex-shrink: 0; /* ทำให้ทุกไอเท็มมีขนาดคงที่ */
     font-family: 'Noto Sans Thai', sans-serif;
 }
 
+.nexts {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.items-wrapper {
+    display: flex;
+    gap: 20px;
+    transition: transform 3s ease;
+   
+
+}
+
+.items {
+   
+    background-color: #ffe4f8;
+    transition: transform 0.5s ease-in-out;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    width: 700px;
+    height: 300px;
+    font-family: 'Noto Sans Thai', sans-serif;
+    flex-shrink: 0; /* ให้แต่ละไอเท็มมีขนาดคงที่ */
+}
+
+.textnearme {
+    font-size: 24px; text-align: left; margin-left: 10px; color: black; margin-top: 10px;
+}
+
+
+/* สไตล์ pagination (จุดด้านล่าง) */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+.carousels {
+    display: flex; /* ใช้ Flexbox เพื่อจัดการการจัดเรียงของ .item */
+    overflow-x: auto; /* เพิ่มการเลื่อนแนวนอนถ้าจำเป็น */
+    gap: 10px; /* ระยะห่างระหว่างไอเท็ม */
+    padding: 10px; /* เพิ่ม padding ถ้าต้องการ */
+    scrollbar-width: thin; /* ขนาดของ scroll bar สำหรับ Firefox */
+}
+
+
+.carousel {
+    display: flex; /* ใช้ Flexbox เพื่อจัดการการจัดเรียงของ .item */
+    overflow-x: auto; /* เพิ่มการเลื่อนแนวนอนถ้าจำเป็น */
+    gap: 5px; /* ระยะห่างระหว่างไอเท็ม */
+    padding: 10px; /* เพิ่ม padding ถ้าต้องการ */
+    scrollbar-width: thin; /* ขนาดของ scroll bar สำหรับ Firefox */
+}
+
+.carousel::-webkit-scrollbar {
+    height: 8px; /* ขนาดของ scroll bar สำหรับ Webkit-based browsers */
+}
+
+.carousel::-webkit-scrollbar-thumb {
+    background: #888; /* สีของ scroll bar */
+    border-radius: 10px; /* มุมโค้งมนของ scroll bar */
+}
+
+.carousel::-webkit-scrollbar-track {
+    background: #f1f1f1; /* สีของ track ของ scroll bar */
+}
+
+
+
 .image-placeholder {
     width: 100%;
-    height: 100px;
+    height: 200px;
     background-color: #D3D3D3;
     border-radius: 10px;
+    overflow: hidden; /* ป้องกันไม่ให้ภาพเกินขอบเขต */
+    position: relative; /* ทำให้ .image-container อยู่ในตำแหน่งที่สัมพันธ์กับ .image-placeholder */
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ทำให้ภาพเต็มพื้นที่ของ div โดยไม่ทำให้ภาพเสียสัดส่วน */
+    position: absolute; /* ทำให้ภาพอยู่ที่ตำแหน่งเริ่มต้นของ .image-placeholder */
+    top: 0;
+    left: 0;
 }
 
 .details-btn {
@@ -118,6 +191,35 @@ main {
     box-sizing: border-box;
 }
 
+.noto-sans-thai {
+    font-family: "Noto Sans Thai", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+
+
+
+
+
+
+
+.details-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.details-btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+
 .carousel {
     overflow: hidden;
     position: relative;
@@ -135,20 +237,7 @@ main {
     width: 30%; /* กำหนดความกว้างของแต่ละ card */
     /* เพิ่ม style อื่นๆ ตามต้องการ เช่น border, padding เป็นต้น */
   }
+
   
-  .prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .prev {
-    left: 0;
-  }
-  
-  .next {
-    right: 0;
-  }
+
 
