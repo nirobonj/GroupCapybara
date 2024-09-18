@@ -26,22 +26,6 @@
     margin-top: 10px;
 }
 
-<<<<<<< Updated upstream
-  /* Fix positions for next/prev buttons */
-  .swiper-button-next, .swiper-button-prev {
-    position: fixed;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-        width: 44px;
-        height: 44px;
-        background-color: rgba(0, 0, 0, 0.5); /* สีพื้นหลังปุ่ม */
-        border-radius: 50%; /* ทำให้ปุ่มกลม */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-=======
 .dot {
     height: 10px;
     width: 10px;
@@ -51,7 +35,6 @@
     display: inline-block;
     transition: background-color 0.3s ease;
 }
->>>>>>> Stashed changes
 
 .dot.active {
     background-color: #717171;
@@ -79,47 +62,26 @@
 
     <main>
       <div class="">
-
-
+    
+   
       <section class="tabs">
             <div class="itemsection">
                 <h2>ใกล้ฉัน</h2>
                     <div class="carousels">
                         <div class="itemsecond">
                             <div class="image-placeholder"></div>
-<<<<<<< Updated upstream
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <a href=" {{ route('shopDetail') }} ">
-                                <button class="details-btn ">รายละเอียด</button>
-                            </a>
-=======
                             <div class="textnearme">ที่อยู่1</div>
                             
->>>>>>> Stashed changes
                         </div>
                         <div class="itemsecond">
                             <div class="image-placeholder"></div>
-<<<<<<< Updated upstream
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <a href=" {{ route('shopDetail') }} ">
-                                <button class="details-btn ">รายละเอียด</button>
-                            </a>
-=======
                             <div class="textnearme">ที่อยู่2</div>
                            
->>>>>>> Stashed changes
                         </div>
                         <div class="itemsecond">
                             <div class="image-placeholder"></div>
-<<<<<<< Updated upstream
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <a href=" {{ route('shopDetail') }} ">
-                                <button class="details-btn ">รายละเอียด</button>
-                            </a>
-=======
                             <div class="textnearme">ที่อยู่3</div>
                            
->>>>>>> Stashed changes
                         </div>
                     </div>
             </div>
@@ -153,35 +115,6 @@
             </div>
         </div>
 
-<<<<<<< Updated upstream
-            <div class="itemsection responsive">
-                <h2>ร้านยอดนิยม Top 3</h2>
-                    <div class="carousel">
-                        <div class="item">
-                            <div class="image-placeholder"></div>
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <a href=" {{ route('shopDetail') }} ">
-                                <button class="details-btn ">รายละเอียด</button>
-                            </a>
-                        </div>
-                        <div class="item">
-                            <div class="image-placeholder"></div>
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <a href=" {{ route('shopDetail') }} ">
-                                <button class="details-btn ">รายละเอียด</button>
-                            </a>
-                        </div>
-                        <div class="item">
-                            <div class="image-placeholder"></div>
-                            <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <a href=" {{ route('shopDetail') }} ">
-                                <button class="details-btn ">รายละเอียด</button>
-                            </a>
-                        </div>
-                    </div>
-            </div>
-=======
->>>>>>> Stashed changes
         </section>
 
         <section class="promotions">
@@ -219,18 +152,8 @@
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
-<<<<<<< Updated upstream
-
-            </div>
-
-        </section>
-
-
-
-=======
         </section>
         
->>>>>>> Stashed changes
         <section class="recommended-shops">
         <div class="swiper-container">
                 <h2 style=" font-size: 30px; text-align: left; margin-left: 10px;margin-top: 5px;">ร้านแนะนำ</h2>
@@ -248,25 +171,6 @@
                         <button class="details-btn" onclick="window.location.href='/history'">รายละเอียด</button>
                         <div style=" font-size: 18px; text-align: left; margin-left: 10px;">
                         <div class="stars">⭐⭐⭐⭐⭐</div>
-<<<<<<< Updated upstream
-                        <a href=" {{ route('shopDetail') }} ">
-                            <button class="details-btn ">รายละเอียด</button>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <div class="image-placeholder"></div>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <a href=" {{ route('shopDetail') }} ">
-                            <button class="details-btn ">รายละเอียด</button>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <div class="image-placeholder"></div>
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <a href=" {{ route('shopDetail') }} ">
-                            <button class="details-btn ">รายละเอียด</button>
-                        </a>
-=======
                             <h3>{{ $shop->shop_name }}</h3>
                             <p>Promotion: {{ $shop->promotion_detail }}</p>
                             <p>{{ $shop->shop_description }}</p>
@@ -274,7 +178,6 @@
                             <p>Clean Nail: {{ $shop->clean_nail }}</p>
                             <p><i class="fa-solid fa-location-dot" style="color: red;"></i> {{ $shop->shop_address }}</p>
                         </div>
->>>>>>> Stashed changes
                     </div>
                 @endforeach
                 </div>
@@ -285,15 +188,8 @@
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
-<<<<<<< Updated upstream
-
         </section>
 
-
-=======
-        </section>
-
->>>>>>> Stashed changes
       </div>
     </main>
 
