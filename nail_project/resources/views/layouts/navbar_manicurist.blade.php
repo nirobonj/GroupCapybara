@@ -20,14 +20,14 @@
                     <a class="nav-link" href="#">edit_shop(emma)</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('mbooking') }}">manage_booking</a>
+                    <a class="nav-link" href="{{ route('mbooking', ['shop_id' => 'S0001']) }}">manage_booking</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('add_pomotion') }}">add_pomotion</a>
+                    <a class="nav-link" href="{{ route('add_promotion') }}">add_promotion</a>
                 </li>
                 <!-- อันนี้ของผู้ใช้ปกติ เดะต้องไปใส่ใน navbar.php -->
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('show_pomotion') }}">show_pomotion</a>
+                    <a class="nav-link" href="{{ route('show_promotion') }}">show_promotion(ลูกค้า)</a>
                 </li>
             </ul>
         </div>
