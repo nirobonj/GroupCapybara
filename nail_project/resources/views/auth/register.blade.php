@@ -13,117 +13,125 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
     <style>
-        /* เพิ่ม CSS นี้เพื่อให้กรอบและพื้นหลังเป็นสีชมพูอ่อนเดียวกัน */
         .form-container {
-            border: 2px solid #FFE4F8; /* ขอบสีชมพูอ่อน */
-            background-color: #FFE4F8; /* พื้นหลังสีชมพูอ่อน */
-            padding: 15px; /* ลดพื้นที่ภายในกรอบ */
-            border-radius: 12px; /* ขอบมุมกลมมนมากขึ้น */
-            max-width: 450px; /* ลดความกว้างสูงสุด */
-            margin: 20px auto; /* เพิ่มระยะห่างด้านบนและด้านล่าง */
-            text-align: center; /* จัดปุ่มตรงกลาง */
+            border: 2px solid #FFE4F8;
+            background-color: #FFE4F8;
+            padding: 15px;
+            border-radius: 12px;
+            max-width: 450px;
+            margin: 20px auto;
+            text-align: center;
         }
 
         .form-header {
-            background-color: #FFE4F8; /* พื้นหลังสีชมพูอ่อน */
-            border: 2px solid #FFE4F8; /* ขอบสีชมพูอ่อน */
-            border-radius: 12px 12px 0 0; /* ขอบมุมกลมมนด้านบน */
-            padding: 5px; /* เพิ่มพื้นที่ภายในกรอบ */
-            margin-bottom: 5px; /* เพิ่มระยะห่างด้านล่าง */
-            font-family: 'Noto Sans Thai', sans-serif; /* ฟอนต์เดียวกัน */
-            font-size: 30px; /* ขนาดตัวอักษรเพิ่มขึ้น */
-            font-weight: 900; /* ความหนาของตัวอักษรเพิ่มขึ้น */
-            color: #F29779; /* สีข้อความ */
+            background-color: #FFE4F8;
+            border: 2px solid #FFE4F8;
+            border-radius: 12px 12px 0 0;
+            padding: 5px;
+            margin-bottom: 5px;
+            font-family: 'Noto Sans Thai', sans-serif;
+            font-size: 30px;
+            font-weight: 900;
+            color: #F29779;
         }
 
         .form-group {
             position: relative;
-            margin-bottom: 12px; /* ลดระยะห่างระหว่างฟอร์ม */
+            margin-bottom: 12px;
         }
 
         .form-group input, .form-group select {
             width: 100%;
-            padding: 10px; /* ลดพื้นที่ให้กับ input */
+            padding: 10px;
             border: 1px solid #ddd;
-            border-radius: 8px; /* ขอบมุมกลมมนมากขึ้น */
-            font-family: 'Noto Sans Thai', sans-serif; /* ฟอนต์เดียวกัน */
-            font-size: 14px; /* ขนาดตัวอักษร */
+            border-radius: 8px;
+            font-family: 'Noto Sans Thai', sans-serif;
+            font-size: 14px;
         }
 
         .form-group input::placeholder, .form-group select::placeholder {
             color: #888;
-            opacity: 1; /* แสดงผล placeholder อย่างเต็มที่ */
-            font-family: 'Noto Sans Thai', sans-serif; /* ฟอนต์ของ placeholder */
+            opacity: 1;
+            font-family: 'Noto Sans Thai', sans-serif;
+        }
+
+        .invalid-feedback {
+            color: #FF0000; /* สีแดง */
+            font-size: 14px; /* ขนาดตัวอักษร */
+            font-family: 'Noto Sans Thai', sans-serif; /* ฟอนต์เดียวกัน */
+            display: block; /* ให้แสดงเป็นบล็อก */
+            text-align: left; /* จัดข้อความให้อยู่ทางซ้าย */
+            margin-top: 5px; /* เพิ่มระยะห่างด้านบน */
         }
 
         .btn-primary {
-            background-color: #F29779; /* ปุ่มสีชมพูอ่อน */
+            background-color: #F29779;
             border: none;
-            padding: 12px 24px; /* เพิ่มพื้นที่ให้กับปุ่ม */
-            border-radius: 8px; /* ขอบมุมกลมมนมากขึ้น */
+            padding: 12px 24px;
+            border-radius: 8px;
             color: white;
             cursor: pointer;
-            text-align: center; /* ทำให้ข้อความในปุ่มตรงกลาง */
-            margin-top: 10px; /* ลดระยะห่างด้านบน */
-            display: inline-block; /* ให้ปุ่มอยู่ตรงกลาง */
-            width: 100%; /* ทำให้ปุ่มเต็มความกว้าง */
-            max-width: 200px; /* จำกัดความกว้างสูงสุดของปุ่ม */
-            font-size: 16px; /* ขนาดตัวอักษรเพิ่มขึ้น */
-            font-weight: 600; /* ความหนาของตัวอักษรเพิ่มขึ้น */
-            font-family: 'Noto Sans Thai', sans-serif; /* ฟอนต์เดียวกัน */
+            text-align: center;
+            margin-top: 10px;
+            display: inline-block;
+            width: 100%;
+            max-width: 200px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Noto Sans Thai', sans-serif;
         }
 
         .btn-primary:hover {
-            background-color: #f1815c; /* สีชมพูอ่อนเข้มเมื่อเอาเมาส์ไปชี้ */
+            background-color: #f1815c;
         }
 
         .role-buttons {
             display: flex;
-            flex-wrap: wrap; /* เพื่อให้ปุ่มสามารถตัดบรรทัดได้ */
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 8px; /* ลดระยะห่างระหว่างปุ่ม */
-            margin: 15px 0; /* ลดระยะห่างด้านบนและด้านล่าง */
+            gap: 8px;
+            margin: 15px 0;
         }
 
         .role-buttons div {
-            flex: 1 1 auto; /* ให้ปุ่มมีความกว้างที่ยืดหยุ่น */
+            flex: 1 1 auto;
             display: flex;
-            justify-content: center; /* จัดกึ่งกลาง */
+            justify-content: center;
         }
 
         .role-buttons label {
-            background-color: #ffffff; /* ปุ่มสีขาว */
-            border: 1px solid #ddd; /* ขอบสีเทาอ่อน */
-            padding: 10px 20px; /* ลดพื้นที่ให้กับปุ่ม */
-            border-radius: 8px; /* ขอบมุมกลมมนมากขึ้น */
-            color: #333; /* สีข้อความ */
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: #333;
             cursor: pointer;
             text-align: center;
-            transition: background-color 0.3s, color 0.3s; /* เพิ่มการเปลี่ยนแปลงของสี */
-            display: block; /* ทำให้ label เป็นบล็อกเพื่อให้กว้างเต็ม */
-            width: 100%; /* ทำให้ปุ่มเต็มความกว้าง */
-            max-width: 180px; /* จำกัดความกว้างสูงสุดของปุ่ม */
-            box-sizing: border-box; /* รวมขอบและ padding ในความกว้าง */
-            font-size: 14px; /* ขนาดตัวอักษร */
-            font-family: 'Noto Sans Thai', sans-serif; /* ฟอนต์เดียวกัน */
+            transition: background-color 0.3s, color 0.3s;
+            display: block;
+            width: 100%;
+            max-width: 180px;
+            box-sizing: border-box;
+            font-size: 14px;
+            font-family: 'Noto Sans Thai', sans-serif;
         }
 
         .role-buttons input[type="radio"] {
-            display: none; /* ซ่อน radio button */
+            display: none;
         }
 
         .role-buttons input[type="radio"]:checked + label {
-            background-color: #F29779; /* สีชมพูอ่อนเมื่อเลือก */
-            color: white; /* สีข้อความเป็นสีขาวเมื่อเลือก */
-            border-color: #F29779; /* ขอบสีชมพูอ่อนเมื่อเลือก */
+            background-color: #F29779;
+            color: white;
+            border-color: #F29779;
         }
 
         .role-buttons label:hover {
-            background-color: #f5f5f5; /* สีพื้นหลังเมื่อเอาเมาส์ไปชี้ */
+            background-color: #f5f5f5;
         }
     </style>
 </head>
-<body class="font-sans antialiased dark:bg-black dark:text-white/50 background-color">
+<body class="font-sans antialiased dark:bg-black dark:text-white/50">
     @include('layouts.navbar_frame')
     <div class="form-container">
         <div class="form-header">
@@ -137,7 +145,7 @@
                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="ชื่อผู้ใช้" required autofocus>
                 @error('name')
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
+                        <strong>กรุณากรอกชื่อผู้ใช้</strong>
                     </span>
                 @enderror
             </div>
@@ -147,7 +155,7 @@
                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="อีเมล" required>
                 @error('email')
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
+                        <strong>อีเมลนี้มีผู้ใช้งานแล้ว</strong>
                     </span>
                 @enderror
             </div>
@@ -157,14 +165,19 @@
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="รหัสผ่าน" required>
                 @error('password')
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
+                        <strong>กรุณากรอกรหัสผ่าน</strong>
                     </span>
                 @enderror
             </div>
 
             <!-- ยืนยันรหัสผ่าน -->
             <div class="form-group">
-                <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" placeholder="ยืนยันรหัสผ่าน" required>
+                <input id="password_confirmation" type="password" class="form-control @error('password_confirmation') is-invalid @enderror" name="password_confirmation" placeholder="ยืนยันรหัสผ่าน" required>
+                @error('password_confirmation')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>รหัสผ่านไม่ตรงกัน</strong>
+                    </span>
+                @enderror
             </div>
 
             <!-- เบอร์โทร -->
@@ -172,7 +185,7 @@
                 <input id="phone_number" type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}" placeholder="เบอร์โทร" required>
                 @error('phone_number')
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
+                        <strong>กรุณากรอกเบอร์โทร</strong>
                     </span>
                 @enderror
             </div>
@@ -187,7 +200,7 @@
                 </select>
                 @error('province_id')
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
+                        <strong>กรุณาเลือกจังหวัด</strong>
                     </span>
                 @enderror
             </div>
@@ -202,7 +215,7 @@
                 </select>
                 @error('district_id')
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
+                        <strong>กรุณาเลือกอำเภอ</strong>
                     </span>
                 @enderror
             </div>
@@ -221,7 +234,7 @@
                 </div>
                 @error('role')
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
+                        <strong>กรุณาเลือกประเภทผู้ใช้</strong>
                     </span>
                 @enderror
             </div>

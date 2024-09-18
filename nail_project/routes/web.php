@@ -25,6 +25,9 @@ Route::post('login', [LoginController::class, 'login']);
 Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/mbooking', [SalonReservationController::class, 'index'])->name('mbooking');
 });
+Route::group(['middleware' => ['role:user']], function () {
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+});
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 

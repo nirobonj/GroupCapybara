@@ -9,6 +9,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
+
 class LoginController extends Controller
 {
     public function showLoginForm()
@@ -21,7 +23,7 @@ class LoginController extends Controller
         // ตรวจสอบข้อมูลที่ส่งมา
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required|string|min:6',
+            'password' => 'required|string|min:8',
         ]);
 
         // ตรวจสอบว่ามีการใช้งานข้อมูลที่กรอกมาหรือไม่
@@ -30,16 +32,21 @@ class LoginController extends Controller
             $user = Auth::user();
             
             if ($user->role == 'admin') {
-                return redirect()->intended('/mbooking'); // เปลี่ยนเส้นทางไปหน้า mbooking ถ้าเป็น admin
+                return redirect()->intended('/mbooking');
             } else {
-                return redirect()->intended('/home'); // เปลี่ยนเส้นทางไปหน้า home ถ้าเป็น user
+                return redirect()->intended('/');
             }
         }
+        $user = \App\Models\User::where('email', $request->email)->first();
 
-        // หากเข้าสู่ระบบไม่สำเร็จ ให้กลับไปยังหน้า login พร้อม error
-        return back()->withErrors([
-            'email' => 'ข้อมูลการเข้าสู่ระบบไม่ถูกต้อง',
-        ]);
+        if (!$user) {
+            // อีเมลไม่พบ
+            return back()->withErrors(['email' => 'ไม่พบอีเมลนี้']);
+        }
+
+        // อีเมลพบ แต่รหัสผ่านผิด
+        return back()->withErrors(['password' => 'รหัสผ่านผิด']);
+
     }
 
     public function logout(Request $request)
