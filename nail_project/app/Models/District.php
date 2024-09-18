@@ -10,8 +10,12 @@ class District extends Model
     use HasFactory;
 
     protected $table = 'district';
-    public function users()
+    //protected $fillable = ['district_name', 'province_id'];
+    protected $primaryKey = 'district_id'; // ใช้ primary key ที่ถูกต้อง
+    public $timestamps = false; // ตั้งค่าเป็น false ถ้าไม่มี timestamps
+
+    public function province()
     {
-        return $this->hasMany(User::class, 'district_id');
+        return $this->belongsTo(Province::class, 'province_id', 'province_id');
     }
 }

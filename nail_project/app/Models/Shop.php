@@ -25,4 +25,11 @@ class Shop extends Model
         'pvc',
         'clean_nail',
     ];
+
+        // ฟังก์ชันสำหรับเชื่อมต่อกับรีวิว
+        public function reviews()
+        {
+            return $this->hasMany(Review::class, 'shop_id', 'shop_id'); // ชี้ไปที่ฟิลด์ shop_id ใน review
+        }
+    
 }
