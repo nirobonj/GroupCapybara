@@ -20,25 +20,6 @@
       <link rel="stylesheet" href="{{ asset('css/swipe.css') }}">
 
       <style>
-        /* สไตล์ pagination (จุดด้านล่าง) */
-.pagination {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.dot {
-    height: 10px;
-    width: 10px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-}
-
-.dot.active {
-    background-color: #717171;
-}
 
       </style>
    
@@ -46,18 +27,7 @@
 
 <body>
     <header>
-        <nav class="navbar">
-            <div class="logo pacifico-regular" style="margin-left: 18px;">NailySlay</div>
-            <div class="search-bar" style="display: flex; justify-content: flex-end; align-items: center;">
-                <input type="text" placeholder="search...">
-                <i class="fab fa-sistrix"></i>
-            </div>
-            <div style="display: flex; justify-content: flex-end; align-items: center;">
-                <a href="https://www.example.com" style="margin-right: 15px;"><i class="fa-solid fa-house-chimney"></i></a>
-                <a href="https://www.example.com" style="margin-right: 15px;"><i class="fa-regular fa-clipboard"></i></a>
-                <button class="login-btn" style="margin-right: 15px;">Login</button>
-            </div>
-        </nav>
+        @include('navbar.navbarhome')
     </header>
 
     <main>
@@ -119,31 +89,58 @@
 
         <section class="promotions">
             <div class="swiper-container">
-                <h2 style=" font-size: 30px; text-align: left; margin-left: 10px;margin-top: 5px;">โปรโมชั่น⚡⚡⚡</h2>
+            <div class="header-container">
+            <h2 class="header-title">โปรโมชั่น⚡⚡⚡</h2>
+            <a href="your-link-here" class="view-more-link">ดูเพิ่มเติม</a>
+        </div>
 
                 <!-- Swiper Wrapper carousel -->
                 <div class="swiper-wrapper">
-                @foreach($homes as $shop)
-                    <!-- Each Slide -->
-                    <div class="swiper-slide">
+                @foreach($homes as $home)
+        <!-- Each Slide -->
+        <div class="swiper-slide">
+            <div class="image-placeholder">
+                <img src="{{ asset('images/' . $home->images_name) }}" alt="Shop Image">
+            </div>
+            <a href="/bookinguser" class="details-btn">รายละเอียด</a>
+            <button class="details-btn" onclick="window.location.href='/bookinguser'">รายละเอียด</button>
+            <div class="discount">-50%</div>
 
-                        <div class="image-placeholder">
-                        <img src="{{ asset('images/' . $shop->images_name) }}" alt="Shop Image">
-                        </div>
-                        <a href="/history" class="details-btn">รายละเอียด</a>
-                        <button class="details-btn" onclick="window.location.href='/history'">รายละเอียด</button>
-                        <div class="discount">-50%</div>
-                        <div style=" font-size: 18px; text-align: left; margin-left: 10px;">
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                            <h3>{{ $shop->shop_name }}</h3>
-                            <p>Promotion: {{ $shop->promotion_detail }}</p>
-                            <p>{{ $shop->shop_description }}</p>
-                            <p>PVC: {{ $shop->pvc }}</p>
-                            <p>Clean Nail: {{ $shop->clean_nail }}</p>
-                            <p><i class="fa-solid fa-location-dot" style="color: red;"></i> {{ $shop->shop_address }}</p>
-                        </div>
-                    </div>
-                @endforeach
+            <div style="font-size: 18px; text-align: left; margin-left: 10px;">
+              <!-- Calculate average review rating -->
+              @php
+    $averageRating = $home->reviews->avg('rating') ?? 0; // ค่าเริ่มต้นถ้าไม่มีรีวิว
+    $reviewCount = $home->reviews->count();
+
+    // คำนวณจำนวนดาวเต็ม ดาวครึ่ง และดาวว่าง
+    $fullStars = floor($averageRating);
+    $halfStar = ($averageRating - $fullStars) >= 0.5 ? 1 : 0;
+    $emptyStars = 5 - ($fullStars + $halfStar);
+@endphp
+
+<div class="rating">
+    @for ($i = 0; $i < $fullStars; $i++)
+        <i class="fa-solid fa-star" style="color: Violet;"></i>
+    @endfor
+    @if ($halfStar)
+        <i class="fa-solid fa-star-half" style="color: Violet;"></i>
+    @endif
+    @for ($i = 0; $i < $emptyStars; $i++)
+        <i class="fa-regular fa-star" style="color: Gray;"></i>
+    @endfor
+    <span>{{ number_format($averageRating, 1) }} ({{ $reviewCount }} รีวิว)</span>
+</div>
+    
+
+                <h3>{{ $home->shop_name }}</h3>
+                <p>Promotion: {{ $home->promotion_detail }}</p>
+                <p>{{ $home->shop_description }}</p>
+                <p>PVC: {{ $home->pvc }}</p>
+                <p>Clean Nail: {{ $home->clean_nail }}</p>
+                <p><i class="fa-solid fa-location-dot" style="color: red;"></i> {{ $home->shop_address }}</p>
+            </div>
+        </div>
+    @endforeach
                 </div>
 
                 <!-- Add Pagination -->

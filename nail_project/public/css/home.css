@@ -6,8 +6,39 @@ body {
 }
 
 main {
-    margin-top: 50px; /* เพิ่มระยะห่างจากด้านบน */
+    margin-top: 80px; /* เพิ่มระยะห่างจากด้านบน */
 }
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.header-title {
+    font-size: 30px;
+    text-align: left;
+}
+
+.view-more-link {
+    background-color: #007bff; /* เปลี่ยนเป็นสีที่คุณต้องการ */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.view-more-link:hover {
+    background-color: #0056b3; /* เปลี่ยนเป็นสีเมื่อ hover */
+}
+
 
 .tabs {
     display: flex;

@@ -7,10 +7,13 @@ use Illuminate\Http\Request;
 
 class HistoryController extends Controller
 {
-    public function index()
+    public function booking()
     {
-        // ดึงข้อมูลทั้งหมดจากโมเดล History
-        $historys = History::all();
-        return view('his.history', compact('historys'));
+        // ดึงข้อมูลทั้งหมดจาก Model History + Model Home
+        $bookingLists = History::leftJoin('shop', 'booking_list.shop_id', '=', 'shop.shop_id')
+        ->select('booking_list.*', 'shop.shop_name')
+        ->get();
+
+        return view('bookuser.history', compact('bookingLists'));
     }
 }

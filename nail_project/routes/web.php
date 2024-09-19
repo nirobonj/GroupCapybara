@@ -34,11 +34,8 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 
 //Route::get('/admin', [SalonReservationController::class, 'index'])->middleware('role:admin');
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/history', [HistoryController::class, 'index']);
-// Route::get('/history', function () {
-//     return view('his.history');
-// });
+Route::get('/', [ShopController::class, 'index'])->name('home');
+Route::get('/bookinguser', [HistoryController::class, 'booking']);
 
 
 Route::get('/mbooking/{shop_id}', [SalonReservationController::class, 'index'])->name('mbooking');

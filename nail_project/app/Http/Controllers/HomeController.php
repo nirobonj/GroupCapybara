@@ -15,9 +15,14 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $homes = Home::all();
-        return view('shop.home', compact('homes'));
+             // ดึงข้อมูลจากทั้ง Home และ Shop
+    $homes = Home::with('shop.reviews')->get(); // ดึงข้อมูลบ้านพร้อมร้านค้าและรีวิวที่เกี่ยวข้อง
+         
+    // ส่งข้อมูลไปยัง view
+    return view('shop.home', compact('homes'));
     }
+
+    
 
     public function shopDetail()
     {
