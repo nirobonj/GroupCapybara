@@ -25,16 +25,24 @@ class ShopController extends Controller
         return $top->reviews->avg('rating');
     })
     ->take(3);
-    
+
     $recomments = Shop::with('reviews')
         ->get()
         ->sortByDesc(function ($rec) {
             return $rec->reviews->avg('rating');
         });
-         
+
     // ส่งข้อมูลไปยัง view
     return view('shop.home', compact('homes', 'promotions', 'tops', 'recomments'));
     }
+
+    /* public function shopDetail()
+    {
+        $shop = Shop::with('reviews')->where('shop_id', 'S0001')->get();
+
+        Log::debug($shop);
+        return view('shop.shopDetails', compact('shop'));  // Use compact() as the second argument
+    } */
 
     public function shopDetail()
     {
@@ -42,6 +50,25 @@ class ShopController extends Controller
 
         Log::debug($shop);
         return view('shop.shopDetails', compact('shop'));  // Use compact() as the second argument
+    }
+
+    public function booking(Request $request)
+    {
+        $request->validate([
+            'date' => 'required|date',
+            'time' => 'required|date_format:H:i',
+        ]);
+
+        // Create a new booking record
+        Booking::create([
+            'date' => $request->date,
+            'time' => $request->time,
+            'created_at' => now(), // or use a different field if needed
+            'updated_at' => now(), // or use a different field if needed
+        ]);
+
+        // Redirect or return a response
+        return redirect()->back()->with('success', 'Booking confirmed!');
     }
 
 }
