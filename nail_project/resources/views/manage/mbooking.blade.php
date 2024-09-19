@@ -18,7 +18,7 @@
             <a href="#" class="btn">
                 <p class="text1">แก้ไขร้าน</p>
             </a>
-            <a href="{{ route('add_promotion') }}" class="btn">
+            <a href="{{ route('add_promotion','shop_id') }}" class="btn">
                 <p class="text1">เพิ่มโปรโมชัน</p>
             </a>
         </div>

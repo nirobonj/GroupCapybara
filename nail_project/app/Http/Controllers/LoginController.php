@@ -38,9 +38,14 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
             // เช็ค role ของผู้ใช้
             $user = Auth::user();
-            
+            $shop = $user->shop;
             if ($user->role == 'admin') {
-                return redirect()->intended('/mbooking/S0001');
+                // return redirect()->intended('/mbooking/S0001');
+                if ($shop) {
+                    return redirect()->intended('/mbooking/' . $shop->shop_id);
+                }
+                // กรณีที่ผู้ใช้ไม่มีข้อมูล shop
+                return redirect()->intended('/');
             } else {
                 return redirect()->intended('/');
             }

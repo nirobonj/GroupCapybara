@@ -59,5 +59,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(District::class, 'district_id');
     }
+    public function shop()
+    {
+        return $this->hasOne(Shop::class, 'user_id', 'id');
+    }
 
 }
