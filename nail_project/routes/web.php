@@ -21,8 +21,8 @@ Route::get('register', [RegisterController::class, 'showRegistrationForm'])->nam
 Route::post('register', [RegisterController::class, 'register'])->name('register');
 Route::get('get-districts/{provinceId}', [RegisterController::class, 'getDistricts']);
 
-Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('login', [LoginController::class, 'login']);
+Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/', [LoginController::class, 'login']);
 
 Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/mbooking', [SalonReservationController::class, 'index'])->name('mbooking');
