@@ -13,7 +13,7 @@ main {
 }
 
 .containerall {
-    transform: scale(0.8); /* ซูมออก 80% */
+    transform: scale(0.89); /* ซูมออก 80% */
     transform-origin: 0 0; /* จุดเริ่มต้นการซูมที่มุมบนซ้าย */
    
     width: 125vw; /* กว้างขึ้นเพื่อรองรับการซูม */
