@@ -46,17 +46,22 @@ class ShopController extends Controller
 
     public function booking(Request $request)
     {
+        $user = Auth::user();
+
         $request->validate([
             'date' => 'required|date',
             'time' => 'required|date_format:H:i',
         ]);
 
         // Create a new booking record
-        Booking::create([
-            'date' => $request->date,
-            'time' => $request->time,
-            'created_at' => now(), // or use a different field if needed
-            'updated_at' => now(), // or use a different field if needed
+        Booking_list::create([
+            'booking_list_id' => 'id',
+            'shop_id' => $user,
+            'user_id' => $user,
+            'date_booking' => $request->date,
+            'time_booking' => $request->time,
+            'date_transaction' => now(), // or use a different field if needed
+            'time_transaction' => now(), // or use a different field if needed
         ]);
 
         // Redirect or return a response

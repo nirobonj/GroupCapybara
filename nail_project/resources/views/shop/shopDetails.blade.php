@@ -80,39 +80,49 @@
             <!-- Review Carousel -->
             <div id="reviewCarousel" class="carousel slide mx-auto" style="margin-top: 30px; max-width: 80%;"
                 data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    @foreach ($shop->reviews->chunk(3) as $key => $reviewChunk)
-                        <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                            <div class="d-flex justify-content-between">
-                                @foreach ($reviewChunk as $review)
-                                    <div class="rounded review-box"
-                                        style="padding: 2rem; width: 33%; background-color: #fff;">
-                                        <div id="content" class="p-3 rounded"
-                                            style="background-color: #f0d6cd; max-width: 100%; border: 1px solid #ccc;">
-                                            <div style="display: flex; align-items: center;">
-                                                <i class="bi bi-star-fill"
-                                                    style="color: rgb(232, 179, 159); margin-right: 0.5rem;"></i>
-                                                <p style="margin: 0;">{{ $review->rating }}</p>
-                                            </div>
-                                            <p>{{ $review->detail }}</p>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
 
-                <!-- Carousel controls -->
-                <a class="carousel-control-prev" href="#reviewCarousel" role="button" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#reviewCarousel" role="button" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </a>
+                @if ($shop->reviews->isEmpty())
+                    <!-- No Reviews Available -->
+                    <div class="p-5 rounded" style="background-color: #fff; text-align: center;">
+                        <p class="mb-0" style="color: #ccc;">no review yet</p>
+                    </div>
+                @else
+                    <div class="carousel-inner">
+                        @foreach ($shop->reviews->chunk(3) as $key => $reviewChunk)
+                            <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                                <div class="d-flex justify-content-start" style="width: 100%;">
+                                    @foreach ($reviewChunk as $review)
+                                        <div class="rounded review-box"
+                                            style="padding: 1rem; width: 33%; background-color: #fff; margin-right: 0.5rem;">
+                                            <div id="content" class="p-3 rounded"
+                                                style="background-color: #f0d6cd; width: 100%; border: 1px solid #ccc;">
+                                                <div style="display: flex; align-items: center;">
+                                                    <i class="bi bi-star-fill"
+                                                        style="color: rgb(232, 179, 159); margin-right: 0.5rem;"></i>
+                                                    <p style="margin: 0;">{{ $review->rating }}</p>
+                                                </div>
+                                                <p>{{ $review->detail }}</p>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <!-- Carousel controls -->
+                    <a class="carousel-control-prev" href="#reviewCarousel" role="button" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#reviewCarousel" role="button" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </a>
+                @endif
             </div>
+
+
 
             <!-- Detail Div -->
             <div class="container" style="width: 80%; margin-top: 30px;">
