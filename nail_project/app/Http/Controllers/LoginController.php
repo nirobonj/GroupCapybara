@@ -45,9 +45,9 @@ class LoginController extends Controller
                     return redirect()->intended('/mbooking/' . $shop->shop_id);
                 }
                 // กรณีที่ผู้ใช้ไม่มีข้อมูล shop
-                return redirect()->intended('/');
+                return redirect()->intended('/' . $user->id);
             } else {
-                return redirect()->intended('/');
+                return redirect()->intended('/' . $user->id);
             }
         }
 
