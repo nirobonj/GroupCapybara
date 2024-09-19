@@ -90,12 +90,25 @@
     margin-left: 20px;
 }
 
-.rating {
-    color: green;
+.card {
+    background-color: #ffffff; /* สีพื้นหลังเป็นสีขาว */
+    border-radius: 10px; /* มุมโค้งมน */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* ใส่เงา */
+    padding: 20px; /* ระยะห่างภายใน */
 }
 
-.promo-label {
-    background-color: yellow;
-    padding: 5px;
-    border-radius: 5px;
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
+
+.rating {
+    font-size: 1.2rem;
+}
+
+.btn-warning {
+    border-radius: 5px;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+}
+
