@@ -12,7 +12,8 @@
     <div class="navitem">
         <a href="/" style="margin-right: 15px;"><i class="fa-solid fa-house-chimney"></i></a>
         <a href="/bookinguser" style="margin-right: 15px;"><i class="fa-regular fa-clipboard"></i></a>
-        <a href="/" class="login-btn">User</a>
+        <a href="/" class="login-btn"  style="margin-right: 15px;">User</a>
+        <a href="/" style="margin-right: 15px;"><i class="fa-solid fa-right-from-bracket"></i></i></a>
     </div>
     <!-- ครึ่งวงกลมอยู่ภายใน navbar -->
     <div class="half-circle">

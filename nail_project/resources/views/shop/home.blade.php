@@ -31,8 +31,28 @@
     @include('navbar.navbartwo')
 
     <main>
+<<<<<<< Updated upstream
         <div class="containerall">
             <div class="">
+=======
+
+      <div class="containerall">
+      <div class="container">
+    
+    <section class="tabs">
+          <div class="itemsection">
+          <div class="header-containersmall">
+              <h2 class="header-title">ใกล้ฉัน</h2>
+              <a href="/nearbyShops" class="view-more-linksmall">ดูเพิ่มเติม</a>
+          </div>
+                  <div class="carousels">
+                  @foreach($homes->take(3) as $home)
+                  <!-- Each Slide -->
+                  <div class="itemsecond">
+                      <div class="image-placeholder">
+                          <img src="{{ asset('images/' . $home->images_name) }}" alt="Shop Image">
+                      </div>
+>>>>>>> Stashed changes
 
                 <section class="tabs">
                     <div class="itemsection">
@@ -149,6 +169,7 @@
                         </div>
                     </div>
 
+<<<<<<< Updated upstream
                 </section>
 
                 <section class="promotions">
@@ -165,6 +186,27 @@
                                     <div class="image-placeholder">
                                         <img src="{{ asset('images/' . $home->images_name) }}" alt="Image">
                                     </div>
+=======
+      </section>
+      
+      <section class="container">
+      <section class="promotions">
+          <div class="swiper-container">
+          <div class="header-container">
+              <h2 class="header-title">โปรโมชั่น⚡⚡⚡</h2>
+              <a href="/" class="view-more-link">ดูเพิ่มเติม</a>
+          </div>
+              <!-- Swiper Wrapper carousel -->
+          <div class="swiper-wrapper">
+          @foreach($promotions as $home)
+              <!-- Each Slide -->
+              <div class="swiper-slide">
+                  <div class="image-placeholder">
+                      <img src="{{ asset('images/' . $home->images_name) }}" alt="Image">
+                  </div>
+                  
+                  <div class="discount">-50%</div>
+>>>>>>> Stashed changes
 
                                     <div class="discount">-50%</div>
 
@@ -176,6 +218,7 @@
                                             $averageRating = $home->reviews->avg('rating') ?? 0; // ค่าเริ่มต้นถ้าไม่มีรีวิว
                                             $reviewCount = $home->reviews->count();
 
+<<<<<<< Updated upstream
                                             // คำนวณจำนวนดาวเต็ม ดาวครึ่ง และดาวว่าง
                                             $fullStars = floor($averageRating);
                                             $halfStar = $averageRating - $fullStars >= 0.5 ? 1 : 0;
@@ -195,6 +238,30 @@
                                             <span>{{ number_format($averageRating, 1) }} ({{ $reviewCount }}
                                                 รีวิว)</span>
                                         </div>
+=======
+                      <h3>{{ $home->shop_name }}</h3>
+                      <p>Promotion: {{ $home->promotion_detail }}</p>
+                      <p><i class="fa-solid fa-location-dot" style="color: red;"></i> {{ $home->shop_address }}</p>
+                  </div>  
+              </div>
+          @endforeach
+          </div>
+
+              <!-- Add Pagination -->
+              <div class="swiper-pagination"></div>
+              <!-- Add Navigation -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+          </div>
+      </section>
+      
+      <section class="recommended-shops"  style="  margin-bottom: 20px;" >
+      <div class="swiper-container" style="  margin-bottom: 20px;" >
+          <div class="header-container">
+              <h2 class="header-title">ร้านแนะนำ</h2>
+              <a href="/" class="view-more-link">ดูเพิ่มเติม</a>
+          </div>
+>>>>>>> Stashed changes
 
                                         <h3>{{ $home->shop_name }}</h3>
                                         <p>Promotion: {{ $home->promotion_detail }}</p>
@@ -232,10 +299,32 @@
                                         <img src="{{ asset('images/' . $home->images_name) }}" alt="Shop Image">
                                     </div>
 
+<<<<<<< Updated upstream
                                     <div style="font-size: 18px; text-align: left; margin-left: 10px;">
                                         <a href="{{ route('shopDetail', ['id' => $home->shop_id]) }}" class="details-btn">Detail</a>
+=======
+                      <h3>{{ $home->shop_name }}</h3>
+                      <p>PVC: {{ $home->pvc }}</p>
+                      <p>Clean Nail: {{ $home->clean_nail }}</p>
+                      
+                        <p style="  margin-top: auto; text-align: left;"><i class="fa-solid fa-location-dot" style="color: red;"></i> {{ $home->shop_address }}</p>
+                     
+                      
+                  </div>  
+              </div>
+          @endforeach
+              </div>
+>>>>>>> Stashed changes
 
 
+<<<<<<< Updated upstream
+=======
+
+      </section>
+ 
+
+    </div>
+>>>>>>> Stashed changes
 
                                         <!-- Calculate average review rating -->
                                         @php

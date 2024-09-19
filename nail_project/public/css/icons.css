@@ -5,7 +5,7 @@
   }
   
   .fa-house-chimney:hover {
-    color: red; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
+    color: #f5c70a; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
     cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
   }
 
@@ -16,7 +16,7 @@
   }
   
   .fa-clipboard:hover {
-    color: red; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
+    color: #f5c70a; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
     cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
   }
 
@@ -42,4 +42,14 @@
     cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
   }
 
+  .fa-right-from-bracket {
+    font-size: 30px; /* กำหนดขนาดไอคอน */
+    color: black; /* เปลี่ยนสีไอคอน */
+    
+  }
+  
+  .fa-right-from-bracket:hover {
+    color: #f5c70a; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
+  }
   

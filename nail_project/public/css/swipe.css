@@ -9,20 +9,21 @@
 }
 
 .discount {
-position: absolute;
-top: 10px;
-right: 10px;
-background-color: red; /* เปลี่ยนสีตามต้องการ */
-color: white;
-padding: 5px 10px;
-border-radius: 0px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red; /* เปลี่ยนสีตามต้องการ */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 0px;
 }
 
 .swiper-container h2 {
-text-align: left;
-padding-left: 20px;
-padding-down: 20px;
+    text-align: left;
+    padding-left: 20px;
+    padding-down: 20px;
 }
+
 .swiper-slide {
     background-color: #ffe4f8;
     padding: 10px;
@@ -36,9 +37,9 @@ padding-down: 20px;
 
 /* Fix positions for next/prev buttons */
 .swiper-button-next, .swiper-button-prev {
-    /* position: fixed;  */
-    position: absolute;
-    z-index: 1000; /* เพิ่ม z-index เพื่อให้ปุ่มอยู่เหนือเนื้อหาอื่น */
+        /* position: fixed;  */
+        position: absolute;
+        z-index: 1000; /* เพิ่ม z-index เพื่อให้ปุ่มอยู่เหนือเนื้อหาอื่น */
         top: 50%;
         transform: translateY(-50%);
         z-index: 10;

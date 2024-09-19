@@ -3,11 +3,11 @@
 html, body {
     height: 100%;
     margin: 0;
-    overflow: hidden; /* ป้องกันการเลื่อนนอกเหนือจากขนาดที่กำหนด */
+     /* ป้องกันการเลื่อนนอกเหนือจากขนาดที่กำหนด */
 }
 
 main {
-    overflow: auto; /* หรือ scroll */
+  /* หรือ scroll */
     width: 100%; /* ให้ความกว้างเต็มหน้าจอ */
     height: 100%; /* ให้ความสูงเต็มหน้าจอ */
 }
@@ -15,12 +15,23 @@ main {
 .containerall {
     transform: scale(0.8); /* ซูมออก 80% */
     transform-origin: 0 0; /* จุดเริ่มต้นการซูมที่มุมบนซ้าย */
+   
     width: 125vw; /* กว้างขึ้นเพื่อรองรับการซูม */
     height: 125vh; /* สูงขึ้นเพื่อรองรับการซูม */
-    overflow: auto; /* เพิ่มการเลื่อนเมื่อจำเป็น */
+  /* เพิ่มการเลื่อนเมื่อจำเป็น */
     position: relative; /* ใช้ตำแหน่งที่สัมพันธ์ */
 }
 
+.container {
+    width: 100% /* กว้างขึ้นเพื่อรองรับการซูม */
+    height: 1000px;
+   
+    border-radius: 20px;
+
+    width: 100%; /* ให้ความกว้างเต็มหน้าจอ */
+    height: 1350px;
+
+}
 body {
     font-family: 'Noto Sans Thai', sans-serif;
     background-color: #FEEBC1;
@@ -97,14 +108,17 @@ body {
     display: flex;
     justify-content: center;
     margin: 40px auto;
-    gap: 20px;
-    margin-top: 50px;
+    gap: 40px;
+    margin-top: 80px;
+    position: relative;
 
 }
 
 
 .promotions, .recommended-shops {
+    position: relative;
     margin: 40px; //เว้นระยะขอบข้างซ้ายขวา
+    margin-bottom: 100px;
 }
 
 .promotions h2, .recommended-shops h2 {
@@ -129,7 +143,7 @@ body {
     background-color: #FFF;
     width: 900px;
     height: 420px; /* หรือกำหนดความสูงตามต้องการ */
-    padding: 10px;
+    padding: 15px;
     border-radius: 15px;
     font-family: 'Noto Sans Thai', sans-serif;
 }
@@ -165,6 +179,8 @@ body {
    
 
 }
+
+
 
 .items {
     width: 100%;
@@ -322,8 +338,9 @@ body {
   }
 
 main {
-    margin-top: 50px;
-    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
 }
 
   

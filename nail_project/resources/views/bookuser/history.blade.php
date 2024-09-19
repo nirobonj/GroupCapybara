@@ -21,13 +21,14 @@
   
    
 </head>
-<body>
-    <header>
-        @include('navbar.navbarhome')
-    </header>
 
+<body>
+        @include('navbar.navbartwo')
+   
     <main>
-    <div class="container">
+    
+    <div class="containerout">
+    <div class="containersection">
         <h1>My Booking</h1>
         <div class="boxsections">
             <div class="">
@@ -46,7 +47,7 @@
             </div>
             @endforeach
 
-            </div>
+        </div>
           
         </div>
     </div>

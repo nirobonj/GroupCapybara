@@ -95,7 +95,7 @@ body {
     display: flex;
     justify-content: flex-end; 
     align-items: center;
-    margin-right: 20px;
+    margin-right: 0px;
 }
 /* สร้างเส้นขอบครึ่งวงกลม */
 .scallop-border {
@@ -175,22 +175,30 @@ body {
     border: none;
 }
 
-.login-btn {
-    background-color: #F48A8A;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.login-btn {
+/* .login-btn {
     background-color: #000000;
     color: white;
     border: none;
     padding: 15px 25px;
     border-radius: 20px;
     cursor: pointer;
+} */
+
+.login-btn {
+    display: inline-block;
+    color: black; /* ตัวหนังสือสีดำ */
+    border: 2px solid black; /* กรอบ (ขอบ) สีดำ */
+    padding: 15px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: transparent; /* พื้นหลังใส */
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* เพิ่มการเปลี่ยนสีพื้นหลังอย่างนุ่มนวล */
+}
+
+.login-btn:hover {
+    background-color: #f5c70a;
 }
 
 .pacifico-regular {
