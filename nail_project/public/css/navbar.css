@@ -102,7 +102,7 @@ body {
     display: flex;
     justify-content: space-between;
     position: absolute;
-    bottom: 640px; /* ให้ครึ่งวงกลมลงมาขอบล่าง */
+    bottom: 500px; /* ให้ครึ่งวงกลมลงมาขอบล่าง */
     left: 0;
     right: 0;
     z-index: 0;
@@ -111,7 +111,7 @@ body {
 
 .circle {
     width: 300px;
-    height: 120px;
+    height: 100px;
     background-color: #cfe9e9;
     border-radius: 50%;
     margin-right: 0px; /* ปรับระยะห่าง */
@@ -120,7 +120,7 @@ body {
 /* ทำให้ครึ่งวงกลมติดกับขอบล่าง */
 .scallop-border .circle {
     position: relative;
-    top: -80px; /* ขยับครึ่งวงกลมขึ้นไปครึ่งหนึ่งของความสูง */
+    top: -50px; /* ขยับครึ่งวงกลมขึ้นไปครึ่งหนึ่งของความสูง */
 }
 
 
@@ -196,7 +196,7 @@ body {
     font-family: "Pacifico", cursive;
     font-weight: 550;
     font-style: normal;
-    font-size: 270%;
+    font-size: 250%;
   }
 
   .margin-example {
