@@ -55,7 +55,7 @@ body {
     content: '';
     display: block;
     position: absolute;
-    bottom: -40px; /* ปรับความลึกของขอบหยัก */
+    bottom: 0px; /* ปรับความลึกของขอบหยัก */
     left: 0;
     width: 100%;
     height: 60px; /* ปรับความสูงของคลื่น */
@@ -102,7 +102,7 @@ body {
     display: flex;
     justify-content: space-between;
     position: absolute;
-    bottom: 500px; /* ให้ครึ่งวงกลมลงมาขอบล่าง */
+    bottom: 503px; /* ให้ครึ่งวงกลมลงมาขอบล่าง */
     left: 0;
     right: 0;
     z-index: 0;
@@ -115,6 +115,7 @@ body {
     background-color: #cfe9e9;
     border-radius: 50%;
     margin-right: 0px; /* ปรับระยะห่าง */
+    position: relative;
 }
 
 /* ทำให้ครึ่งวงกลมติดกับขอบล่าง */
@@ -196,7 +197,7 @@ body {
     font-family: "Pacifico", cursive;
     font-weight: 550;
     font-style: normal;
-    font-size: 250%;
+    font-size: 240%;
   }
 
   .margin-example {

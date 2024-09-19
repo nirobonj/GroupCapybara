@@ -26,13 +26,8 @@
 </head>
 
 <body>
-    <header>
    
-    <div class="navall">
-    @include('navbar.navbarhome')
-    </div>
-        
-    </header>
+    @include('navbar.navbartwo')
 
     <main>
       <div class="containerall">
@@ -42,7 +37,7 @@
           <div class="itemsection">
           <div class="header-containersmall">
               <h2 class="header-title">ใกล้ฉัน</h2>
-              <a href="/" class="view-more-linksmall">ดูเพิ่มเติม</a>
+              <a href="/nearbyShops" class="view-more-linksmall">ดูเพิ่มเติม</a>
           </div>
                   <div class="carousels">
                   @foreach($homes->take(3) as $home)
