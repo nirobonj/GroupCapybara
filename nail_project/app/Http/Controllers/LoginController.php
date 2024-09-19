@@ -21,12 +21,19 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         // ตรวจสอบข้อมูลที่ส่งมา
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required|string|min:8',
+        ], [
+            'password.min' => 'กรุณากรอกรหัสผ่านขั้นต่ำ 8 ตัวอักษร',
+            'email.required' => 'กรุณากรอกอีเมล',
+            'email.email' => 'กรุณากรอกอีเมลที่ถูกต้อง',
         ]);
 
-        // ตรวจสอบว่ามีการใช้งานข้อมูลที่กรอกมาหรือไม่
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
             // เช็ค role ของผู้ใช้
             $user = Auth::user();
@@ -37,16 +44,15 @@ class LoginController extends Controller
                 return redirect()->intended('/');
             }
         }
+
+        // ตรวจสอบการมีอยู่ของอีเมลในฐานข้อมูล
         $user = \App\Models\User::where('email', $request->email)->first();
 
         if (!$user) {
-            // อีเมลไม่พบ
             return back()->withErrors(['email' => 'ไม่พบอีเมลนี้']);
         }
 
-        // อีเมลพบ แต่รหัสผ่านผิด
         return back()->withErrors(['password' => 'รหัสผ่านผิด']);
-
     }
 
     public function logout(Request $request)

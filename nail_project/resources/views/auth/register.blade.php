@@ -13,13 +13,14 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
     <style>
+        
         .form-container {
             border: 2px solid #FFE4F8;
             background-color: #FFE4F8;
             padding: 15px;
             border-radius: 12px;
             max-width: 450px;
-            margin: 20px auto;
+            margin: 60px auto;
             text-align: center;
         }
 

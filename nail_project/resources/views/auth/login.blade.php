@@ -13,86 +13,86 @@
 
     <style>
         .form-container {
-            border: 2px solid #FFE4F8; /* ขอบสีชมพูอ่อน */
-            background-color: #FFE4F8; /* พื้นหลังสีชมพูอ่อน */
-            padding: 15px; /* เพิ่มพื้นที่ภายในกรอบ */
-            border-radius: 12px; /* ขอบมุมกลมมนมากขึ้น */
-            max-width: 450px; /* ลดความกว้างสูงสุด */
-            margin: 20px auto; /* เพิ่มระยะห่างด้านบนและด้านล่าง */
-            text-align: center; /* จัดปุ่มเข้าสู่ระบบตรงกลาง */
+            border: 2px solid #FFE4F8;
+            background-color: #FFE4F8;
+            padding: 15px;
+            border-radius: 12px;
+            max-width: 450px;
+            margin: 60px auto;
+            text-align: center;
         }
 
         .form-header {
-            background-color: #FFE4F8; /* พื้นหลังสีชมพูอ่อน */
-            border: 2px solid #FFE4F8; /* ขอบสีชมพูอ่อน */
-            border-radius: 12px 12px 0 0; /* ขอบมุมกลมมนด้านบน */
-            padding: 5px; /* เพิ่มพื้นที่ภายในกรอบ */
-            margin-bottom: 5px; /* เพิ่มระยะห่างด้านล่าง */
-            font-family: 'Noto Sans Thai', sans-serif; /* ฟอนต์เดียวกัน */
-            font-size: 30px; /* ขนาดตัวอักษรเพิ่มขึ้น */
-            font-weight: 900; /* ความหนาของตัวอักษรเพิ่มขึ้น */
-            color: #F29779; /* สีข้อความ */
+            background-color: #FFE4F8;
+            border: 2px solid #FFE4F8;
+            border-radius: 12px 12px 0 0;
+            padding: 5px;
+            margin-bottom: 5px;
+            font-family: 'Noto Sans Thai', sans-serif;
+            font-size: 30px;
+            font-weight: 900; 
+            color: #F29779; 
         }
 
         .form-group {
             position: relative;
-            margin-bottom: 12px; /* ลดระยะห่างระหว่างฟอร์ม */
+            margin-bottom: 12px;
         }
 
         .form-group input {
             width: 100%;
-            padding: 10px; /* ลดพื้นที่ให้กับ input */
+            padding: 10px;
             border: 1px solid #ddd;
-            border-radius: 8px; /* ขอบมุมกลมมนมากขึ้น */
-            font-family: 'Noto Sans Thai', sans-serif; /* ฟอนต์เดียวกัน */
-            font-size: 14px; /* ขนาดตัวอักษร */
+            border-radius: 8px;
+            font-family: 'Noto Sans Thai', sans-serif;
+            font-size: 14px;
         }
 
         .form-group input::placeholder {
             color: #888;
-            opacity: 1; /* แสดงผล placeholder อย่างเต็มที่ */
-            font-family: 'Noto Sans Thai', sans-serif; /* ฟอนต์ของ placeholder */
+            opacity: 1;
+            font-family: 'Noto Sans Thai', sans-serif;
         }
 
         .btn-primary {
-            background-color: #F29779; /* ปุ่มสีชมพูอ่อน */
+            background-color: #F29779;
             border: none;
-            padding: 12px 24px; /* เพิ่มพื้นที่ให้กับปุ่ม */
-            border-radius: 8px; /* ขอบมุมกลมมนมากขึ้น */
+            padding: 12px 24px;
+            border-radius: 8px;
             color: white;
             cursor: pointer;
-            text-align: center; /* ทำให้ข้อความในปุ่มตรงกลาง */
-            margin-top: 10px; /* ลดระยะห่างด้านบน */
-            display: inline-block; /* ให้ปุ่มอยู่ตรงกลาง */
-            width: 100%; /* ทำให้ปุ่มเต็มความกว้าง */
-            max-width: 200px; /* จำกัดความกว้างสูงสุดของปุ่ม */
-            font-size: 16px; /* ขนาดตัวอักษรเพิ่มขึ้น */
-            font-weight: 600; /* ความหนาของตัวอักษรเพิ่มขึ้น */
-            font-family: 'Noto Sans Thai', sans-serif; /* ฟอนต์เดียวกัน */
+            text-align: center;
+            margin-top: 10px;
+            display: inline-block;
+            width: 100%;
+            max-width: 200px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Noto Sans Thai', sans-serif;
         }
 
         .btn-primary:hover {
-            background-color: #f1815c; /* สีชมพูอ่อนเข้มเมื่อเอาเมาส์ไปชี้ */
+            background-color: #f1815c;
         }
 
         .btn-link {
-            background-color: transparent; /* ไม่มีสีพื้นหลัง */
-            border: none; /* ลบขอบ */
-            color: #888; /* สีข้อความเทา */
-            padding: 0; /* ลบพื้นที่ภายในปุ่ม */
-            font-size: 16px; /* ขนาดตัวอักษร */
-            font-weight: 600; /* ความหนาของตัวอักษร */
-            font-family: 'Noto Sans Thai', sans-serif; /* ฟอนต์เดียวกัน */
-            text-decoration: underline; /* ขีดเส้นใต้เพื่อให้ดูเหมือนลิงก์ */
-            cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อเอาเมาส์ไปชี้ */
-            display: block; /* ทำให้ลิงก์เต็มความกว้าง */
-            text-align: left; /* ทำให้ข้อความในลิงก์ชิดซ้าย */
-            margin-bottom: 12px; /* เพิ่มระยะห่างด้านล่าง */
+            background-color: transparent;
+            border: none;
+            color: #888;
+            padding: 0;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Noto Sans Thai', sans-serif;
+            text-decoration: underline;
+            cursor: pointer;
+            display: block;
+            text-align: left;
+            margin-bottom: 12px;
         }
         .invalid-feedback {
-            color: #FF0000; /* สีแดง */
-            font-size: 14px; /* ขนาดตัวอักษร */
-            font-family: 'Noto Sans Thai', sans-serif; /* ฟอนต์เดียวกัน */
+            color: #FF0000;
+            font-size: 14px;
+            font-family: 'Noto Sans Thai', sans-serif;
         }
 
     </style>

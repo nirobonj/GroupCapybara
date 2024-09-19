@@ -31,6 +31,12 @@ class RegisterController extends Controller
             'province_id' => 'required|integer|exists:province,province_id',
             'district_id' => 'required|integer|exists:district,district_id',
             'role' => 'required|string|in:user,admin',
+        ], [
+            'email.required' => 'กรุณากรอกอีเมล',
+            'email.email' => 'กรุณากรอกอีเมลที่ถูกต้อง',
+            'email.unique' => 'อีเมลนี้มีผู้ใช้งานแล้ว',
+            'password.min' => 'กรุณากรอกรหัสผ่านขั้นต่ำ 8 ตัวอักษร',
+            'password.confirmed' => 'การยืนยันรหัสผ่านไม่ตรงกัน',
         ]);
         
         $user = User::create([
