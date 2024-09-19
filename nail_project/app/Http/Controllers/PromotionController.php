@@ -7,23 +7,26 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\BookingList;
 use App\Models\Shop;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class PromotionController extends Controller
 {
-    public function add_promotion(Request $request,$shop_id)
+    public function add_promotion(Request $request, $shop_id)
     {
-        $shop = Shop::where('shop_id', $shop_id)->first();
+        $user = Auth::user();
+        $shop = $user->shop;
+        $shop = Shop::where('shop_id', $shop->shop_id)->first();
+        return view('promotion.add_promotion', compact('shop'));  // Use compact() to pass variables to the view
+    }
 
-        Log::debug($shop);
-        return view('promotion.add_promotion', compact('shop'));  // Use compact() as the second argument
-    }
-    public function show_promotion(Request $request,$shop_id)
+    public function show_promotion(Request $request, $shop_id)
     {
-        $shop = Shop::where('shop_id', $shop_id)->first();
-        Log::debug($shop);
-        return view('promotion.show_promotion', compact('shop'));  // Use compact() as the second argument
+        $user = Auth::user();
+        $shop = $user->shop;
+        $shop = Shop::where('shop_id', $shop->shop_id)->first();
+        return view('promotion.show_promotion', compact('shop'));  // Use compact() to pass variables to the view
     }
-    
 }
+

@@ -40,8 +40,8 @@ Route::get('/bookinguser', [HistoryController::class, 'booking']);
 Route::get('/edit_profile/{id}', [EditProfileUserController::class, 'index'])->name('edit_profile');
 
 Route::get('/mbooking/{shop_id}', [SalonReservationController::class, 'index'])->name('mbooking');
-Route::get('/add_promotion{shop_id}', [PromotionController::class, 'add_promotion'])->name('add_promotion');
-Route::get('/show_promotion{shop_id}', [PromotionController::class, 'show_promotion'])->name('show_promotion');
+Route::get('/add_promotion/{shop_id}', [PromotionController::class, 'add_promotion'])->name('add_promotion');
+Route::get('/show_promotion/{shop_id}', [PromotionController::class, 'show_promotion'])->name('show_promotion');
 // Route::get('/add_promotion', [AddPromotionController::class, 'index'])->name('add_promotion');
 // Route::get('/show_promotion', [ShowPromotionController::class, 'index'])->name('show_promotion');
 
