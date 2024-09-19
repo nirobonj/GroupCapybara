@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AddPomotionController extends Controller
+class ShowPromotionController extends Controller
 {
     public function index()
     {
         
-        return view('pomotion.add_pomotion');
+        return view('promotion.show_promotion');
     }
 }
+

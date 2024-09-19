@@ -15,7 +15,7 @@
             @if(Auth::user() && Auth::user()->isManicurist())
                 @include('layouts.navbar_manicurist')
             @else
-                @include('layouts.navbar')
+                @include('layouts.navbar_frame')
             @endif
 
             <div>

@@ -1,0 +1,87 @@
+.swiper-container {
+    position: relative;
+    overflow: hidden;
+    background-color: #FFF;
+    width: 100%;
+    height: 600px; /* หรือกำหนดความสูงตามต้องการ */
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.discount {
+position: absolute;
+top: 10px;
+right: 10px;
+background-color: red; /* เปลี่ยนสีตามต้องการ */
+color: white;
+padding: 5px 10px;
+border-radius: 0px;
+}
+
+.swiper-container h2 {
+text-align: left;
+padding-left: 20px;
+padding-down: 20px;
+}
+.swiper-slide {
+    background-color: #ffe4f8;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+    height: 480px; /* ปรับเป็น auto เพื่อให้ขนาดปรับตามข้อมูล */
+    flex-shrink: 0; /* ทำให้ทุกไอเท็มมีขนาดคงที่ */
+ 
+}
+
+/* Fix positions for next/prev buttons */
+.swiper-button-next, .swiper-button-prev {
+    /* position: fixed;  */
+    position: absolute;
+    z-index: 1000; /* เพิ่ม z-index เพื่อให้ปุ่มอยู่เหนือเนื้อหาอื่น */
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 44px;
+        height: 44px;
+        background-color: rgba(0, 0, 0, 0.5); /* สีพื้นหลังปุ่ม */
+        border-radius: 50%; /* ทำให้ปุ่มกลม */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-button-next {
+        right: 10px; /* ตำแหน่งปุ่ม next ด้านขวา */
+    }
+
+    .swiper-button-prev {
+        left: 10px; /* ตำแหน่งปุ่ม prev ด้านซ้าย */
+    }
+
+    /* ป้องกันไม่ให้ปุ่มเคลื่อนที่ตามการสไลด์ */
+    .swiper-button-next:hover, .swiper-button-prev:hover {
+        background-color: rgba(0, 0, 0, 0.7); /* สีเมื่อ hover */
+    }
+
+    /* Optional: กำหนดสีไอคอนในปุ่ม */
+    .swiper-button-next::after, .swiper-button-prev::after {
+        color: white;
+        font-size: 18px;
+    }
+  
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .prev {
+    left: 0;
+  }
+  
+  .next {
+    right: 0;
+  }

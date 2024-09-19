@@ -2,18 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-.pacifico-regular {
-    font-family: "Pacifico", cursive;
-    font-weight: 550;
-    font-style: normal;
-    font-size: 200%;
-  }
-
-  .margin-example {
-    margin-left: 15px;  
-    
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -31,13 +19,120 @@ body {
     align-items: center;
     background-color: #cfe9e9;
     padding: 15px;
+    height: 110px;
     border-bottom: 2px solid #D3D3D3;
+    flex-wrap: wrap;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cfe9e9;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    border-bottom: none;
+}
+
+.navbar::after {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: radial-gradient(circle at 20px 40px, transparent 19px, #cfe9e9 20px),
+                radial-gradient(circle at 60px 40px, transparent 19px, #cfe9e9 20px);
+    background-size: 80px 40px;
+    background-repeat: repeat-x;
+}
+
+
+/* ส่วนนี้จะสร้างขอบหยัก */
+.navbar::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0px; /* ปรับความลึกของขอบหยัก */
+    left: 0;
+    width: 100%;
+    height: 60px; /* ปรับความสูงของคลื่น */
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDQwIiBoZWlnaHQ9IjMyMCIgdmlld0JveD0iMCAwIDE0NDAgMzIwIj4gPHBhdGggZmlsbD0iI2NmZTllOSIgc3Ryb2tlLXdpZHRoPSIwIiBkPSJNMCwxMDBMMTQ0MCwxMDBMMTQ0MCwzMjBMNTIwLDMxNS41TDAsMzIwWiIgZmlsbC1vcGFjaXR5PSIxIj48L3BhdGg+PC9zdmc+');
+    background-size: cover;
+    z-index: -1;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FEEBC1;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cfe9e9;
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+    border-bottom: none;
+    overflow: visible;
+}
+
+.navitem {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    margin-right: 20px;
+}
+/* สร้างเส้นขอบครึ่งวงกลม */
+.scallop-border {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 503px; /* ให้ครึ่งวงกลมลงมาขอบล่าง */
+    left: 0;
+    right: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.circle {
+    width: 300px;
+    height: 100px;
+    background-color: #cfe9e9;
+    border-radius: 50%;
+    margin-right: 0px; /* ปรับระยะห่าง */
+    position: relative;
+}
+
+/* ทำให้ครึ่งวงกลมติดกับขอบล่าง */
+.scallop-border .circle {
+    position: relative;
+    top: -50px; /* ขยับครึ่งวงกลมขึ้นไปครึ่งหนึ่งของความสูง */
+}
+
+
 .logo {
-    font-size: 24px;
     color: #F48A8A;
     font-family: 'Cursive';
+}
+
+.icon-btn img {
+    width: 25px;
+    height: 25px;
 }
 
 .search-bar {
@@ -60,44 +155,6 @@ body {
     border: none;
 }
 
-.nav-icons {
-    display: flex;
-    gap: 10px;
-}
-
-.icon-btn img {
-    width: 25px;
-    height: 25px;
-}
-
-.login-btn {
-    background-color: #F48A8A;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #cfe9e9;
-    padding: 20px;
-    position: relative;
-    z-index: 10;
-    overflow: hidden;
-    border-bottom: none;
-}
-
-.logo {
-    font-size: 24px;
-    color: #F48A8A;
-    font-family: 'Cursive';
-}
-
 .search-bar {
     display: flex;
     align-items: center;
@@ -118,14 +175,13 @@ body {
     border: none;
 }
 
-.nav-icons {
-    display: flex;
-    gap: 10px;
-}
-
-.icon-btn img {
-    width: 25px;
-    height: 25px;
+.login-btn {
+    background-color: #F48A8A;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
 }
 
 .login-btn {
@@ -137,16 +193,15 @@ body {
     cursor: pointer;
 }
 
-.navbar::after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDQwIiBoZWlnaHQ9IjMyMCIgdmlld0JveD0iMCAwIDE0NDAgMzIwIj4gPHBhdGggZmlsbD0iI2NmZTllOSIgc3Ryb2tlLXdpZHRoPSIwIiBkPSJNMCwxMDBMMTQ0MCwxMDBMMTQ0MCwzMjBMNTIwLDMxNS41TDAsMzIwWiIgZmlsbC1vcGFjaXR5PSIxIj48L3BhdGg+PC9zdmc+');
-    background-size: cover;
-}
+.pacifico-regular {
+    font-family: "Pacifico", cursive;
+    font-weight: 550;
+    font-style: normal;
+    font-size: 240%;
+  }
 
+  .margin-example {
+    margin-left: 15px;  
+    
+}
 

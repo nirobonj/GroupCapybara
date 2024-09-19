@@ -14,8 +14,13 @@
     <body class="font-sans antialiased dark:bg-black dark:text-white/50 background-color">
 
         @include('layouts.navbar_manicurist')
-        <div class="box1">
-            <p class="text">show pomotion</p>
+        <div class="container1">
+            <div class="box1">
+                <p class="text">show pomotion</p>
+            </div>
+            <div class="box2">
+                <p class="text2">{{$shop->promotion_detail}}</p>
+            </div>
         </div>
     </div>
     </body>

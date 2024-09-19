@@ -6,10 +6,36 @@ use App\Models\Shop;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Auth;
-use Log;
+use Illuminate\Support\Facades\Log;
 
 class ShopController extends Controller
 {
+    public function index()
+    {
+    // ดึงข้อมูลจากทั้ง Home และ Shop
+    $homes = Shop::with('reviews')->get();
+
+    // ดึงข้อมูลร้านค้าพร้อมกับรีวิวและสุ่มเรียงลำดับ
+    $promotions = Shop::with('reviews')->get()->shuffle();
+
+    // ดึงข้อมูลร้านค้าพร้อมกับรีวิวและจัดเรียงตามคะแนน
+    $tops = Shop::with('reviews')
+    ->get()
+    ->sortByDesc(function ($top) {
+        return $top->reviews->avg('rating');
+    })
+    ->take(3);
+
+    $recomments = Shop::with('reviews')
+        ->get()
+        ->sortByDesc(function ($rec) {
+            return $rec->reviews->avg('rating');
+        });
+
+    // ส่งข้อมูลไปยัง view
+    return view('shop.home', compact('homes', 'promotions', 'tops', 'recomments'));
+    }
+
     /* public function shopDetail()
     {
         $shop = Shop::with('reviews')->where('shop_id', 'S0001')->get();
@@ -20,7 +46,7 @@ class ShopController extends Controller
 
     public function shopDetail()
     {
-        $shop = Shop::where('shop_id', 'S0001')->first();
+        $shop = Shop::where('shop_id', 'S01')->first();
 
         Log::debug($shop);
         return view('shop.shopDetails', compact('shop'));  // Use compact() as the second argument

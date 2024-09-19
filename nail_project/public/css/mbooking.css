@@ -53,7 +53,8 @@
 }
 
 .background-color {
-    background-color: #FFEABD;
+    /* background-color: #FFEABD; */
+    background: linear-gradient(90deg, #FFEABD, #F4DDFC);
     /* background-color: #F4DDFCFF; */
 }
 
@@ -72,7 +73,7 @@
     margin-left: 40px;
     width: 300px;
     height: 50px;
-    background-color: #FFEABD;
+    /* background-color: #FFEABD; */
     border-radius: 16px;
     padding-top: 10px;
     display: flex;

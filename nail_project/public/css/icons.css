@@ -1,5 +1,5 @@
 .fa-house-chimney {
-    font-size: 35px; /* กำหนดขนาดไอคอน */
+    font-size: 45px; /* กำหนดขนาดไอคอน */
     color: black; /* เปลี่ยนสีไอคอน */
 
   }
@@ -10,7 +10,7 @@
   }
 
   .fa-clipboard {
-    font-size: 35px; /* กำหนดขนาดไอคอน */
+    font-size: 45px; /* กำหนดขนาดไอคอน */
     color: black; /* เปลี่ยนสีไอคอน */
     
   }
@@ -22,11 +22,22 @@
 
   .fa-sistrix {
     font-size: 35px; /* กำหนดขนาดไอคอน */
-    color: black; /* เปลี่ยนสีไอคอน */
+    color: #f7c748; /* เปลี่ยนสีไอคอน */
     
   }
   
   .fa-sistrix:hover {
+    color: red; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
+  }
+
+  .fa-pen-to-square {
+    font-size: 15px; /* กำหนดขนาดไอคอน */
+    color: white; /* เปลี่ยนสีไอคอน */
+    
+  }
+  
+  .fa-pen-to-square:hover {
     color: red; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
     cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
   }

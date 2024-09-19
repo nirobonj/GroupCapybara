@@ -6,30 +6,27 @@
 
         <title>NailSlay</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="{{ asset('css/mbooking.css') }}">
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50 background-color">
 
         @include('layouts.navbar_manicurist')
         <div class="box1">
-            <p class="text1">bua</p>
+            <p class="text1">{{ $shop->shop_name }}</p>
         </div>
         <div class="container1">
-                <a href="#" class="btn">
-                    <p class="text1">แก้ไขร้าน</p>
-                </a>
-                <a href="{{ route('add_pomotion') }}"class="btn">
-                    <p class="text1">เพิ่มโปรโมชัน</p>
-                </a>
+            <a href="#" class="btn">
+                <p class="text1">แก้ไขร้าน</p>
+            </a>
+            <a href="{{ route('add_promotion','shop_id') }}" class="btn">
+                <p class="text1">เพิ่มโปรโมชัน</p>
+            </a>
         </div>
         <div class="container1">
             <div class="textbox1">
                 <p class="text2">รายการจอง</p>
             </div>
-                <input class="btn" type="date" id="start" name="trip-start" value="<?= date('Y-m-d'); ?>" />
+            <input class="btn" type="date" id="start" name="trip-start" value="{{ request('date', now()->format('Y-m-d')) }}" onchange="filterBookings()" />
         </div>
 
         <div class="container mt-5">
@@ -38,27 +35,28 @@
                     <tr>
                         <th>ชื่อ</th>
                         <th>เบอร์โทร</th>
+                        <!-- <th>วันที่</th> -->
                         <th>เวลา</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>ข้อมูล 1-1</td>
-                        <td>ข้อมูล 1-2</td>
-                        <td>ข้อมูล 1-3</td>
-                    </tr>
-                    <tr>
-                        <td>ข้อมูล 2-1</td>
-                        <td>ข้อมูล 2-2</td>
-                        <td>ข้อมูล 2-3</td>
-                    </tr>
-                    <tr>
-                        <td>ข้อมูล 3-1</td>
-                        <td>ข้อมูล 3-2</td>
-                        <td>ข้อมูล 3-3</td>
-                    </tr>
+                    @foreach ($bookings as $booking)
+                        <tr>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->phone_number }}</td>
+                            <!-- <td>{{ $booking->date_booking->format('Y-m-d') }}</td> -->
+                            <td>{{ $booking->time_booking->format('H:i:s') }}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
+
+        <script>
+            function filterBookings() {
+                const selectedDate = document.getElementById('start').value;
+                window.location.href = `?date=${selectedDate}`;
+            }
+        </script>
     </body>
 </html>
