@@ -21,6 +21,7 @@ body {
     padding: 15px;
     height: 110px;
     border-bottom: 2px solid #D3D3D3;
+    flex-wrap: wrap;
 }
 
 .navbar {
@@ -90,6 +91,12 @@ body {
     overflow: visible;
 }
 
+.navitem {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    margin-right: 20px;
+}
 /* สร้างเส้นขอบครึ่งวงกลม */
 .scallop-border {
     display: flex;
@@ -113,12 +120,11 @@ body {
 /* ทำให้ครึ่งวงกลมติดกับขอบล่าง */
 .scallop-border .circle {
     position: relative;
-    top: -70px; /* ขยับครึ่งวงกลมขึ้นไปครึ่งหนึ่งของความสูง */
+    top: -80px; /* ขยับครึ่งวงกลมขึ้นไปครึ่งหนึ่งของความสูง */
 }
 
 
 .logo {
-    font-size: 24px;
     color: #F48A8A;
     font-family: 'Cursive';
 }
@@ -190,7 +196,7 @@ body {
     font-family: "Pacifico", cursive;
     font-weight: 550;
     font-style: normal;
-    font-size: 200%;
+    font-size: 270%;
   }
 
   .margin-example {
