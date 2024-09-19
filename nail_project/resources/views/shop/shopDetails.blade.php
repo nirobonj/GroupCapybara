@@ -31,39 +31,51 @@
         <div class="mx-auto" style="background-color: rgb(255, 234, 189); max-width: 80%;">
             <!-- Banner Div -->
             <div class="mx-auto rounded" style="background-color: white; width: 80%; height: 150px;">
-                <p>banner</p>
+                <div class="pd-5" style="max-width: 30%; height: 100%;">
+                    <img src="{{ asset('images/' . $shop->images_name) }}" alt="Image"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
             </div>
 
+
+            <!-- Content Div -->
             <!-- Content Div -->
             <div class="container" style="width: 80%; margin-top: 30px;">
-                <div class="row">
+                <div class="row d-flex align-items-stretch">
                     <!-- Left Side (3 divs) -->
                     <div class="col-md-6" style="padding-right: 0.5rem; padding-left: 0;">
-                        <div class="mb-2 p-2 fw-bold rounded" style="background-color: white;">
-                            {{ $shop->shop_name }}
-                        </div>
-                        <div class="mb-2 p-1 ml-5 rounded">
-                            <i class="bi bi-star-fill"
-                                style="margin-left: 0.3rem; margin-right: 0.5rem; color: rgb(232, 179, 159);"></i>
-                            {{ number_format($shop->reviews->avg('rating') ?? 0, 1) }}
-
-                        </div>
-                        <div class="p-3 rounded" style="background-color: white;">
-                            <div class="rounded" style="background-color: white;">
-                                <p class="fw-bold mb-0">ที่อยู่ :</p>{{ $shop->shop_address }}
+                        <div class="d-flex flex-column h-100">
+                            <div class="mb-2 p-2 fw-bold rounded" style="background-color: white;">
+                                {{ $shop->shop_name }}
                             </div>
-                            <div class="rounded" style="background-color: white;">
-                                <p class="fw-bold mb-0">คำอธิบาย :</p>{{ $shop->shop_description }}
+                            <div class="mb-2 p-1 ml-5 rounded">
+                                <i class="bi bi-star-fill"
+                                    style="margin-left: 0.3rem; margin-right: 0.5rem; color: rgb(232, 179, 159);"></i>
+                                {{ number_format($shop->reviews->avg('rating') ?? 0, 1) }}
+                            </div>
+                            <div class="p-3 rounded flex-grow-1" style="background-color: white;">
+                                <div class="rounded" style="background-color: white;">
+                                    <p class="fw-bold mb-0">ที่อยู่ :</p>{{ $shop->shop_address }}
+                                </div>
+                                <div class="rounded" style="background-color: white;">
+                                    <p class="fw-bold mb-0">คำอธิบาย :</p>{{ $shop->shop_description }}
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Right Side (1 div) -->
                     <div class="col-md-6" style="padding-right: 0; padding-left: 0.5rem;">
-                        <div class="p-3 rounded" style="background-color: white; height: 100%;">picture</div>
+                        <div class="p-3 rounded h-100" style="background-color: white;">
+                            <div class="pd-5" style="height: 100%;">
+                                <img src="{{ asset('images/' . $shop->images_name) }}" alt="Image"
+                                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
 
             <!-- Review Carousel -->
             <div id="reviewCarousel" class="carousel slide mx-auto" style="margin-top: 30px; max-width: 80%;"
