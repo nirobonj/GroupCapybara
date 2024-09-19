@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Province;
 use App\Models\District;
 use App\Models\User;
+use App\Models\Shop;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -39,14 +40,14 @@ class LoginController extends Controller
             $user = Auth::user();
             
             if ($user->role == 'admin') {
-                return redirect()->intended('/mbooking');
+                return redirect()->intended('/mbooking/S0001');
             } else {
                 return redirect()->intended('/');
             }
         }
 
         // ตรวจสอบการมีอยู่ของอีเมลในฐานข้อมูล
-        $user = \App\Models\User::where('email', $request->email)->first();
+        $user = User::where('email', $request->email)->first();
 
         if (!$user) {
             return back()->withErrors(['email' => 'ไม่พบอีเมลนี้']);
