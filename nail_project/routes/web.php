@@ -21,7 +21,7 @@ Route::get('register', [RegisterController::class, 'showRegistrationForm'])->nam
 Route::post('register', [RegisterController::class, 'register'])->name('register');
 Route::get('get-districts/{provinceId}', [RegisterController::class, 'getDistricts']);
 
-Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
+Route::get('/test', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/', [LoginController::class, 'login']);
 
 Route::middleware(['auth', 'is_admin'])->group(function () {
@@ -35,8 +35,9 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 
 //Route::get('/admin', [SalonReservationController::class, 'index'])->middleware('role:admin');
-Route::get('/{id}', [ShopController::class, 'index'])->name('home');
+Route::get('/', [ShopController::class, 'index'])->name('home');
 Route::get('/bookinguser', [HistoryController::class, 'booking']);
+
 Route::get('/edit_profile/{id}', [EditProfileUserController::class, 'index'])->name('edit_profile');
 Route::put('/edit_profile/{id}', [EditProfileUserController::class, 'update'])->name('edit_profile.update');
 
