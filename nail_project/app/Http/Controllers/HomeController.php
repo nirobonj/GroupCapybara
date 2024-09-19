@@ -22,8 +22,6 @@ class HomeController extends Controller
     return view('shop.home', compact('homes'));
     }
 
-    
-
     public function shopDetail()
     {
         $shop = Shop::where('shop_id', 'S0001')->first();

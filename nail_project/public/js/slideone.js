@@ -4,26 +4,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const dots = document.querySelectorAll('.dot');
     const totalItems = items.length;
 
-    // ฟังก์ชันสำหรับอัปเดตการเลื่อนและ pagination
+    if (totalItems === 0) return; // ตรวจสอบถ้ามี slides ให้ทำงาน
+
     function updateCarousel() {
-        const newTranslateX = -currentIndex * 720; // คำนวณตำแหน่งเลื่อน (ความกว้างของ .items คือ 700px + 20px margin)
+        const slideWidth = 720; // ขนาดของแต่ละ slide
+        const margin = 20; // ถ้ามี margin หรือ padding เพิ่มเติม
+        const newTranslateX = -currentIndex * (slideWidth + margin);
+
         items.forEach(item => {
             item.style.transform = `translateX(${newTranslateX}px)`;
         });
 
-        // อัปเดตสถานะจุด pagination
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentIndex);
         });
     }
 
-    // ฟังก์ชันเลื่อนทุก 3 วินาที
     setInterval(function() {
         currentIndex = (currentIndex + 1) % totalItems; // วน loop
         updateCarousel();
     }, 3000);
 
-    // เพิ่ม event listener ให้สามารถคลิกที่จุด pagination
     dots.forEach((dot, index) => {
         dot.addEventListener('click', function() {
             currentIndex = index;
