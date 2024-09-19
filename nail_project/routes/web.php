@@ -44,8 +44,9 @@ Route::get('/show_promotion', [PromotionController::class, 'show_promotion'])->n
 // Route::get('/add_promotion', [AddPromotionController::class, 'index'])->name('add_promotion');
 // Route::get('/show_promotion', [ShowPromotionController::class, 'index'])->name('show_promotion');
 
-// nearbyShops
+// nearbyShops & RecomentShops
 Route::get('/nearbyShops', [ListNailShopController::class, 'nearbyShops']);
+Route::get('/recomentShops', [ListNailShopController::class, 'recomentShops']);
 
 //shop details
 Route::get('/shopDetails', [HomeController::class, 'shopDetail'])->name('shopDetail');

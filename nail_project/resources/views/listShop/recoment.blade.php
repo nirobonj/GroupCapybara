@@ -22,7 +22,7 @@
     <!-- Main Content -->
     <div class="container">
         <div class="header">
-            <h1 class="nameShop">ใกล้ฉัน</h1>
+            <h1 class="nameShop">Recoment</h1>
             <div class="search-container">
                 <input type="text" placeholder="ค้นหาร้านทำเล็บ...">
                 <button type="submit">ค้นหา</button>
@@ -46,7 +46,7 @@
                         <div class="col-9">
                             <h5 class="card-title">{{ $shop->shop_name }}</h5>
                             <div class="rating mb-2">
-                                <span style="color: green;">★ {{ number_format($shop->reviews->avg('rating') ?? 0, 1) }}</span>
+                                <span style="color: green;">★ {{ number_format($shop->reviews->avg('rating') ?? 1, 1) }}</span>
                                 <span style="color: green;">({{ $shop->reviews->count() }})</span>
                             </div>
                             @if ($shop->promotion_detail)
