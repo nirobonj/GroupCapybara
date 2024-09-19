@@ -21,13 +21,10 @@ main {
     position: relative; /* ใช้ตำแหน่งที่สัมพันธ์ */
 }
 
-
-
 body {
     font-family: 'Noto Sans Thai', sans-serif;
     background-color: #FEEBC1;
 }
-
 
 @media (max-width: 768px){
     
@@ -101,7 +98,7 @@ body {
     justify-content: center;
     margin: 40px auto;
     gap: 20px;
-  
+    margin-top: 50px;
 
 }
 
@@ -227,6 +224,7 @@ body {
     gap: 5px; /* ระยะห่างระหว่างไอเท็ม */
     padding: 10px; /* เพิ่ม padding ถ้าต้องการ */
     scrollbar-width: thin; /* ขนาดของ scroll bar สำหรับ Firefox */
+    
 }
 
 .carousel::-webkit-scrollbar {
@@ -325,6 +323,7 @@ body {
 
 main {
     margin-top: 50px;
+    margin-bottom: 0px;
 }
 
   
