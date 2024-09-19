@@ -29,7 +29,7 @@
             padding: 5px;
             margin-bottom: 5px;
             font-family: 'Noto Sans Thai', sans-serif;
-            font-size: 30px;
+            font-size:35px;
             font-weight: 900; 
             color: #F29779; 
         }
@@ -81,7 +81,7 @@
             color: #888;
             padding: 0;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 400;
             font-family: 'Noto Sans Thai', sans-serif;
             text-decoration: underline;
             cursor: pointer;

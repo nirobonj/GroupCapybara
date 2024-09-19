@@ -28,7 +28,7 @@
             padding: 5px;
             margin-bottom: 5px;
             font-family: 'Noto Sans Thai', sans-serif;
-            font-size: 30px;
+            font-size: 35px;
             font-weight: 900;
             color: #F29779;
         }
@@ -50,8 +50,14 @@
             border-radius: 8px;
             color: white;
             cursor: pointer;
+            text-align: center;
+            margin-top: 10px;
+            display: inline-block;
             width: 100%;
             max-width: 200px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Noto Sans Thai', sans-serif;
         }
     </style>
 </head>
@@ -104,8 +110,8 @@
                 <input id="password_confirmation" type="password" name="password_confirmation" placeholder="ยืนยันรหัสผ่าน" required>
             </div>
             @if ($errors->has('password_confirmation'))
-            <div style="color:red;">
-                {{ $errors->first('password_confirmation') }}
+            <div style="color:red; font-weight:bold;">
+                <strong>{{ $errors->first('password_confirmation') }}</strong>
             </div>
                 @endif
 

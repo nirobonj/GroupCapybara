@@ -31,7 +31,7 @@
             padding: 5px;
             margin-bottom: 5px;
             font-family: 'Noto Sans Thai', sans-serif;
-            font-size: 30px;
+            font-size:35px;
             font-weight: 900;
             color: #F29779;
         }
@@ -57,12 +57,12 @@
         }
 
         .invalid-feedback {
-            color: #FF0000; /* สีแดง */
-            font-size: 14px; /* ขนาดตัวอักษร */
-            font-family: 'Noto Sans Thai', sans-serif; /* ฟอนต์เดียวกัน */
-            display: block; /* ให้แสดงเป็นบล็อก */
-            text-align: left; /* จัดข้อความให้อยู่ทางซ้าย */
-            margin-top: 5px; /* เพิ่มระยะห่างด้านบน */
+            color: #FF0000;
+            font-size: 14px;
+            font-family: 'Noto Sans Thai', sans-serif;
+            display: block; 
+            text-align: left;
+            margin-top: 5px;
         }
 
         .btn-primary {
