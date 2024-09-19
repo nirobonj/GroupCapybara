@@ -1,12 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&family=Pacifico&display=swap');
 
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* ป้องกันการเลื่อนนอกเหนือจากขนาดที่กำหนด */
+}
+
+main {
+    overflow: auto; /* หรือ scroll */
+    width: 100%; /* ให้ความกว้างเต็มหน้าจอ */
+    height: 100%; /* ให้ความสูงเต็มหน้าจอ */
+}
+
+.containerall {
+    transform: scale(0.8); /* ซูมออก 80% */
+    transform-origin: 0 0; /* จุดเริ่มต้นการซูมที่มุมบนซ้าย */
+    width: 125vw; /* กว้างขึ้นเพื่อรองรับการซูม */
+    height: 125vh; /* สูงขึ้นเพื่อรองรับการซูม */
+    overflow: auto; /* เพิ่มการเลื่อนเมื่อจำเป็น */
+    position: relative; /* ใช้ตำแหน่งที่สัมพันธ์ */
+}
+
+
+
 body {
     font-family: 'Noto Sans Thai', sans-serif;
     background-color: #FEEBC1;
 }
 
-main {
-    margin-top: 80px; /* เพิ่มระยะห่างจากด้านบน */
+
+@media (max-width: 768px){
+    
+
 }
 
 .header-containersmall {
@@ -76,7 +101,10 @@ main {
     justify-content: center;
     margin: 40px auto;
     gap: 20px;
+  
+
 }
+
 
 .promotions, .recommended-shops {
     margin: 40px; //เว้นระยะขอบข้างซ้ายขวา
@@ -277,9 +305,6 @@ main {
     background-color: #0056b3;
 }
 
-
-
-
 .carousel {
     overflow: hidden;
     position: relative;
@@ -297,6 +322,10 @@ main {
     width: 30%; /* กำหนดความกว้างของแต่ละ card */
     /* เพิ่ม style อื่นๆ ตามต้องการ เช่น border, padding เป็นต้น */
   }
+
+main {
+    margin-top: 50px;
+}
 
   
 
