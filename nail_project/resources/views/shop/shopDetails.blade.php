@@ -20,9 +20,11 @@
 </head>
 
 <body>
-    @include('layouts.navbar')
+    @include('layouts.navbar_manicurist')
+
     <div style="height: 100%;background-color: rgb(255, 234, 189);">
         <p class="text-center fs-3 pt-3" style="color: rgb(232, 179, 159);">
+            <br>
             <i class="bi bi-flower3"></i><i class="bi bi-flower3"></i><i class="bi bi-flower3"></i>
         </p>
 
@@ -43,7 +45,8 @@
                         <div class="mb-2 p-1 ml-5 rounded">
                             <i class="bi bi-star-fill"
                                 style="margin-left: 0.3rem; margin-right: 0.5rem; color: rgb(232, 179, 159);"></i>
-                            {{ number_format($shop->rating, 1) }}
+                            {{ number_format($shop->reviews->avg('rating') ?? 0, 1) }}
+
                         </div>
                         <div class="p-3 rounded" style="background-color: white;">
                             <div class="rounded" style="background-color: white;">
@@ -63,36 +66,40 @@
             </div>
 
             <!-- Review Carousel -->
-            <div id="reviewCarousel" class="carousel slide mx-auto" style="margin-top: 30px; max-width: 80%;">
+            <div id="reviewCarousel" class="carousel slide mx-auto" style="margin-top: 30px; max-width: 80%;"
+                data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="d-flex justify-content-between">
-                            <div class="rounded review-box" style="padding: 12%;">Review 1</div>
-                            <div class="rounded review-box" style="padding: 12%;">Review 2</div>
-                            <div class="rounded review-box" style="padding: 12%;">Review 3</div>
+                    @foreach ($shop->reviews->chunk(3) as $key => $reviewChunk)
+                        <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                            <div class="d-flex justify-content-between">
+                                @foreach ($reviewChunk as $review)
+                                    <div class="rounded review-box"
+                                        style="padding: 2rem; width: 33%; background-color: #fff;">
+                                        <div id="content" class="p-3 rounded"
+                                            style="background-color: #f0d6cd; max-width: 100%; border: 1px solid #ccc;">
+                                            <div style="display: flex; align-items: center;">
+                                                <i class="bi bi-star-fill"
+                                                    style="color: rgb(232, 179, 159); margin-right: 0.5rem;"></i>
+                                                <p style="margin: 0;">{{ $review->rating }}</p>
+                                            </div>
+                                            <p>{{ $review->detail }}</p>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-between">
-                            <div class="rounded review-box" style="padding: 12%;">Review 4</div>
-                            <div class="rounded review-box" style="padding: 12%;">Review 5</div>
-                            <div class="rounded review-box" style="padding: 12%;">Review 6</div>
-                        </div>
-                    </div>
-                    <!-- Add more carousel items as needed -->
+                    @endforeach
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"
-                        style="background-color: rgb(232, 179, 159); "></span>
+
+                <!-- Carousel controls -->
+                <a class="carousel-control-prev" href="#reviewCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"
-                        style="background-color: rgb(232, 179, 159);"></span>
+                </a>
+                <a class="carousel-control-next" href="#reviewCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
-                </button>
+                </a>
             </div>
 
             <!-- Detail Div -->
@@ -138,51 +145,56 @@
 
                     <div class="d-flex justify-content-center align-items-center" style="padding-bottom: 5%;">
                         <!-- Button trigger modal -->
-                        <button type="button" class="mt-5 p-2 rounded" data-bs-toggle="modal"
-                            data-bs-target="#bookNowModal">
-                            Book Now!
+                        <button type="button" class="mt-5 btn p-3 rounded" data-bs-toggle="modal"
+                            data-bs-target="#bookNowModal"
+                            style="background-color: #f29779; color: #fff; border: none; text-transform: uppercase;
+                transition: background-color 0.3s ease, transform 0.3s ease;">
+                            <p class="mb-0">Book Now!</p>
                         </button>
+
                     </div>
                 </div>
             </div>
 
         </div>
 
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="bookNowModal" tabindex="-1" aria-labelledby="bookNowModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="bookNowModalLabel">Booking Confirmation</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="date" class="form-label">Select Date</label>
-                            <input type="date" class="form-control" id="date">
+        <!-- Modal -->
+        <!-- Modal -->
+        <div class="modal fade" id="bookNowModal" tabindex="-1" aria-labelledby="bookNowModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="bookNowModalLabel">Booking Confirmation</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <form action="{{ route('add_booking') }}" method="POST">
+                        @csrf
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="date" class="form-label">Select Date</label>
+                                <input type="date" class="form-control" id="date" name="date" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="time" class="form-label">Select Time</label>
+                                <input type="time" class="form-control" id="time" name="time" required>
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="time" class="form-label">Select Time</label>
-                            <input type="time" class="form-control" id="time">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Confirm Booking</button>
                         </div>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="confirmBooking">Confirm Booking</button>
-                </div>
             </div>
         </div>
-    </div>
 
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

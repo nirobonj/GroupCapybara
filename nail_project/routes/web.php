@@ -30,4 +30,5 @@ Route::get('/show_pomotion', [ShowPomotionController::class, 'index'])->name('sh
 Route::get('/nearbyShops', [ListNailShopController::class, 'nearbyShops']);
 
 //shop details
-Route::get('/shopDetails', [HomeController::class, 'shopDetail'])->name('shopDetail');
+Route::get('/shopDetails', [ShopController::class, 'shopDetail'])->name('shopDetail');
+Route::post('/add_booking', [ShopController::class, 'booking'])->name('add_booking');
