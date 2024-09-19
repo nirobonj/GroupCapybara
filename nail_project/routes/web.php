@@ -38,6 +38,7 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/{id}', [ShopController::class, 'index'])->name('home');
 Route::get('/bookinguser', [HistoryController::class, 'booking']);
 Route::get('/edit_profile/{id}', [EditProfileUserController::class, 'index'])->name('edit_profile');
+Route::put('/edit_profile/{id}', [EditProfileUserController::class, 'update'])->name('edit_profile.update');
 
 Route::get('/mbooking/{shop_id}', [SalonReservationController::class, 'index'])->name('mbooking');
 Route::get('/add_promotion/{shop_id}', [PromotionController::class, 'add_promotion'])->name('add_promotion');
