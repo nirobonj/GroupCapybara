@@ -40,15 +40,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($bookings as $booking)
-                        <tr>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->phone_number }}</td>
-                            <!-- <td>{{ $booking->date_booking->format('Y-m-d') }}</td> -->
-                            <td>{{ $booking->time_booking->format('H:i:s') }}</td>
-                        </tr>
-                    @endforeach
-                </tbody>
+                @foreach ($bookings as $booking)
+                    <tr>
+                        <td>{{ $booking->user->name ?? 'N/A' }}</td>
+                        <td>{{ $booking->user->phone_number ?? 'N/A' }}</td>
+                        <!-- <td>{{ $booking->date_booking->format('Y-m-d') }}</td> -->
+                        <td>{{ $booking->time_booking->format('H:i:s') }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
             </table>
         </div>
 
