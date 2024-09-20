@@ -35,7 +35,7 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 
 //Route::get('/admin', [SalonReservationController::class, 'index'])->middleware('role:admin');
-Route::get('/home', [ShopController::class, 'index'])->name('home');
+Route::get('/home/{id}', [ShopController::class, 'index'])->name('home');
 Route::get('/bookinguser', [HistoryController::class, 'booking']);
 
 Route::get('/edit_profile/{id}', [EditProfileUserController::class, 'index'])->name('edit_profile');
