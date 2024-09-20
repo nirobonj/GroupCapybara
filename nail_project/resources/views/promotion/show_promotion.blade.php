@@ -30,9 +30,9 @@
                 {!! nl2br(str_replace('-', '<br>', $shop->promotion_detail)) !!}
                 </div>
             </div>
-            <div class="btn">
-            <p class="text2 ">ตกลง</p>
-            </div>
+            <a href="/nearbyShops" class="btn">
+                <p class="text2">ตกลง</p>
+            </a>
         </div>
     </div>
     </body>
