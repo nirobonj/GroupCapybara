@@ -13,7 +13,13 @@
         <a  href="{{ route('home', ['id' => $user->id]) }}" style="margin-right: 15px;"><i class="fa-solid fa-house-chimney"></i></a>
         <a href="{{ route('bookinguser', ['id' => $user->id]) }}" style="margin-right: 15px;"><i class="fa-regular fa-clipboard"></i></a>
         <a href="{{ route('edit_profile', ['id' => $user->id]) }}" class="login-btn"  style="margin-right: 15px;">User</a>
-        <a href="/" style="margin-right: 15px;"><i class="fa-solid fa-right-from-bracket"></i></i></a>
+        <!-- <a href="/" style="margin-right: 15px;"><i class="fa-solid fa-right-from-bracket"></i></i></a> -->
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+</form>
+<a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+    <i class="fa-solid fa-right-from-bracket"></i>
+</a>
     </div>
     <!-- ครึ่งวงกลมอยู่ภายใน navbar -->
     <div class="half-circle">
