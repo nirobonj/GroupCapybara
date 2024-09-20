@@ -10,10 +10,10 @@
         <i class="fab fa-sistrix" style="position: absolute; right: 10px; cursor: pointer;"></i>
     </div> -->
     <div class="navitem">
-        <a href="/home" style="margin-right: 15px;"><i class="fa-solid fa-house-chimney"></i></a>
-        <a href="/bookinguser" style="margin-right: 15px;"><i class="fa-regular fa-clipboard"></i></a>
-        <a href="/edit_profile/{id}" class="login-btn"  style="margin-right: 15px;">User</a>
-        <a href="/logout" style="margin-right: 15px;"><i class="fa-solid fa-right-from-bracket"></i></i></a>
+        <a  href="{{ route('home', ['id' => $user->id]) }}" style="margin-right: 15px;"><i class="fa-solid fa-house-chimney"></i></a>
+        <a href="{{ route('bookinguser', ['id' => $user->id]) }}" style="margin-right: 15px;"><i class="fa-regular fa-clipboard"></i></a>
+        <a href="{{ route('edit_profile', ['id' => $user->id]) }}" class="login-btn"  style="margin-right: 15px;">User</a>
+        <a href="/" style="margin-right: 15px;"><i class="fa-solid fa-right-from-bracket"></i></i></a>
     </div>
     <!-- ครึ่งวงกลมอยู่ภายใน navbar -->
     <div class="half-circle">
