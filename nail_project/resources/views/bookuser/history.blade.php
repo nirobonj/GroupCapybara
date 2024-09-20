@@ -35,14 +35,39 @@
             @foreach($bookingLists as $booking)
             <!-- Each Slide -->
             <div class="boxsection">
-                <div class="image-placeholder"></div>
+
+                <!-- <div class="image-placeholder">
+                    <img src="{{ asset('images/' . $booking->images_name) }}" alt="Shop Image">
+                </div> -->
+
                 <div class="boxtext">
                     <h3>{{ $booking->shop_name }}</h3> <!-- ใช้ shop_name ที่ได้จาก join -->
-                    <p>Date Transaction: {{ $booking->date_transaction }}</p> <!-- วันที่ทำธุรกรรม -->
-                    <p>Time Transaction: {{ $booking->time_transaction }}</p> <!-- เวลาทำธุรกรรม -->
-                    <p>Date Booking: {{ $booking->date_booking }}</p> <!-- วันที่ทำการจอง -->
-                    <p>Time Booking: {{ $booking->time_booking }}</p> <!-- เวลาทำการจอง -->
-                    <a href="/" class="details-btn"><i class="fa-solid fa-pen-to-square"></i>แก้ไข</a>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <table style="width: 65%; table-layout: auto;">
+                            <tr>
+                                <td style="width: 140px; line-height: 3;">Date Transaction:</td>
+                                <td>{{ $booking->date_transaction }}</td>
+                                <td style="width: 140px; line-height: 3;">Time Transaction:</td>
+                                <td>{{ $booking->time_transaction }}</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 140px; line-height: 1;">Date Booking:</td>
+                                <td>{{ $booking->date_booking }}</td>
+                                <td style="width: 140px; line-height: 1;">Time Booking:</td>
+                                <td>{{ $booking->time_booking }}</td>
+                            </tr>
+                        </table>
+
+                      
+                        <a href="/" class="details-btn" style="margin-right: 100px;"><i class="fa-solid fa-pen-to-square"></i> แก้ไข</a>
+
+                    
+
+                       
+                    </div>
+
+                 
                 </div>
             </div>
             @endforeach

@@ -148,11 +148,21 @@ body {
     font-family: 'Noto Sans Thai', sans-serif;
 }
 
-.itemsection h2 {
-    text-align: left;
-    padding-left: 20px;
-    padding-down: 20px;
+.itemsecond h3 {
+    font-size: 18px;
+    white-space: nowrap; /* ป้องกันการขึ้นบรรทัดใหม่ */
+    overflow: hidden; /* ซ่อนข้อความส่วนที่เกิน */
+    text-overflow: ellipsis; /* เพิ่ม "..." เมื่อข้อความยาวเกิน */
+    margin-top: 10px;
 }
+
+.itemsecond p {
+    font-size: 16px;
+    white-space: nowrap; /* ป้องกันการขึ้นบรรทัดใหม่ */
+    overflow: hidden; /* ซ่อนข้อความส่วนที่เกิน */
+    text-overflow: ellipsis; /* เพิ่ม "..." เมื่อข้อความยาวเกิน */
+}
+
 
 .itemsecond {
     background-color: #ffe4f8;
@@ -176,30 +186,24 @@ body {
     display: flex;
     gap: 20px;
     transition: transform 0.5s ease;
-   
-
 }
 
-
-
 .items {
-    width: 100%;
-    box-sizing: border-box; 
-    flex: 0 0 100%; 
-    background-color: #ffe4f8;
+    flex: 0 0 auto;
+    width: 850px; /* กำหนดขนาดที่แน่นอนหรือใช้ % เพื่อให้ยืดหยุ่น */
+    margin-right: 20px; /* ระยะห่างระหว่าง items */
     transition: transform 0.5s ease-in-out;
+    background-color: #ffe4f8;
     padding: 15px;
     border-radius: 15px;
     text-align: center;
     height: 330px;
     font-family: 'Noto Sans Thai', sans-serif;
-    flex-shrink: 0; /* ให้แต่ละไอเท็มมีขนาดคงที่ */
 }
 
 .textnearme {
     font-size: 24px; text-align: left; margin-left: 10px; color: black; margin-top: 10px;
 }
-
 
 /* สไตล์ pagination (จุดด้านล่าง) */
 .pagination {
@@ -224,12 +228,22 @@ body {
 }
 
 .carousels {
-    display: flex; /* ใช้ Flexbox เพื่อจัดการการจัดเรียงของ .item */
-    overflow-x: auto; /* เพิ่มการเลื่อนแนวนอนถ้าจำเป็น */
+    display: flex; /* จัดเรียงแบบแนวนอน */
+    overflow: hidden; /* ป้องกันการแสดงแทบเลื่อน */
     gap: 10px; /* ระยะห่างระหว่างไอเท็ม */
-    padding: 10px; /* เพิ่ม padding ถ้าต้องการ */
-    scrollbar-width: thin; /* ขนาดของ scroll bar สำหรับ Firefox */
-    margin-top: 0px;
+    padding: 10px;
+}
+
+.carousels {
+    overflow: hidden; /* ลบแทบเลื่อน */
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+/* ลบแทบเลื่อนในเบราว์เซอร์ต่างๆ */
+.carousels::-webkit-scrollbar {
+    display: none; /* สำหรับ Chrome, Safari, Opera */
 }
 
 

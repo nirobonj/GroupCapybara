@@ -12,12 +12,24 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('css/listShop.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="{{ asset('css/listShop.css') }}">
+<link rel="stylesheet" href="{{ asset('css/icons.css') }}">
+<link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
+<link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+<link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+
+    
 </head>
 
 <body class="font-sans antialiased dark:bg-black dark:text-white/50 background-color">
     <!-- Navbar -->
-    @include('layouts.navbar_frame')
+ 
+    @include('navbar.navbartwo')
 
     <!-- Main Content -->
     <div class="container">

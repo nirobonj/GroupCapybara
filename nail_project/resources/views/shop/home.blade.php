@@ -93,7 +93,7 @@
 
           <div class="header-containersmall">
               <h2 class="header-title">ร้านยอดนิยม Top 3</h2>
-              <a href="/" class="view-more-linksmall">ดูเพิ่มเติม</a>
+              <a href="/recomentShops" class="view-more-linksmall">ดูเพิ่มเติม</a>
           </div>
 
           <div class="nexts carousel">
@@ -163,46 +163,43 @@
           @foreach($promotions as $home)
               <!-- Each Slide -->
               <div class="swiper-slide">
-                  <div class="image-placeholder">
-                      <img src="{{ asset('images/' . $home->images_name) }}" alt="Image">
-                  </div>
-                  
+                    <div class="image-placeholder">
+                        <img src="{{ asset('images/' . $home->images_name) }}" alt="Image">
+                    </div>
 
+                    <div class="discount">-50%</div>
 
-                                    <div class="discount">-50%</div>
+                    <div style="font-size: 18px; text-align: left; margin-left: 10px;">
+                        <a href="{{ route('shopDetail', ['id' => $home->shop_id]) }}" class="details-btn">Detail</a>
 
-                                    <div style="font-size: 18px; text-align: left; margin-left: 10px;">
-                                        <a href="{{ route('shopDetail', ['id' => $home->shop_id]) }}" class="details-btn">Detail</a>
+                        <!-- Calculate average review rating -->
+                        @php
+                            $averageRating = $home->reviews->avg('rating') ?? 0; // ค่าเริ่มต้นถ้าไม่มีรีวิว
+                            $reviewCount = $home->reviews->count();
 
-                                        <!-- Calculate average review rating -->
-                                        @php
-                                            $averageRating = $home->reviews->avg('rating') ?? 0; // ค่าเริ่มต้นถ้าไม่มีรีวิว
-                                            $reviewCount = $home->reviews->count();
+                            // คำนวณจำนวนดาวเต็ม ดาวครึ่ง และดาวว่าง
+                            $fullStars = floor($averageRating);
+                            $halfStar = $averageRating - $fullStars >= 0.5 ? 1 : 0;
+                            $emptyStars = 5 - ($fullStars + $halfStar);
+                        @endphp
 
-
-                                            // คำนวณจำนวนดาวเต็ม ดาวครึ่ง และดาวว่าง
-                                            $fullStars = floor($averageRating);
-                                            $halfStar = $averageRating - $fullStars >= 0.5 ? 1 : 0;
-                                            $emptyStars = 5 - ($fullStars + $halfStar);
-                                        @endphp
-
-                                        <div class="rating">
-                                            @for ($i = 0; $i < $fullStars; $i++)
-                                                <i class="fa-solid fa-star" style="color: Violet;"></i>
-                                            @endfor
-                                            @if ($halfStar)
-                                                <i class="fa-solid fa-star-half" style="color: Violet;"></i>
-                                            @endif
-                                            @for ($i = 0; $i < $emptyStars; $i++)
-                                                <i class="fa-regular fa-star" style="color: Gray;"></i>
-                                            @endfor
-                                            <span>{{ number_format($averageRating, 1) }} ({{ $reviewCount }}
+                        <div class="rating">
+                            @for ($i = 0; $i < $fullStars; $i++)
+                            <i class="fa-solid fa-star" style="color: Violet;"></i>
+                            @endfor
+                            @if ($halfStar)
+                                <i class="fa-solid fa-star-half" style="color: Violet;"></i>
+                            @endif
+                            @for ($i = 0; $i < $emptyStars; $i++)
+                                <i class="fa-regular fa-star" style="color: Gray;"></i>
+                            @endfor
+                        <span>{{ number_format($averageRating, 1) }} ({{ $reviewCount }}
                                                 รีวิว)</span>
-                                        </div>
+                        </div>
 
-                      <h3>{{ $home->shop_name }}</h3>
-                      <p>Promotion: {{ $home->promotion_detail }}</p>
-                      <p><i class="fa-solid fa-location-dot" style="color: red;"></i> {{ $home->shop_address }}</p>
+                        <h3>{{ $home->shop_name }}</h3>
+                        <p>Promotion: {{ $home->promotion_detail }}</p>
+                        <p><i class="fa-solid fa-location-dot" style="color: red;"></i> {{ $home->shop_address }}</p>
                   </div>  
               </div>
           @endforeach

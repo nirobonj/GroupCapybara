@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NailySlay - แก้ไขโปรไฟล์</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/history.css') }}">
     <link rel="stylesheet" href="{{ asset('css/icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
@@ -62,7 +63,8 @@
     </style>
 </head>
 <body>
-    @include('layouts.navbar_frame')
+    @include('navbar.navbartwo')
+
     <div class="form-container">
         <div class="form-header">
             Profile
