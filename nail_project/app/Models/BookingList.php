@@ -15,12 +15,19 @@ class BookingList extends Model
 
     // public $timestamps = false;
 
+    // Disable timestamps
+    public $timestamps = false;
+
+    // Define fillable fields
     protected $fillable = [
         'shop_id',
         'user_id',
-        'date_transaction',
         'date_booking',
+        'time_booking',
+        'date_transaction',
+        'time_transaction'
     ];
+
     protected $casts = [
         'time_transaction' => 'datetime:H:i:s',
         'time_booking' => 'datetime:H:i:s',
@@ -40,5 +47,5 @@ class BookingList extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
-    
+
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shop Details</title>
+    <title>{{ $shop->shop_name }}</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -130,13 +130,19 @@
                     <!-- Left Side (3 divs) -->
                     <div class="col-md-6" style="padding-right: 0.5rem; padding-left: 0;">
                         <div class="mb-3 p-3 rounded" style="background-color: #f0d6cd;">color</div>
-                        <div class="mb-3 p-5 rounded" style="background-color: white;">pic color</div>
+                        <div class="mb-3 p-3 rounded" style="background-color: white;">
+                            <img src="{{ asset('images/' . $shop->color_img) }}" alt="Image"
+                                    style="width: 100%; height: 20%; object-fit: cover; border-radius: 10px;">
+                        </div>
                     </div>
 
                     <!-- Right Side (1 div) -->
                     <div class="col-md-6" style="padding-right: 0; padding-left: 0.5rem;">
                         <div class="mb-3 p-3 rounded" style="background-color: #f0d6cd;">parts</div>
-                        <div class="mb-3 p-5 rounded" style="background-color: white;">pic parts</div>
+                        <div class="mb-3 p-3 rounded" style="background-color: white;">
+                            <img src="{{ asset('images/' . $shop->parts_img) }}" alt="Image"
+                                    style="width: 100%; height: 20%; object-fit: cover; border-radius: 10px;">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -181,7 +187,6 @@
         </div>
 
         <!-- Modal -->
-        <!-- Modal -->
         <div class="modal fade" id="bookNowModal" tabindex="-1" aria-labelledby="bookNowModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
@@ -193,6 +198,9 @@
                     </div>
                     <form action="{{ route('add_booking') }}" method="POST">
                         @csrf
+                        <!-- Hidden input to send shop_id -->
+                        <input type="hidden" name="shop_id" value="{{ $shop->shop_id }}">
+
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="date" class="form-label">Select Date</label>
@@ -212,7 +220,11 @@
             </div>
         </div>
 
-
+        @if (session('success'))
+            <script>
+                alert('{{ session('success') }}');
+            </script>
+        @endif
 
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>

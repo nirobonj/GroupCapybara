@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shop;
+use App\Models\BookingList;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Auth;
@@ -45,27 +46,30 @@ class ShopController extends Controller
     }
 
     public function booking(Request $request)
-    {
-        $user = Auth::user();
+{
+    // Get the authenticated user
+    $user = Auth::user();
 
-        $request->validate([
-            'date' => 'required|date',
-            'time' => 'required|date_format:H:i',
-        ]);
+    // Validate the request
+    $request->validate([
+        'date' => 'required|date',
+        'time' => 'required|date_format:H:i',
+    ]);
 
-        // Create a new booking record
-        Booking_list::create([
-            'booking_list_id' => 'id',
-            'shop_id' => $user,
-            'user_id' => $user,
-            'date_booking' => $request->date,
-            'time_booking' => $request->time,
-            'date_transaction' => now(), // or use a different field if needed
-            'time_transaction' => now(), // or use a different field if needed
-        ]);
+    // Create a new booking record
+    BookingList::create([
+        'shop_id' => $request->shop_id,
+        'user_id' => $user->id, // Use user ID instead of the user object
+        'date_booking' => $request->date,
+        'time_booking' => $request->time . ':00', // Ensure time format is hh:mm:ss
+        'date_transaction' => now()->toDateString(), // Store current date
+        'time_transaction' => Carbon::now('Asia/Bangkok')->toTimeString(),
+    ]);
 
-        // Redirect or return a response
-        return redirect()->back()->with('success', 'Booking confirmed!');
-    }
+    // Redirect or return a response
+    return redirect()->back()->with('success', 'Booking confirmed!');
+}
+
+
 
 }
