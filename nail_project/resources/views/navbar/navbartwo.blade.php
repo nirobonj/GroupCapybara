@@ -4,7 +4,13 @@
 </head>
 
 <nav class="navbar navbar-expand-lg">
-<div class="logo pacifico-regular" style="margin-left: 35px;">NailySlay</div>
+<div style="padding-left: 2%;">
+            <a class="font-weight-bold fs-4"
+                style="color: #F29779; font-family: 'Leckerli One', cursive; text-decoration: none;font-size: 45px !important;">
+                NailySlay
+            </a>
+        </div>
+<!-- <div class="logo pacifico-regular" style="margin-left: 35px;">NailySlay</div> -->
     <!-- <div class="search-bar" style="display: flex; justify-content: flex-end; align-items: center; position: relative; width: 25%;">
         <input type="text" placeholder="" style="width: 90%; padding-right: 30px;">
         <i class="fab fa-sistrix" style="position: absolute; right: 10px; cursor: pointer;"></i>

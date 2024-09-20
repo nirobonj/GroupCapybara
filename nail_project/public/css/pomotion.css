@@ -11,7 +11,7 @@
     margin-left: 40px;
     width: 650px;
     height: 50px;
-    background-color: #E4DCFFFF;
+    background-color: #FFE4F8;
     /* border-radius: 16px; */
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
@@ -47,8 +47,8 @@
     justify-content: center; 
 }
 .background-color {
-    /* background-color: #FFEABD; */
-    background: linear-gradient(90deg, #FFEABD, #F4DDFC);
+    background-color: #FFEABD;
+    /* background: linear-gradient(90deg, #FFEABD, #F4DDFC); */
 }
 .text {
     /* margin-top: 40px; */

@@ -62,7 +62,8 @@
                                 <span style="color: green;">({{ $shop->reviews->count() }})</span>
                             </div>
                             @if ($shop->promotion_detail)
-                            <button class="btn btn-warning">promo</button>
+                            <!-- <button class="btn btn-warning" >promo</button> -->
+                            <a class="btn btn-warning" href="{{ route('show_promotion', ['shop_id' => $shop->shop_id]) }}">promo</a>
                             @endif
                         </div>
                     </div>

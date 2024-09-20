@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div style="padding-left: 2%;">
             <a class="font-weight-bold fs-4"
-                style="color: rgb(232, 179, 159); font-family: 'Leckerli One', cursive; text-decoration: none;font-size: 45px !important;">
+                style="color: #F29779; font-family: 'Leckerli One', cursive; text-decoration: none;font-size: 45px !important;">
                 NailySlay
             </a>
         </div>
@@ -26,9 +26,9 @@
                     <a class="nav-link" href="{{ route('add_promotion',$shop->shop_id) }}">add_promotion</a>
                 </li>
                 <!-- อันนี้ของผู้ใช้ปกติ เดะต้องไปใส่ใน navbar.php -->
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('show_promotion',$shop->shop_id) }}">show_promotion(ลูกค้า)</a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
