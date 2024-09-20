@@ -1,45 +1,55 @@
 .fa-house-chimney {
-    font-size: 45px; /* กำหนดขนาดไอคอน */
-    color: black; /* เปลี่ยนสีไอคอน */
+  font-size: 45px; /* กำหนดขนาดไอคอน */
+  color: black; /* เปลี่ยนสีไอคอน */
 
-  }
-  
-  .fa-house-chimney:hover {
-    color: red; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
-    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
-  }
+}
 
-  .fa-clipboard {
-    font-size: 45px; /* กำหนดขนาดไอคอน */
-    color: black; /* เปลี่ยนสีไอคอน */
-    
-  }
-  
-  .fa-clipboard:hover {
-    color: red; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
-    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
-  }
+.fa-house-chimney:hover {
+  color: #f5c70a; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
+}
 
-  .fa-sistrix {
-    font-size: 35px; /* กำหนดขนาดไอคอน */
-    color: #f7c748; /* เปลี่ยนสีไอคอน */
-    
-  }
+.fa-clipboard {
+  font-size: 45px; /* กำหนดขนาดไอคอน */
+  color: black; /* เปลี่ยนสีไอคอน */
   
-  .fa-sistrix:hover {
-    color: red; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
-    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
-  }
+}
 
-  .fa-pen-to-square {
-    font-size: 15px; /* กำหนดขนาดไอคอน */
-    color: white; /* เปลี่ยนสีไอคอน */
-    
-  }
-  
-  .fa-pen-to-square:hover {
-    color: red; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
-    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
-  }
+.fa-clipboard:hover {
+  color: #f5c70a; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
+}
 
+.fa-sistrix {
+  font-size: 35px; /* กำหนดขนาดไอคอน */
+  color: #f7c748; /* เปลี่ยนสีไอคอน */
   
+}
+
+.fa-sistrix:hover {
+  color: red; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
+}
+
+.fa-pen-to-square {
+  font-size: 15px; /* กำหนดขนาดไอคอน */
+  color: white; /* เปลี่ยนสีไอคอน */
+  
+}
+
+.fa-pen-to-square:hover {
+  color: red; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
+}
+
+.fa-right-from-bracket {
+  font-size: 30px; /* กำหนดขนาดไอคอน */
+  color: black; /* เปลี่ยนสีไอคอน */
+  
+}
+
+.fa-right-from-bracket:hover {
+  color: #f5c70a; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
+  cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
+}
+

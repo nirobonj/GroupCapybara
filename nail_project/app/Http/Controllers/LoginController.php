@@ -45,9 +45,9 @@ class LoginController extends Controller
                     return redirect()->intended('/mbooking/' . $shop->shop_id);
                 }
                 // กรณีที่ผู้ใช้ไม่มีข้อมูล shop
-                return redirect()->intended('/' . $user->id);
+                return redirect()->intended('/home/' . $user->id);
             } else {
-                return redirect()->intended('/' . $user->id);
+                return redirect()->intended('/home/' . $user->id);
             }
         }
 
@@ -64,6 +64,6 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-        return redirect('/home');
+        return redirect('/');
     }
 }

@@ -31,190 +31,188 @@
     @include('navbar.navbartwo')
 
     <main>
-        <div class="containerall">
+
+    <div class="containerall">
             <div class="">
 
-                <section class="tabs">
-                    <div class="itemsection">
-                        <div class="header-containersmall">
-                            <h2 class="header-title">ใกล้ฉัน</h2>
-                            <a href="/nearbyShops" class="view-more-linksmall">ดูเพิ่มเติม</a>
-                        </div>
-                        <div class="carousels">
-                            @foreach ($homes->take(3) as $home)
-                                <!-- Each Slide -->
-                                <div class="itemsecond">
-                                    <div class="image-placeholder">
-                                        <img src="{{ asset('images/' . $home->images_name) }}" alt="Shop Image">
-                                    </div>
 
-                                    <div style="font-size: 18px; text-align: left; margin-left: 5px; margin-top: 5px;">
+      <div class="containerall">
+      <div class="container">
+    
+      <section class="tabs">
+          <div class="itemsection">
+          <div class="header-containersmall">
+              <h2 class="header-title">ใกล้ฉัน</h2>
+              <a href="/nearbyShops" class="view-more-linksmall">ดูเพิ่มเติม</a>
+          </div>
+                  <div class="carousels">
+                  @foreach($homes->take(3) as $home)
+                  <!-- Each Slide -->
+                  <div class="itemsecond">
+                      <div class="image-placeholder">
+                          <img src="{{ asset('images/' . $home->images_name) }}" alt="Shop Image">
+                      </div>
 
-                                        <!-- Calculate average review rating -->
-                                        @php
-                                            $averageRating = $home->reviews->avg('rating') ?? 0; // ค่าเริ่มต้นถ้าไม่มีรีวิว
-                                            $reviewCount = $home->reviews->count();
+                      <div style="font-size: 18px; text-align: left; margin-left: 5px; margin-top: 5px;">
+      
+                      <!-- Calculate average review rating -->
+                      @php
+                          $averageRating = $home->reviews->avg('rating') ?? 0; // ค่าเริ่มต้นถ้าไม่มีรีวิว
+                          $reviewCount = $home->reviews->count();
 
-                                            // คำนวณจำนวนดาวเต็ม ดาวครึ่ง และดาวว่าง
-                                            $fullStars = floor($averageRating);
-                                            $halfStar = $averageRating - $fullStars >= 0.5 ? 1 : 0;
-                                            $emptyStars = 5 - ($fullStars + $halfStar);
-                                        @endphp
+                          // คำนวณจำนวนดาวเต็ม ดาวครึ่ง และดาวว่าง
+                          $fullStars = floor($averageRating);
+                          $halfStar = ($averageRating - $fullStars) >= 0.5 ? 1 : 0;
+                          $emptyStars = 5 - ($fullStars + $halfStar);
+                      @endphp
 
-                                        <div class="rating">
-                                            @for ($i = 0; $i < $fullStars; $i++)
-                                                <i class="fa-solid fa-star" style="color: Violet;"></i>
-                                            @endfor
-                                            @if ($halfStar)
-                                                <i class="fa-solid fa-star-half" style="color: Violet;"></i>
-                                            @endif
-                                            @for ($i = 0; $i < $emptyStars; $i++)
-                                                <i class="fa-regular fa-star" style="color: Gray;"></i>
-                                            @endfor
-                                            <span>{{ number_format($averageRating, 1) }} ({{ $reviewCount }}
-                                                รีวิว)</span>
-                                        </div>
+                      <div class="rating">
+                          @for ($i = 0; $i < $fullStars; $i++)
+                              <i class="fa-solid fa-star" style="color: Violet;"></i>
+                          @endfor
+                          @if ($halfStar)
+                              <i class="fa-solid fa-star-half" style="color: Violet;"></i>
+                          @endif
+                          @for ($i = 0; $i < $emptyStars; $i++)
+                              <i class="fa-regular fa-star" style="color: Gray;"></i>
+                          @endfor
+                          <span>{{ number_format($averageRating, 1) }} ({{ $reviewCount }} รีวิว)</span>
+                      </div>
 
-                                        <h3>{{ $home->shop_name }}</h3>
-                                        <p><i class="fa-solid fa-location-dot" style="color: red;"></i>
-                                            {{ $home->shop_address }}</p>
+                      <h3>{{ $home->shop_name }}</h3>
+                      <p><i class="fa-solid fa-location-dot" style="color: red;"></i> {{ $home->shop_address }}</p>
+          
+                      </div>
+          
+                  </div>  
+                  @endforeach
+                  </div>
+          </div>
 
-                                    </div>
+      <div class="itemsections">
 
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
+          <div class="header-containersmall">
+              <h2 class="header-title">ร้านยอดนิยม Top 3</h2>
+              <a href="/recomentShops" class="view-more-linksmall">ดูเพิ่มเติม</a>
+          </div>
 
-                    <div class="itemsections">
+          <div class="nexts carousel">
+              <div class="items-wrapper">
+              @foreach($tops as $home)
+              <!-- Each Slide -->
+              <div class="items">
+                  <div class="image-placeholder">
+                      <img src="{{ asset('images/' . $home->images_name) }}" alt="Shop Image">
+                  </div>
 
-                        <div class="header-containersmall">
-                            <h2 class="header-title">ร้านยอดนิยม Top 3</h2>
-                            <a href="/" class="view-more-linksmall">ดูเพิ่มเติม</a>
-                        </div>
+                  <div style="font-size: 18px; text-align: left; margin-left: 5px; margin-top: 5px;">
 
-                        <div class="nexts carousel">
-                            <div class="items-wrapper">
-                                @foreach ($tops as $home)
-                                    <!-- Each Slide -->
-                                    <div class="items">
-                                        <div class="image-placeholder">
-                                            <img src="{{ asset('images/' . $home->images_name) }}" alt="Shop Image">
-                                        </div>
+                      <!-- Calculate average review rating -->
+                      @php
+                          $averageRating = $home->reviews->avg('rating') ?? 0; // ค่าเริ่มต้นถ้าไม่มีรีวิว
+                          $reviewCount = $home->reviews->count();
 
-                                        <div
-                                            style="font-size: 18px; text-align: left; margin-left: 5px; margin-top: 5px;">
+                          // คำนวณจำนวนดาวเต็ม ดาวครึ่ง และดาวว่าง
+                          $fullStars = floor($averageRating);
+                          $halfStar = ($averageRating - $fullStars) >= 0.5 ? 1 : 0;
+                          $emptyStars = 5 - ($fullStars + $halfStar);
+                      @endphp
 
-                                            <!-- Calculate average review rating -->
-                                            @php
-                                                $averageRating = $home->reviews->avg('rating') ?? 0; // ค่าเริ่มต้นถ้าไม่มีรีวิว
-                                                $reviewCount = $home->reviews->count();
+                      <div class="rating">
+                          @for ($i = 0; $i < $fullStars; $i++)
+                              <i class="fa-solid fa-star" style="color: Violet;"></i>
+                          @endfor
+                          @if ($halfStar)
+                              <i class="fa-solid fa-star-half" style="color: Violet;"></i>
+                          @endif
+                          @for ($i = 0; $i < $emptyStars; $i++)
+                              <i class="fa-regular fa-star" style="color: Gray;"></i>
+                          @endfor
+                          <span>{{ number_format($averageRating, 1) }} ({{ $reviewCount }} รีวิว)</span>
+                      </div>
 
-                                                // คำนวณจำนวนดาวเต็ม ดาวครึ่ง และดาวว่าง
-                                                $fullStars = floor($averageRating);
-                                                $halfStar = $averageRating - $fullStars >= 0.5 ? 1 : 0;
-                                                $emptyStars = 5 - ($fullStars + $halfStar);
-                                            @endphp
+                      <h3>{{ $home->shop_name }}</h3>
+                      <p><i class="fa-solid fa-location-dot" style="color: red;"></i> {{ $home->shop_address }}</p>
+                  
+                  </div>
 
-                                            <div class="rating">
-                                                @for ($i = 0; $i < $fullStars; $i++)
-                                                    <i class="fa-solid fa-star" style="color: Violet;"></i>
-                                                @endfor
-                                                @if ($halfStar)
-                                                    <i class="fa-solid fa-star-half" style="color: Violet;"></i>
-                                                @endif
-                                                @for ($i = 0; $i < $emptyStars; $i++)
-                                                    <i class="fa-regular fa-star" style="color: Gray;"></i>
-                                                @endfor
-                                                <span>{{ number_format($averageRating, 1) }} ({{ $reviewCount }}
-                                                    รีวิว)</span>
-                                            </div>
+              </div>  
+              @endforeach
 
-                                            <h3>{{ $home->shop_name }}</h3>
-                                            <p><i class="fa-solid fa-location-dot" style="color: red;"></i>
-                                                {{ $home->shop_address }}</p>
-
-                                        </div>
-
-                                    </div>
-                                @endforeach
-
-                            </div>
-                            <!-- เพิ่มจุด pagination -->
-                            <!-- <div class="pagination">
+              </div>
+                  <!-- เพิ่มจุด pagination -->
+                  <!-- <div class="pagination">
                   <span class="dot active"></span>
                   <span class="dot"></span>
                   <span class="dot"></span>
                   </div> -->
-                        </div>
+          </div>
+      </div>
+
+      </section>
+
+      <section class="container">
+      <section class="promotions">
+          <div class="swiper-container">
+          <div class="header-container">
+              <h2 class="header-title">โปรโมชั่น⚡⚡⚡</h2>
+              <a href="/" class="view-more-link">ดูเพิ่มเติม</a>
+          </div>
+              <!-- Swiper Wrapper carousel -->
+          <div class="swiper-wrapper">
+          @foreach($promotions as $home)
+              <!-- Each Slide -->
+              <div class="swiper-slide">
+                    <div class="image-placeholder">
+                        <img src="{{ asset('images/' . $home->images_name) }}" alt="Image">
                     </div>
 
-                </section>
+                    <div class="discount">-50%</div>
 
-                <section class="promotions">
-                    <div class="swiper-container">
-                        <div class="header-container">
-                            <h2 class="header-title">โปรโมชั่น⚡⚡⚡</h2>
-                            <a href="/" class="view-more-link">ดูเพิ่มเติม</a>
-                        </div>
-                        <!-- Swiper Wrapper carousel -->
-                        <div class="swiper-wrapper">
-                            @foreach ($promotions as $home)
-                                <!-- Each Slide -->
-                                <div class="swiper-slide">
-                                    <div class="image-placeholder">
-                                        <img src="{{ asset('images/' . $home->images_name) }}" alt="Image">
-                                    </div>
+                    <div style="font-size: 18px; text-align: left; margin-left: 10px;">
+                        <a href="{{ route('shopDetail', ['id' => $home->shop_id]) }}" class="details-btn">Detail</a>
 
-                                    <div class="discount">-50%</div>
+                        <!-- Calculate average review rating -->
+                        @php
+                            $averageRating = $home->reviews->avg('rating') ?? 0; // ค่าเริ่มต้นถ้าไม่มีรีวิว
+                            $reviewCount = $home->reviews->count();
 
-                                    <div style="font-size: 18px; text-align: left; margin-left: 10px;">
-                                        <a href="{{ route('shopDetail', ['id' => $home->shop_id]) }}" class="details-btn">Detail</a>
+                            // คำนวณจำนวนดาวเต็ม ดาวครึ่ง และดาวว่าง
+                            $fullStars = floor($averageRating);
+                            $halfStar = $averageRating - $fullStars >= 0.5 ? 1 : 0;
+                            $emptyStars = 5 - ($fullStars + $halfStar);
+                        @endphp
 
-                                        <!-- Calculate average review rating -->
-                                        @php
-                                            $averageRating = $home->reviews->avg('rating') ?? 0; // ค่าเริ่มต้นถ้าไม่มีรีวิว
-                                            $reviewCount = $home->reviews->count();
-
-                                            // คำนวณจำนวนดาวเต็ม ดาวครึ่ง และดาวว่าง
-                                            $fullStars = floor($averageRating);
-                                            $halfStar = $averageRating - $fullStars >= 0.5 ? 1 : 0;
-                                            $emptyStars = 5 - ($fullStars + $halfStar);
-                                        @endphp
-
-                                        <div class="rating">
-                                            @for ($i = 0; $i < $fullStars; $i++)
-                                                <i class="fa-solid fa-star" style="color: Violet;"></i>
-                                            @endfor
-                                            @if ($halfStar)
-                                                <i class="fa-solid fa-star-half" style="color: Violet;"></i>
-                                            @endif
-                                            @for ($i = 0; $i < $emptyStars; $i++)
-                                                <i class="fa-regular fa-star" style="color: Gray;"></i>
-                                            @endfor
-                                            <span>{{ number_format($averageRating, 1) }} ({{ $reviewCount }}
+                        <div class="rating">
+                            @for ($i = 0; $i < $fullStars; $i++)
+                            <i class="fa-solid fa-star" style="color: Violet;"></i>
+                            @endfor
+                            @if ($halfStar)
+                                <i class="fa-solid fa-star-half" style="color: Violet;"></i>
+                            @endif
+                            @for ($i = 0; $i < $emptyStars; $i++)
+                                <i class="fa-regular fa-star" style="color: Gray;"></i>
+                            @endfor
+                        <span>{{ number_format($averageRating, 1) }} ({{ $reviewCount }}
                                                 รีวิว)</span>
-                                        </div>
-
-                                        <h3>{{ $home->shop_name }}</h3>
-                                        <p>Promotion: {{ $home->promotion_detail }}</p>
-                                        <p>{{ $home->shop_description }}</p>
-                                        <p>PVC: {{ $home->pvc }}</p>
-                                        <p>Clean Nail: {{ $home->clean_nail }}</p>
-                                        <p><i class="fa-solid fa-location-dot" style="color: red;"></i>
-                                            {{ $home->shop_address }}</p>
-                                    </div>
-                                </div>
-                            @endforeach
                         </div>
 
-                        <!-- Add Pagination -->
-                        <div class="swiper-pagination"></div>
-                        <!-- Add Navigation -->
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                </section>
+                        <h3>{{ $home->shop_name }}</h3>
+                        <p>Promotion: {{ $home->promotion_detail }}</p>
+                        <p><i class="fa-solid fa-location-dot" style="color: red;"></i> {{ $home->shop_address }}</p>
+                  </div>  
+              </div>
+          @endforeach
+          </div>
+
+              <!-- Add Pagination -->
+              <div class="swiper-pagination"></div>
+              <!-- Add Navigation -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+          </div>
+      </section>
+
 
                 <section class="recommended-shops">
                     <div class="swiper-container">
@@ -232,9 +230,9 @@
                                         <img src="{{ asset('images/' . $home->images_name) }}" alt="Shop Image">
                                     </div>
 
+
                                     <div style="font-size: 18px; text-align: left; margin-left: 10px;">
                                         <a href="{{ route('shopDetail', ['id' => $home->shop_id]) }}" class="details-btn">Detail</a>
-
 
 
                                         <!-- Calculate average review rating -->
@@ -263,8 +261,6 @@
                                         </div>
 
                                         <h3>{{ $home->shop_name }}</h3>
-                                        <p>Promotion: {{ $home->promotion_detail }}</p>
-                                        <p>{{ $home->shop_description }}</p>
                                         <p>PVC: {{ $home->pvc }}</p>
                                         <p>Clean Nail: {{ $home->clean_nail }}</p>
                                         <p><i class="fa-solid fa-location-dot" style="color: red;"></i>

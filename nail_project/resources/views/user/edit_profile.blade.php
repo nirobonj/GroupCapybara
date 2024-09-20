@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NailySlay - แก้ไขโปรไฟล์</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/history.css') }}">
     <link rel="stylesheet" href="{{ asset('css/icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
@@ -28,7 +29,7 @@
             padding: 5px;
             margin-bottom: 5px;
             font-family: 'Noto Sans Thai', sans-serif;
-            font-size: 30px;
+            font-size: 35px;
             font-weight: 900;
             color: #F29779;
         }
@@ -50,13 +51,20 @@
             border-radius: 8px;
             color: white;
             cursor: pointer;
+            text-align: center;
+            margin-top: 10px;
+            display: inline-block;
             width: 100%;
             max-width: 200px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Noto Sans Thai', sans-serif;
         }
     </style>
 </head>
 <body>
-    @include('layouts.navbar_frame')
+    @include('navbar.navbartwo')
+
     <div class="form-container">
         <div class="form-header">
             Profile
@@ -104,8 +112,8 @@
                 <input id="password_confirmation" type="password" name="password_confirmation" placeholder="ยืนยันรหัสผ่าน" required>
             </div>
             @if ($errors->has('password_confirmation'))
-            <div style="color:red;">
-                {{ $errors->first('password_confirmation') }}
+            <div style="color:red; font-weight:bold;">
+                <strong>{{ $errors->first('password_confirmation') }}</strong>
             </div>
                 @endif
 

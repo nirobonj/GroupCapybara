@@ -6,8 +6,9 @@ body {
 }
 
 main {
-    margin-top: 70px; /* เพิ่มระยะห่างจากด้านบน */
-    margin-bottom: 50px;
+    height: 100%; /* กำหนดให้ main ใช้ความสูงเท่ากับหน้าจอ */
+    margin-bottom: 50px; 
+    paddin-bottom: 50px; 
 }
 
 h1 {
@@ -18,10 +19,23 @@ h3 {
     font-size: 24px;
 }
 
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px;
+.containerout {
+    max-width: 1100px;
+    margin: 20px auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    transform: scale(0.85) translateY(-100px);
+}
+
+.containersection {
+    max-width: 1000px;
+    margin: 50px auto;
+    margin-top: 50px; /* เว้นระยะด้านบน */
+    margin-bottom: 50px; /* เว้นระยะด้านล่าง */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
     background-color: #FFF;
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -51,7 +65,7 @@ h3 {
 
 .boxsection {
     background-color: #FFEDED;
-    padding: 10px;
+    padding: 15px;
     margin-bottom: 20px;
     border-radius: 20px;
 }
@@ -60,7 +74,7 @@ h3 {
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: left;
-    margin-left: 15px;
+    margin-left: 30px;
     line-height: 1.6;
 }
 

@@ -3,24 +3,35 @@
 html, body {
     height: 100%;
     margin: 0;
-    overflow: hidden; /* ป้องกันการเลื่อนนอกเหนือจากขนาดที่กำหนด */
+     /* ป้องกันการเลื่อนนอกเหนือจากขนาดที่กำหนด */
 }
 
 main {
-    overflow: auto; /* หรือ scroll */
+  /* หรือ scroll */
     width: 100%; /* ให้ความกว้างเต็มหน้าจอ */
     height: 100%; /* ให้ความสูงเต็มหน้าจอ */
 }
 
 .containerall {
-    transform: scale(0.8); /* ซูมออก 80% */
+    transform: scale(0.89); /* ซูมออก 80% */
     transform-origin: 0 0; /* จุดเริ่มต้นการซูมที่มุมบนซ้าย */
+   
     width: 125vw; /* กว้างขึ้นเพื่อรองรับการซูม */
     height: 125vh; /* สูงขึ้นเพื่อรองรับการซูม */
-    overflow: auto; /* เพิ่มการเลื่อนเมื่อจำเป็น */
+  /* เพิ่มการเลื่อนเมื่อจำเป็น */
     position: relative; /* ใช้ตำแหน่งที่สัมพันธ์ */
 }
 
+.container {
+    width: 100% /* กว้างขึ้นเพื่อรองรับการซูม */
+    height: 1000px;
+   
+    border-radius: 20px;
+
+    width: 100%; /* ให้ความกว้างเต็มหน้าจอ */
+    height: 1350px;
+
+}
 body {
     font-family: 'Noto Sans Thai', sans-serif;
     background-color: #FEEBC1;
@@ -97,14 +108,17 @@ body {
     display: flex;
     justify-content: center;
     margin: 40px auto;
-    gap: 20px;
-    margin-top: 50px;
+    gap: 40px;
+    margin-top: 80px;
+    position: relative;
 
 }
 
 
 .promotions, .recommended-shops {
+    position: relative;
     margin: 40px; //เว้นระยะขอบข้างซ้ายขวา
+    margin-bottom: 100px;
 }
 
 .promotions h2, .recommended-shops h2 {
@@ -129,16 +143,26 @@ body {
     background-color: #FFF;
     width: 900px;
     height: 420px; /* หรือกำหนดความสูงตามต้องการ */
-    padding: 10px;
+    padding: 15px;
     border-radius: 15px;
     font-family: 'Noto Sans Thai', sans-serif;
 }
 
-.itemsection h2 {
-    text-align: left;
-    padding-left: 20px;
-    padding-down: 20px;
+.itemsecond h3 {
+    font-size: 18px;
+    white-space: nowrap; /* ป้องกันการขึ้นบรรทัดใหม่ */
+    overflow: hidden; /* ซ่อนข้อความส่วนที่เกิน */
+    text-overflow: ellipsis; /* เพิ่ม "..." เมื่อข้อความยาวเกิน */
+    margin-top: 10px;
 }
+
+.itemsecond p {
+    font-size: 16px;
+    white-space: nowrap; /* ป้องกันการขึ้นบรรทัดใหม่ */
+    overflow: hidden; /* ซ่อนข้อความส่วนที่เกิน */
+    text-overflow: ellipsis; /* เพิ่ม "..." เมื่อข้อความยาวเกิน */
+}
+
 
 .itemsecond {
     background-color: #ffe4f8;
@@ -162,28 +186,24 @@ body {
     display: flex;
     gap: 20px;
     transition: transform 0.5s ease;
-   
-
 }
 
 .items {
-    width: 100%;
-    box-sizing: border-box; 
-    flex: 0 0 100%; 
-    background-color: #ffe4f8;
+    flex: 0 0 auto;
+    width: 850px; /* กำหนดขนาดที่แน่นอนหรือใช้ % เพื่อให้ยืดหยุ่น */
+    margin-right: 20px; /* ระยะห่างระหว่าง items */
     transition: transform 0.5s ease-in-out;
+    background-color: #ffe4f8;
     padding: 15px;
     border-radius: 15px;
     text-align: center;
     height: 330px;
     font-family: 'Noto Sans Thai', sans-serif;
-    flex-shrink: 0; /* ให้แต่ละไอเท็มมีขนาดคงที่ */
 }
 
 .textnearme {
     font-size: 24px; text-align: left; margin-left: 10px; color: black; margin-top: 10px;
 }
-
 
 /* สไตล์ pagination (จุดด้านล่าง) */
 .pagination {
@@ -208,12 +228,22 @@ body {
 }
 
 .carousels {
-    display: flex; /* ใช้ Flexbox เพื่อจัดการการจัดเรียงของ .item */
-    overflow-x: auto; /* เพิ่มการเลื่อนแนวนอนถ้าจำเป็น */
+    display: flex; /* จัดเรียงแบบแนวนอน */
+    overflow: hidden; /* ป้องกันการแสดงแทบเลื่อน */
     gap: 10px; /* ระยะห่างระหว่างไอเท็ม */
-    padding: 10px; /* เพิ่ม padding ถ้าต้องการ */
-    scrollbar-width: thin; /* ขนาดของ scroll bar สำหรับ Firefox */
-    margin-top: 0px;
+    padding: 10px;
+}
+
+.carousels {
+    overflow: hidden; /* ลบแทบเลื่อน */
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+/* ลบแทบเลื่อนในเบราว์เซอร์ต่างๆ */
+.carousels::-webkit-scrollbar {
+    display: none; /* สำหรับ Chrome, Safari, Opera */
 }
 
 
@@ -322,8 +352,9 @@ body {
   }
 
 main {
-    margin-top: 50px;
-    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
 }
 
   

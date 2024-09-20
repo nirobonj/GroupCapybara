@@ -7,14 +7,17 @@ document.addEventListener('DOMContentLoaded', function() {
     if (totalItems === 0) return; // ตรวจสอบถ้ามี slides ให้ทำงาน
 
     function updateCarousel() {
-        const slideWidth = 720; // ขนาดของแต่ละ slide
-        const margin = 20; // ถ้ามี margin หรือ padding เพิ่มเติม
+        // ใช้ความกว้างจริงของ items เพื่อคำนวณ slideWidth
+        const slideWidth = items[0].offsetWidth; // ขนาดของแต่ละ slide (อิงจากขนาดจริง)
+        const margin = 40; // ถ้ามี margin หรือ padding เพิ่มเติม
         const newTranslateX = -currentIndex * (slideWidth + margin);
 
+        // อัปเดตการแปลที่ใช้เลื่อน
         items.forEach(item => {
             item.style.transform = `translateX(${newTranslateX}px)`;
         });
 
+        // อัปเดตจุดสถานะ (dots)
         dots.forEach((dot, index) => {
             dot.classList.toggle('active', index === currentIndex);
         });
@@ -23,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(function() {
         currentIndex = (currentIndex + 1) % totalItems; // วน loop
         updateCarousel();
-    }, 3000);
+    }, 2500);
 
     dots.forEach((dot, index) => {
         dot.addEventListener('click', function() {
@@ -31,4 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
             updateCarousel();
         });
     });
+
+    window.addEventListener('resize', updateCarousel); // อัปเดตขนาดเมื่อหน้าต่างเปลี่ยนขนาด
 });

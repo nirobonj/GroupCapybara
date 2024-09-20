@@ -13,6 +13,8 @@ class ShopController extends Controller
 {
     public function index()
     {
+        $user = Auth::user();
+
         // ดึงข้อมูลจากทั้ง Home และ Shop
         $homes = Shop::with('reviews')->get();
 
@@ -34,7 +36,7 @@ class ShopController extends Controller
             });
 
         // ส่งข้อมูลไปยัง view
-        return view('shop.home', compact('homes', 'promotions', 'tops', 'recomments'));
+        return view('shop.home', compact('homes', 'promotions', 'tops', 'recomments', 'user'));
     }
 
     public function shopDetail($id)

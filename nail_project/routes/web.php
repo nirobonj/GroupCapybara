@@ -28,15 +28,17 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/mbooking', [SalonReservationController::class, 'index'])->name('mbooking');
 });
 Route::group(['middleware' => ['role:user']], function () {
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/home', [ShopController::class, 'index'])->name('home');
 });
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 
 
 //Route::get('/admin', [SalonReservationController::class, 'index'])->middleware('role:admin');
-Route::get('/{id}', [ShopController::class, 'index'])->name('home');
-Route::get('/bookinguser', [HistoryController::class, 'booking']);
+Route::get('/home/{id}', [ShopController::class, 'index'])->name('home');
+// Route::get('/home', [ShopController::class, 'index'])->name('home');
+Route::get('/bookinguser/{id}', [HistoryController::class, 'booking'])->name('bookinguser');
+
 Route::get('/edit_profile/{id}', [EditProfileUserController::class, 'index'])->name('edit_profile');
 Route::put('/edit_profile/{id}', [EditProfileUserController::class, 'update'])->name('edit_profile.update');
 
@@ -47,7 +49,7 @@ Route::get('/show_promotion/{shop_id}', [PromotionController::class, 'show_promo
 // Route::get('/show_promotion', [ShowPromotionController::class, 'index'])->name('show_promotion');
 
 // nearbyShops & RecomentShops
-Route::get('/nearbyShops', [ListNailShopController::class, 'nearbyShops']);
+Route::get('/nearbyShops', [ListNailShopController::class, 'nearbyShops'])->name('nearbyShops');
 Route::get('/recomentShops', [ListNailShopController::class, 'recomentShops']);
 
 //shop details

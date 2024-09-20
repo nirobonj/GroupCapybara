@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NailySlay - ลงทะเบียน</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/history.css') }}">
     <link rel="stylesheet" href="{{ asset('css/icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
@@ -31,7 +32,7 @@
             padding: 5px;
             margin-bottom: 5px;
             font-family: 'Noto Sans Thai', sans-serif;
-            font-size: 30px;
+            font-size:35px;
             font-weight: 900;
             color: #F29779;
         }
@@ -57,12 +58,12 @@
         }
 
         .invalid-feedback {
-            color: #FF0000; /* สีแดง */
-            font-size: 14px; /* ขนาดตัวอักษร */
-            font-family: 'Noto Sans Thai', sans-serif; /* ฟอนต์เดียวกัน */
-            display: block; /* ให้แสดงเป็นบล็อก */
-            text-align: left; /* จัดข้อความให้อยู่ทางซ้าย */
-            margin-top: 5px; /* เพิ่มระยะห่างด้านบน */
+            color: #FF0000;
+            font-size: 14px;
+            font-family: 'Noto Sans Thai', sans-serif;
+            display: block; 
+            text-align: left;
+            margin-top: 5px;
         }
 
         .btn-primary {
@@ -130,10 +131,34 @@
         .role-buttons label:hover {
             background-color: #f5f5f5;
         }
+
+
+        .back-button {
+            position: absolute;
+            top: 170px;
+            right: 300px;
+            background-color: #F29779;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-family: 'Noto Sans Thai', sans-serif;
+            font-size: 14px;
+        }
+
+        .back-button:hover {
+            background-color: #f1815c;
+        }
     </style>
 </head>
 <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-    @include('layouts.navbar_frame')
+    @include('navbar.navbarlogin')
+
+    <button class="back-button" onclick="window.history.back()">
+        <i class="fas fa-arrow-left"></i> back to login
+    </button>
+
     <div class="form-container">
         <div class="form-header">
             Sign Up
