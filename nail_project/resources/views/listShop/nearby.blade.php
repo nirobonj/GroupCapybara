@@ -93,7 +93,7 @@
 
                                         <!-- ปุ่มโปรโมชั่น -->
                                         @if (!empty($shop->promotion_detail) && $shop->promotion_detail !== '-')
-                                            <a href="{{ route('shopDetail', ['id' => $shop->shop_id]) }}"
+                                            <a href="{{ route('show_promotion', ['shop_id' => $shop->shop_id]) }}"
                                                 class="btn btn-warning">promo</a>
                                         @endif
                                         <div style="display: flex; justify-content: start;  padding: 10px; border-radius: 5px; width: 30%; margin-left: auto;">
