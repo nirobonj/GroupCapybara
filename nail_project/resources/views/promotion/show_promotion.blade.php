@@ -22,13 +22,17 @@
         
         @include('navbar.navbartwo')
         <div class="container1">
+            <p class="text font-weight-bold">โปรโมชันของร้าน</p>
             <div class="box1">
-                <p class="text">show pomotion</p>
+                <!-- <p class="text">show pomotion</p> -->
+            
+                <div class="box2">
+                {!! nl2br(str_replace('-', '<br>', $shop->promotion_detail)) !!}
+                </div>
             </div>
-            <div class="box2">
-            {!! nl2br(str_replace('-', '<br>', $shop->promotion_detail)) !!}
+            <div class="btn">
+            <p class="text2 ">ตกลง</p>
             </div>
-
         </div>
     </div>
     </body>
