@@ -35,7 +35,7 @@
     .navbar {
         background-color: rgb(212, 234, 232);
         /* background-color: #9FEFEBFF; */
-        height: 80px;
+        height: 100px;
         position: relative;
         z-index: 1;
     }

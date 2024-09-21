@@ -43,7 +43,7 @@
 <style>
     .navbar {
         background-color: #D4EAE8;
-        height: 80px;
+        height: 100px;
         position: relative;
         z-index: 1;
     }
