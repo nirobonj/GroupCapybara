@@ -29,9 +29,8 @@
     align-items: center; 
     justify-content: center; 
 }
-.btn {
+/* .btn {
     margin-top: 20px;
-    /* margin-right: 550px; */
     margin-left: 635px;
     width: 100px;
     height: 50px;
@@ -41,11 +40,80 @@
     display: flex;
     align-items: center; 
     justify-content: center; 
-    transition: background-color 0.3s; /* เพิ่ม transition สำหรับความนุ่มนวล */
+    transition: background-color 0.3s; 
+} */
+.btn-container {
+    display: flex;            /* ใช้ Flexbox */
+    justify-content: center;   /* จัดให้อยู่กึ่งกลางแนวนอน */
+    gap: 10px;                 /* เพิ่มระยะห่างระหว่างปุ่ม */
 }
 
+.btn {
+    margin-top: 20px;
+    margin-right: 440px;
+    width: 100px;
+    height: 50px;
+    display: inline-block;     /* ทำให้ปุ่มอยู่ในบรรทัดเดียวกัน */
+    text-align: center;
+    background-color: #F29779; /* ปรับสีพื้นหลังของปุ่ม */
+    color: white;
+    text-decoration: none;     /* เอาเส้นใต้ลิงก์ออก */
+    border-radius: 8px;
+    display: flex;
+    cursor: pointer;
+    align-items: center; 
+    justify-content: center; 
+}
+.btn2 {
+    margin-top: 20px;
+    position: relative; /* กำหนดตำแหน่งเป็น relative */
+    left: -420px; /* ขยับปุ่มเข้าไป 180px */
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    text-align: center;
+    background-color: #F29779;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    display: flex;
+    cursor: pointer;
+    align-items: center; 
+    justify-content: center; 
+}
+.btn3 {
+    margin-top: 20px;
+    margin-left: 635px;
+    width: 100px;
+    height: 50px;
+    display: inline-block;     /* ทำให้ปุ่มอยู่ในบรรทัดเดียวกัน */
+    text-align: center;
+    background-color: #F29779; /* ปรับสีพื้นหลังของปุ่ม */
+    color: white;
+    text-decoration: none;     /* เอาเส้นใต้ลิงก์ออก */
+    border-radius: 8px;
+    display: flex;
+    cursor: pointer;
+    align-items: center; 
+    justify-content: center; 
+}
 .btn:hover {
-    background-color: #A3C8F1FF; /* สีชมพูเมื่อชี้ */
+    background-color: #A3C8F1FF;
+}
+.btn-confirm {
+    background-color: #F29779; 
+}
+
+.btn-cancel {
+    background-color: #F29779; 
+}
+
+.btn-confirm:hover {
+    background-color: #A3C8F1FF; /* สีเมื่อชี้เมาส์ปุ่มยืนยัน */
+}
+
+.btn-cancel:hover {
+    background-color: #FFB3F5FF; /* สีเมื่อชี้เมาส์ปุ่มยกเลิก */
 }
 .background-color {
     background-color: #FFEABD;

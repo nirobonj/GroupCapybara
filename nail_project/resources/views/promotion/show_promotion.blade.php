@@ -28,7 +28,7 @@
                 {!! nl2br(str_replace('-', '<br>', $shop->promotion_detail)) !!}
                 </div>
             </div>
-            <a href="/nearbyShops" class="btn">
+            <a href="/nearbyShops" class="btn3">
                 <p class="text2">ตกลง</p>
             </a>
         </div>

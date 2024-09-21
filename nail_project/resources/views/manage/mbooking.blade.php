@@ -64,5 +64,11 @@
                 window.location.href = `?date=${selectedDate}`;
             }
         </script>
+        @if (session('success'))
+            <script>
+                alert("{{ addslashes(session('success')) }}");
+            </script>
+        @endif
+
     </body>
 </html>

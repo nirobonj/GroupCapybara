@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Province;
 use App\Models\District;
 use App\Models\User;
+use App\Models\Shop;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -15,9 +16,10 @@ class EditProfileUserController extends Controller
     public function index($id)
     {
         $user = User::findOrFail($id); // ดึงข้อมูลผู้ใช้ตาม ID
+        $shop = $user->shop;  
         $provinces = Province::all();
         $districts = District::where('province_id', $user->province_id)->get();  // ดึงอำเภอที่อยู่ในจังหวัดเดียวกับผู้ใช้
-        return view('user.edit_profile', compact('user', 'provinces', 'districts'));
+        return view('user.edit_profile', compact('user', 'provinces', 'districts','shop'));
     }
 
     public function update(Request $request, $id)

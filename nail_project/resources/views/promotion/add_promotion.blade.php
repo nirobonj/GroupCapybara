@@ -21,19 +21,37 @@
 
         @include('layouts.navbar_manicurist')
         <div class="container1">
-            <p class="text font-weight-bold">แก้ไขโปรโมชัน</p>
+            <p class="text font-weight-bold">เพิ่ม/แก้ไขโปรโมชัน</p>
             <div class="box1">
-                <!-- <p class="text">show pomotion</p> -->
-            
-                <div class="box2">
-                {!! nl2br(str_replace('-', '<br>', $shop->promotion_detail)) !!}
-                </div>
+                <form action="{{ route('update_promotion', ['shop_id' => $shop->shop_id]) }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <div class="box2">
+                        <textarea name="promotion_detail" rows="8" cols="50" class="form-control">{{ $shop->promotion_detail }}</textarea>
+                    </div>
             </div>
-            <a href="/nearbyShops" class="btn">
-                <p class="text2">ตกลง</p>
-            </a>
+            <div class="btn-container">
+                <button type="submit" class="btn btn-confirm">
+                    <p class="text2">ยืนยัน</p>
+                </button>
+                <a href="{{ route('mbooking', $shop->shop_id)}}" class="btn2 btn-cancel">
+                    <p class="text2">ยกเลิก</p>
+                </a>
+            </div>
+            </form>
         </div>
-        
     </div>
+    <!-- @if (session('success'))
+        <script>
+            alert("{{ addslashes(session('success')) }}");
+        </script>
+    @endif -->
+    @if (session('success'))
+        <script>
+            console.log("{{ addslashes(session('success')) }}");
+            alert("{{ addslashes(session('success')) }}");
+        </script>
+    @endif
+
     </body>
 </html>

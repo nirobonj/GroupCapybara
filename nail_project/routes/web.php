@@ -45,6 +45,7 @@ Route::put('/edit_profile/{id}', [EditProfileUserController::class, 'update'])->
 
 Route::get('/mbooking/{shop_id}', [SalonReservationController::class, 'index'])->name('mbooking');
 Route::get('/add_promotion/{shop_id}', [PromotionController::class, 'add_promotion'])->name('add_promotion');
+Route::put('/update_promotion/{shop_id}', [PromotionController::class, 'update_promotion'])->name('update_promotion');
 Route::get('/show_promotion/{shop_id}', [PromotionController::class, 'show_promotion'])->name('show_promotion');
 // Route::get('/add_promotion', [AddPromotionController::class, 'index'])->name('add_promotion');
 // Route::get('/show_promotion', [ShowPromotionController::class, 'index'])->name('show_promotion');
