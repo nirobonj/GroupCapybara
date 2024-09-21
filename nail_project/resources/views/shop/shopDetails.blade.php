@@ -51,7 +51,8 @@
                     <!-- Left Side (3 divs) -->
                     <div class="col-md-6" style="padding-right: 0.5rem; padding-left: 0;">
                         <div class="d-flex flex-column h-100">
-                            <div class="mb-2 p-2 fw-bold rounded" style="font-family: 'Noto Sans Thai', sans-serif; background-color: white;">
+                            <div class="mb-2 p-2 fw-bold rounded"
+                                style="font-family: 'Noto Sans Thai', sans-serif; background-color: white;">
                                 {{ $shop->shop_name }}
                             </div>
                             <div class="mb-2 p-1 ml-5 rounded">
@@ -61,12 +62,15 @@
                             </div>
                             <div class="p-3 rounded flex-grow-1" style="background-color: white;">
                                 <div class="rounded" style="background-color: white;">
-                                    <p class="fw-bold mb-0" style="font-family: 'Noto Sans Thai', sans-serif; ">ที่อยู่ :</p>
+                                    <p class="fw-bold mb-0" style="font-family: 'Noto Sans Thai', sans-serif; ">ที่อยู่
+                                        :</p>
                                     <p style="font-family: 'Noto Sans Thai', sans-serif; ">{{ $shop->shop_address }}</p>
                                 </div>
                                 <div class="rounded" style="background-color: white;">
-                                    <p class="fw-bold mb-0" style="font-family: 'Noto Sans Thai', sans-serif; ">คำอธิบาย :</p>
-                                    <p style="font-family: 'Noto Sans Thai', sans-serif; ">{{ $shop->shop_description }}</p>
+                                    <p class="fw-bold mb-0" style="font-family: 'Noto Sans Thai', sans-serif; ">คำอธิบาย
+                                        :</p>
+                                    <p style="font-family: 'Noto Sans Thai', sans-serif; ">{{ $shop->shop_description }}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +96,8 @@
                 @if ($shop->reviews->isEmpty())
                     <!-- No Reviews Available -->
                     <div class="p-5 rounded" style="background-color: #fff; text-align: center;">
-                        <p class="mb-0" style="font-family: 'Noto Sans Thai', sans-serif; color: #ccc;">ยังไม่มีรีวิว</p>
+                        <p class="mb-0" style="font-family: 'Noto Sans Thai', sans-serif; color: #ccc;">ยังไม่มีรีวิว
+                        </p>
                     </div>
                 @else
                     <div class="carousel-inner">
@@ -107,10 +112,12 @@
                                                 <div style="display: flex; align-items: center;">
                                                     <i class="bi bi-star-fill"
                                                         style="color:#f29779; margin-right: 0.5rem;"></i>
-                                                    <p style="font-family: 'Noto Sans Thai', sans-serif; margin: 0;">{{ $review->rating }}</p>
+                                                    <p style="font-family: 'Noto Sans Thai', sans-serif; margin: 0;">
+                                                        {{ $review->rating }}</p>
                                                 </div>
                                                 <hr>
-                                                <p style="font-family: 'Noto Sans Thai', sans-serif; ">{{ $review->detail }}</p>
+                                                <p style="font-family: 'Noto Sans Thai', sans-serif; ">
+                                                    {{ $review->detail }}</p>
                                             </div>
                                         </div>
                                     @endforeach
@@ -138,23 +145,30 @@
                 <div class="row">
                     <!-- Left Side (3 divs) -->
                     <div class="col-md-6" style="padding-right: 0.5rem; padding-left: 0;">
-                        <div class="mb-3 p-3 rounded" style="font-family: 'Noto Sans Thai', sans-serif; background-color: #f29779; font-weight: bold;">สีของทางร้าน</div>
-                        <div class="mb-3 p-3 rounded" style="background-color: white;">
+                        <div class="mb-3 p-3 rounded"
+                            style="font-family: 'Noto Sans Thai', sans-serif; background-color: #f29779; font-weight: bold;">
+                            สีของทางร้าน</div>
+                        <div class="mb-3 p-3 rounded" style="background-color: white; height: 300px;">
+                            <!-- Set a fixed height for consistency -->
                             <img src="{{ asset('images/' . $shop->color_img) }}" alt="Image"
-                                    style="width: 100%; height: 20%; object-fit: cover; border-radius: 10px;">
+                                style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
                         </div>
                     </div>
 
                     <!-- Right Side (1 div) -->
                     <div class="col-md-6" style="padding-right: 0; padding-left: 0.5rem;">
-                        <div class="mb-3 p-3 rounded" style="font-family: 'Noto Sans Thai', sans-serif; background-color: #f29779; font-weight: bold;">อะไหล่ของทางร้าน</div>
-                        <div class="mb-3 p-3 rounded" style="background-color: white;">
+                        <div class="mb-3 p-3 rounded"
+                            style="font-family: 'Noto Sans Thai', sans-serif; background-color: #f29779; font-weight: bold;">
+                            อะไหล่ของทางร้าน</div>
+                        <div class="mb-3 p-3 rounded" style="background-color: white; height: 300px;">
+                            <!-- Set a fixed height for consistency -->
                             <img src="{{ asset('images/' . $shop->parts_img) }}" alt="Image"
-                                    style="width: 100%; height: 20%; object-fit: cover; border-radius: 10px;">
+                                style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <!-- Detail Div -->
             <div class="container" style="width: 80%; margin-top: 30px;">
