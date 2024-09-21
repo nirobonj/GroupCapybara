@@ -30,7 +30,7 @@
 
     <div style="padding-top: 5%; height: 100%;background-color: rgb(255, 234, 189);">
         <div class="mx-auto" style="max-width: 70%;">
-            <h2 class="text-center mt-4" style="color: rgb(232, 179, 159);">{{ $shop->shop_name }}</h2>
+            <h2 class="text-center mt-4" style="color: #f29779;">{{ $shop->shop_name }}</h2>
 
             <form action="{{ route('shop.update', ['shop_id' => $shop->shop_id]) }}" method="POST" enctype="multipart/form-data">
                 @csrf

@@ -9,6 +9,13 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+
     <style>
         .review-box {
             background-color: #f8f9fa;
@@ -20,11 +27,11 @@
 </head>
 
 <body>
-    @include('layouts.navbar_manicurist')
+    @include('navbar.navbartwo')
 
 
     <div style="height: 100%;background-color: rgb(255, 234, 189);">
-        <p class="text-center fs-3 pt-3" style="color: rgb(232, 179, 159);">
+        <p class="text-center fs-3 pt-3" style="color:#f29779;">
             <br>
             <i class="bi bi-flower3"></i><i class="bi bi-flower3"></i><i class="bi bi-flower3"></i>
         </p>
@@ -32,34 +39,34 @@
         <div class="mx-auto" style="background-color: rgb(255, 234, 189); max-width: 80%;">
             <!-- Banner Div -->
             <div class="mx-auto rounded" style="background-color: white; width: 80%; height: 150px;">
-                <div class="pd-5" style="max-width: 30%; height: 100%;">
+                <div class="pd-5" style="max-width: 100%; height: 100%;">
                     <img src="{{ asset('images/' . $shop->images_name) }}" alt="Image"
-                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                        style="width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 10px;">
                 </div>
             </div>
 
-
-            <!-- Content Div -->
             <!-- Content Div -->
             <div class="container" style="width: 80%; margin-top: 30px;">
                 <div class="row d-flex align-items-stretch">
                     <!-- Left Side (3 divs) -->
                     <div class="col-md-6" style="padding-right: 0.5rem; padding-left: 0;">
                         <div class="d-flex flex-column h-100">
-                            <div class="mb-2 p-2 fw-bold rounded" style="background-color: white;">
+                            <div class="mb-2 p-2 fw-bold rounded" style="font-family: 'Noto Sans Thai', sans-serif; background-color: white;">
                                 {{ $shop->shop_name }}
                             </div>
                             <div class="mb-2 p-1 ml-5 rounded">
                                 <i class="bi bi-star-fill"
-                                    style="margin-left: 0.3rem; margin-right: 0.5rem; color: rgb(232, 179, 159);"></i>
+                                    style="font-family: 'Noto Sans Thai', sans-serif; margin-left: 0.3rem; margin-right: 0.5rem; color:#f29779;"></i>
                                 {{ number_format($shop->reviews->avg('rating') ?? 0, 1) }}
                             </div>
                             <div class="p-3 rounded flex-grow-1" style="background-color: white;">
                                 <div class="rounded" style="background-color: white;">
-                                    <p class="fw-bold mb-0">ที่อยู่ :</p>{{ $shop->shop_address }}
+                                    <p class="fw-bold mb-0" style="font-family: 'Noto Sans Thai', sans-serif; ">ที่อยู่ :</p>
+                                    <p style="font-family: 'Noto Sans Thai', sans-serif; ">{{ $shop->shop_address }}</p>
                                 </div>
                                 <div class="rounded" style="background-color: white;">
-                                    <p class="fw-bold mb-0">คำอธิบาย :</p>{{ $shop->shop_description }}
+                                    <p class="fw-bold mb-0" style="font-family: 'Noto Sans Thai', sans-serif; ">คำอธิบาย :</p>
+                                    <p style="font-family: 'Noto Sans Thai', sans-serif; ">{{ $shop->shop_description }}</p>
                                 </div>
                             </div>
                         </div>
@@ -85,7 +92,7 @@
                 @if ($shop->reviews->isEmpty())
                     <!-- No Reviews Available -->
                     <div class="p-5 rounded" style="background-color: #fff; text-align: center;">
-                        <p class="mb-0" style="color: #ccc;">no review yet</p>
+                        <p class="mb-0" style="font-family: 'Noto Sans Thai', sans-serif; color: #ccc;">ยังไม่มีรีวิว</p>
                     </div>
                 @else
                     <div class="carousel-inner">
@@ -96,13 +103,14 @@
                                         <div class="rounded review-box"
                                             style="padding: 1rem; width: 33%; background-color: #fff; margin-right: 0.5rem;">
                                             <div id="content" class="p-3 rounded"
-                                                style="background-color: #f0d6cd; width: 100%; border: 1px solid #ccc;">
+                                                style="background-color: #f8ccbe; width: 100%; border: 1px solid #ccc;">
                                                 <div style="display: flex; align-items: center;">
                                                     <i class="bi bi-star-fill"
-                                                        style="color: rgb(232, 179, 159); margin-right: 0.5rem;"></i>
-                                                    <p style="margin: 0;">{{ $review->rating }}</p>
+                                                        style="color:#f29779; margin-right: 0.5rem;"></i>
+                                                    <p style="font-family: 'Noto Sans Thai', sans-serif; margin: 0;">{{ $review->rating }}</p>
                                                 </div>
-                                                <p>{{ $review->detail }}</p>
+                                                <hr>
+                                                <p style="font-family: 'Noto Sans Thai', sans-serif; ">{{ $review->detail }}</p>
                                             </div>
                                         </div>
                                     @endforeach
@@ -130,7 +138,7 @@
                 <div class="row">
                     <!-- Left Side (3 divs) -->
                     <div class="col-md-6" style="padding-right: 0.5rem; padding-left: 0;">
-                        <div class="mb-3 p-3 rounded" style="background-color: #f0d6cd;">color</div>
+                        <div class="mb-3 p-3 rounded" style="font-family: 'Noto Sans Thai', sans-serif; background-color: #f29779; font-weight: bold;">สีของทางร้าน</div>
                         <div class="mb-3 p-3 rounded" style="background-color: white;">
                             <img src="{{ asset('images/' . $shop->color_img) }}" alt="Image"
                                     style="width: 100%; height: 20%; object-fit: cover; border-radius: 10px;">
@@ -139,7 +147,7 @@
 
                     <!-- Right Side (1 div) -->
                     <div class="col-md-6" style="padding-right: 0; padding-left: 0.5rem;">
-                        <div class="mb-3 p-3 rounded" style="background-color: #f0d6cd;">parts</div>
+                        <div class="mb-3 p-3 rounded" style="font-family: 'Noto Sans Thai', sans-serif; background-color: #f29779; font-weight: bold;">อะไหล่ของทางร้าน</div>
                         <div class="mb-3 p-3 rounded" style="background-color: white;">
                             <img src="{{ asset('images/' . $shop->parts_img) }}" alt="Image"
                                     style="width: 100%; height: 20%; object-fit: cover; border-radius: 10px;">
@@ -153,22 +161,22 @@
                 <div class="row">
                     <!-- Left Side (2 divs) -->
                     <div class="col-md-3" style="padding-left: 0; padding-right: 0;">
-                        <div class="mb-3 p-3 rounded" style="background-color: #f0d6cd; width: 80%;">
-                            PVC
+                        <div class="mb-3 p-3 rounded" style="background-color: #f29779; width: 80%;">
+                            <p style="font-family: 'Noto Sans Thai', sans-serif; font-weight: bold;">PVC</p>
                         </div>
-                        <div class="mb-3 p-3 rounded" style="background-color: #f0d6cd; width: 80%;">
-                            ล้างเล็บ
+                        <div class="mb-3 p-3 rounded" style="background-color: #f29779; width: 80%;">
+                            <p style="font-family: 'Noto Sans Thai', sans-serif; font-weight: bold;">ล้างเล็บ</p>
                         </div>
                     </div>
 
                     <!-- Right Side (2 divs) -->
                     <div class="col-md-9" style="padding-left: 0; padding-right: 0;">
                         <div class="mb-3 p-3 rounded" style="background-color: white; width: 100%;">
-                            {{ $shop->pvc }}
+                            <p style="font-family: 'Noto Sans Thai', sans-serif; ">{{ $shop->pvc }}</p>
                         </div>
 
                         <div class="mb-3 p-3 rounded" style="background-color: white; width: 100%;">
-                            {{ $shop->clean_nail }}
+                            <p style="font-family: 'Noto Sans Thai', sans-serif; ">{{ $shop->clean_nail }}</p>
                         </div>
                     </div>
 
@@ -178,7 +186,7 @@
                             data-bs-target="#bookNowModal"
                             style="background-color: #f29779; color: #fff; border: none; text-transform: uppercase;
                 transition: background-color 0.3s ease, transform 0.3s ease;">
-                            <p class="mb-0">Book Now!</p>
+                            <p class="mb-0" style="font-family: 'Noto Sans Thai', sans-serif; ">จองเลย !</p>
                         </button>
 
                     </div>

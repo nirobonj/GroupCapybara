@@ -38,7 +38,7 @@
 
       <div class="containerall">
       <div class="container">
-    
+
       <section class="tabs">
           <div class="itemsection">
           <div class="header-containersmall">
@@ -54,7 +54,7 @@
                       </div>
 
                       <div style="font-size: 18px; text-align: left; margin-left: 5px; margin-top: 5px;">
-      
+
                       <!-- Calculate average review rating -->
                       @php
                           $averageRating = $home->reviews->avg('rating') ?? 0; // ค่าเริ่มต้นถ้าไม่มีรีวิว
@@ -81,10 +81,10 @@
 
                       <h3>{{ $home->shop_name }}</h3>
                       <p><i class="fa-solid fa-location-dot" style="color: red;"></i> {{ $home->shop_address }}</p>
-          
+
                       </div>
-          
-                  </div>  
+
+                  </div>
                   @endforeach
                   </div>
           </div>
@@ -133,10 +133,10 @@
 
                       <h3>{{ $home->shop_name }}</h3>
                       <p><i class="fa-solid fa-location-dot" style="color: red;"></i> {{ $home->shop_address }}</p>
-                  
+
                   </div>
 
-              </div>  
+              </div>
               @endforeach
 
               </div>
@@ -200,7 +200,7 @@
                         <h3>{{ $home->shop_name }}</h3>
                         <p>Promotion: {{ $home->promotion_detail }}</p>
                         <p><i class="fa-solid fa-location-dot" style="color: red;"></i> {{ $home->shop_address }}</p>
-                  </div>  
+                  </div>
               </div>
           @endforeach
           </div>

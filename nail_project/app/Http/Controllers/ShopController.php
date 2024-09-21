@@ -43,10 +43,11 @@ class ShopController extends Controller
 
     public function shopDetail($id)
     {
+        $user = Auth::user();
         $shop = Shop::where('shop_id', $id )->first();
 
         Log::debug($shop);
-        return view('shop.shopDetails', compact('shop'));  // Use compact() as the second argument
+        return view('shop.shopDetails', compact('user', 'shop'));  // Use compact() as the second argument
     }
 
     public function booking(Request $request)
@@ -76,9 +77,10 @@ class ShopController extends Controller
 
     public function edit($shop_id)
     {
+        $user = Auth::user();
         $shop = Shop::where('shop_id', $shop_id)->first();
 
-        return view('shop.EditShopDetails', compact('shop'));
+        return view('shop.EditShopDetails', compact('user', 'shop'));
     }
 
     public function update(Request $request, $shop_id)

@@ -17,16 +17,9 @@ class HomeController extends Controller
     {
              // ดึงข้อมูลจากทั้ง Home และ Shop
     $homes = Home::with('shop.reviews')->get(); // ดึงข้อมูลบ้านพร้อมร้านค้าและรีวิวที่เกี่ยวข้อง
-         
+
     // ส่งข้อมูลไปยัง view
     return view('shop.home', compact('homes'));
     }
 
-    public function shopDetail()
-    {
-        $shop = Shop::where('shop_id', 'S0001')->first();
-
-        Log::debug($shop);
-        return view('shop.shopDetails', compact('shop'));  // Use compact() as the second argument
-    }
 }
