@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div style="padding-left: 2%;">
             <a href="{{ route('home', ['id' => auth()->user()->id]) }}" class="font-weight-bold fs-4"
-                style="color: rgb(232, 179, 159); font-family: 'Leckerli One', cursive; text-decoration: none;font-size: 45px !important;">
+                style="color: #F29779; font-family: 'Leckerli One', cursive; text-decoration: none;font-size: 45px !important;">
                 NailySlay
             </a>
         </div>
@@ -15,21 +15,19 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">edit_shop(emma)</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('mbooking', $shop->shop_id) }}">manage_booking</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('add_promotion',$shop->shop_id) }}">add_promotion</a>
-                </li>
-                <!-- อันนี้ของผู้ใช้ปกติ เดะต้องไปใส่ใน navbar.php -->
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="{{ route('show_promotion',$shop->shop_id) }}">show_promotion(ลูกค้า)</a>
-                </li> -->
-            </ul>
+            <div class="navbar-nav ms-auto">
+            <div class="navitem">
+                    <a style="margin-right: 15px;" href="{{ route('mbooking', $shop->shop_id) }}"><i class="fa-solid fa-house-chimney"></i></a>
+                    <a style="margin-right: 15px;" href="{{ route('editShop', $shop->shop_id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a href="{{ route('edit_profile', ['id' => $user->id]) }}" class="login-btn"  style="margin-right: 15px;">SHOP</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
     <!-- ครึ่งวงกลมอยู่ภายใน navbar -->
@@ -44,8 +42,7 @@
 
 <style>
     .navbar {
-        background-color: rgb(212, 234, 232);
-        /* background-color: #9FEFEBFF; */
+        background-color: #D4EAE8;
         height: 80px;
         position: relative;
         z-index: 1;
@@ -64,8 +61,19 @@
         width: 77px;
         height: 35px;
         background-color: rgb(212, 234, 232);
-        /* background-color: #9FEFEBFF; */
         border-bottom-left-radius: 80px;
         border-bottom-right-radius: 80px;
+    }
+    .fa-pen-to-square{
+        font-size: 45px; 
+        color: black;
+    }
+    .fa-house-chimney{
+        font-size: 45px; 
+        color: black;
+    }
+    .fa-right-from-bracket{
+        font-size: 45px; 
+        color: black;
     }
 </style>

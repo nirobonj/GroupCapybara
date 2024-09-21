@@ -186,12 +186,13 @@ body {
 
 .login-btn {
     display: inline-block;
-    color: black; /* ตัวหนังสือสีดำ */
-    border: 2px solid black; /* กรอบ (ขอบ) สีดำ */
+    color: white; /* ตัวหนังสือสีขาว */
+    font-weight: bold; /* ตัวหนา */
+    border: none; /* ไม่มีขอบ */
     padding: 15px 25px;
     border-radius: 20px;
     cursor: pointer;
-    background-color: transparent; /* พื้นหลังใส */
+    background-color: black; /* พื้นหลังสีดำ */
     text-align: center;
     text-decoration: none;
     transition: background-color 0.3s ease; /* เพิ่มการเปลี่ยนสีพื้นหลังอย่างนุ่มนวล */

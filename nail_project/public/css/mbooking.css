@@ -1,3 +1,7 @@
+body {
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
 .container1 {
     margin-left: 80px;
     display: flex; 
@@ -53,9 +57,7 @@
 }
 
 .background-color {
-    /* background-color: #FFEABD; */
-    background: linear-gradient(90deg, #FFEABD, #F4DDFC);
-    /* background-color: #F4DDFCFF; */
+    background-color: #FFEABD;
 }
 
 .text1 {

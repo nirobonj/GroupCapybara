@@ -18,8 +18,6 @@
         <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50 background-color">
-
-        
         @include('navbar.navbartwo')
         <div class="container1">
             <p class="text font-weight-bold">โปรโมชันของร้าน</p>

@@ -18,16 +18,10 @@ class PromotionController extends Controller
         $user = Auth::user();
         $shop = $user->shop;
         $shop = Shop::where('shop_id', $shop->shop_id)->first();
+        // dd($shop);
         return view('promotion.add_promotion', compact('shop'));  // Use compact() to pass variables to the view
     }
 
-    // public function show_promotion(Request $request, $shop_id)
-    // {
-    //     $user = Auth::user();
-    //     $shop = $user->shop;
-    //     $shop = Shop::where('shop_id', $shop->shop_id)->first();
-    //     return view('promotion.show_promotion', compact('shop'));  // Use compact() to pass variables to the view
-    // }
     public function show_promotion(Request $request, $shop_id)
     {
         // ค้นหาร้านตาม shop_id ที่ส่งเข้ามา

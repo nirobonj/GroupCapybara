@@ -7,6 +7,12 @@
         <title>NailSlay</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('css/mbooking.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="{{ asset('css/icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50 background-color">
 
@@ -18,7 +24,7 @@
             <a href="{{ route('editShop', ['shop_id' => $shop->shop_id]) }}" class="btn">
                 <p class="text1">แก้ไขร้าน</p>
             </a>
-            <a href="{{ route('add_promotion','shop_id') }}" class="btn">
+            <a href="{{ route('add_promotion',['shop_id' => $shop->shop_id]) }}" class="btn">
                 <p class="text1">เพิ่มโปรโมชัน</p>
             </a>
         </div>
