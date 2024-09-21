@@ -8,7 +8,7 @@ body {
 main {
     height: 100%; /* กำหนดให้ main ใช้ความสูงเท่ากับหน้าจอ */
     margin-bottom: 50px; 
-    paddin-bottom: 50px; 
+    padding-bottom: 50px; 
 }
 
 h1 {
@@ -94,4 +94,85 @@ h3 {
 
 .details-btn i {
     margin-right: 8px; /* ระยะห่างระหว่างไอคอนและข้อความ */
+}
+
+/* CSS สำหรับป๊อปอัพ */
+/* CSS สำหรับป๊อปอัพ */
+.popup {
+    display: none; /* ซ่อนป๊อปอัพโดยเริ่มต้น */
+    position: fixed; /* คงที่ที่หน้าจอ */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* จัดให้ป๊อปอัพอยู่ตรงกลาง */
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 400px;
+    text-align: center;
+}
+
+.overlay {
+    display: none; /* ซ่อน overlay โดยเริ่มต้น */
+    position: fixed ;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+
+.close-btn, .review-btn {
+    background-color: #e88484;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.close-btn:hover, .review-btn:hover {
+    background-color: #000000;
+}
+
+.confirm-btn {
+    background-color: #83DB9B; /* Light green */
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    float: right;
+    border-radius: 8px;
+}
+
+.cancel-btn {
+    background-color: #F29779; /* Light red */
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    float: left;
+    border-radius: 8px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.star-rating {
+    cursor: pointer;
+    color: lightgray; /* สีเริ่มต้น */
+    margin-bottom: 10px; /* เว้นระยะห่างระหว่างดาวและกล่องข้อความ */
+}
+
+.star-rating i {
+    font-size: 24px; /* ขนาดดาว */
+}
+
+.star-rating i.selected {
+    color: gold; /* สีเมื่อเลือก */
 }

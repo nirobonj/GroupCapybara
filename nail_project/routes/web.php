@@ -15,7 +15,7 @@ use App\Http\Controllers\AddPromotionController;
 use App\Http\Controllers\ShowPromotionController;
 use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\ListNailShopController;
-
+use App\Http\Controllers\ReviewController;
 
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register.form');
 Route::post('register', [RegisterController::class, 'register'])->name('register');
@@ -38,6 +38,7 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/home/{id}', [ShopController::class, 'index'])->name('home');
 // Route::get('/home', [ShopController::class, 'index'])->name('home');
 Route::get('/bookinguser/{id}', [HistoryController::class, 'booking'])->name('bookinguser');
+Route::post('/submit_review', [ReviewController::class, 'submitReview'])->name('submit-review');
 
 Route::get('/edit_profile/{id}', [EditProfileUserController::class, 'index'])->name('edit_profile');
 Route::put('/edit_profile/{id}', [EditProfileUserController::class, 'update'])->name('edit_profile.update');
