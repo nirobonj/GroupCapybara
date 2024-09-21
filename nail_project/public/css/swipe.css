@@ -12,10 +12,12 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: red; /* เปลี่ยนสีตามต้องการ */
+    background-color: #ffcb2d; /* สีเหลืองสดใส */
     color: white;
-    padding: 5px 10px;
+    padding: 7px 20px;
     border-radius: 0px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเพื่อให้เด่นขึ้น */
+    font-weight: bold; /* ทำให้ข้อความหนาขึ้น */
 }
 
 .swiper-container h2 {
