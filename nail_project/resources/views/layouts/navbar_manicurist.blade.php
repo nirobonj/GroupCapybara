@@ -5,7 +5,7 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
         <div style="padding-left: 2%;">
-            <a class="font-weight-bold fs-4"
+            <a href="{{ route('home', ['id' => auth()->user()->id]) }}" class="font-weight-bold fs-4"
                 style="color: rgb(232, 179, 159); font-family: 'Leckerli One', cursive; text-decoration: none;font-size: 45px !important;">
                 NailySlay
             </a>

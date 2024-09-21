@@ -15,7 +15,7 @@
             <p class="text1">{{ $shop->shop_name }}</p>
         </div>
         <div class="container1">
-            <a href="#" class="btn">
+            <a href="{{ route('editShop', ['shop_id' => $shop->shop_id]) }}" class="btn">
                 <p class="text1">แก้ไขร้าน</p>
             </a>
             <a href="{{ route('add_promotion','shop_id') }}" class="btn">

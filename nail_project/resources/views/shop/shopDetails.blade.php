@@ -22,6 +22,7 @@
 <body>
     @include('layouts.navbar_manicurist')
 
+
     <div style="height: 100%;background-color: rgb(255, 234, 189);">
         <p class="text-center fs-3 pt-3" style="color: rgb(232, 179, 159);">
             <br>

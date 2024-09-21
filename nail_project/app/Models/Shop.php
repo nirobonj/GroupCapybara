@@ -15,6 +15,16 @@ class Shop extends Model
      */
     protected $table = 'shop';
 
+    public $timestamps = false;
+
+    // Specify the primary key
+    protected $primaryKey = 'shop_id';
+
+    // If the primary key is not an auto-incrementing integer
+    public $incrementing = false;
+
+    // If the primary key is not a number, set its type
+    protected $keyType = 'string';  // or 'int' if it's an intege
 
     protected $fillable = [
         'shop_id',

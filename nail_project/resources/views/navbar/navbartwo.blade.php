@@ -5,6 +5,7 @@
 
 <nav class="navbar navbar-expand-lg">
 <div class="logo pacifico-regular" style="margin-left: 35px;">NailySlay</div>
+
     <!-- <div class="search-bar" style="display: flex; justify-content: flex-end; align-items: center; position: relative; width: 25%;">
         <input type="text" placeholder="" style="width: 90%; padding-right: 30px;">
         <i class="fab fa-sistrix" style="position: absolute; right: 10px; cursor: pointer;"></i>

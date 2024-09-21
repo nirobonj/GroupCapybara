@@ -56,3 +56,10 @@ Route::get('/recomentShops', [ListNailShopController::class, 'recomentShops']);
 /* Route::get('/shopDetails', [ShopController::class, 'shopDetail'])->name('shopDetail'); */
 Route::get('/shopDetail/{id}', [ShopController::class, 'shopDetail'])->name('shopDetail');
 Route::post('/add_booking', [ShopController::class, 'booking'])->name('add_booking');
+
+// edit
+Route::get('/edit/{shop_id}', [ShopController::class, 'edit'])->name('editShop');
+Route::put('/update/{shop_id}', [ShopController::class, 'update'])->name('shop.update');
+
+
+
