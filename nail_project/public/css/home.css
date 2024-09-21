@@ -54,6 +54,7 @@ body {
 .header-title {
     font-size: 30px;
     text-align: left;
+    padding-left: 20px;
 }
 
 .header-container {
