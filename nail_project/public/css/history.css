@@ -29,7 +29,7 @@ h3 {
 }
 
 .containersection {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 50px auto;
     margin-top: 50px; /* เว้นระยะด้านบน */
     margin-bottom: 50px; /* เว้นระยะด้านล่าง */
@@ -132,6 +132,7 @@ h3 {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
+    margin-left: 20px;
 }
 
 .close-btn:hover, .review-btn:hover {

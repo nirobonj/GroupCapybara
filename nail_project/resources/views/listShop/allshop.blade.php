@@ -28,7 +28,7 @@
     <!-- Main Content -->
     <div class="container">
         <div class="header">
-            <h1 class="nameShop">ร้านยอดนิยม</h1>
+            <h1 class="nameShop">ร้านค้า</h1>
             <div class="search-container">
                 <input type="text" placeholder="ค้นหาร้านทำเล็บ...">
                 <button type="submit">ค้นหา</button>
