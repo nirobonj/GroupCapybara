@@ -145,6 +145,7 @@
         <p class="text-center fs-3 pt-3" style="color:#f29779;">
             <br>
             <i class="bi bi-flower3"></i><i class="bi bi-flower3"></i><i class="bi bi-flower3"></i>
+            <p class="text-center fs-3" style="font-family: 'Noto Sans Thai', sans-serif; color:#f29779;">แก้ไขร้าน</p>
         </p>
 
         <div class="mx-auto" style="background-color: rgb(255, 234, 189); max-width: 80%;">
@@ -205,7 +206,7 @@
                     <!-- Left Side (3 divs) -->
                     <div class="col-md-6" style="padding-right: 0.5rem; padding-left: 0;">
                         <div class="mb-3 p-3 rounded"
-                            style="font-family: 'Noto Sans Thai', sans-serif; background-color: #f29779; font-weight: bold;">
+                            style="text-align: center; font-family: 'Noto Sans Thai', sans-serif; background-color: #f29779; font-weight: bold;">
                             สีของทางร้าน</div>
                         <div class="mb-3 p-3 rounded" style="background-color: white; height: 300px;">
                             <!-- Set a fixed height for consistency -->
@@ -218,7 +219,7 @@
                     <!-- Right Side (1 div) -->
                     <div class="col-md-6" style="padding-right: 0; padding-left: 0.5rem;">
                         <div class="mb-3 p-3 rounded"
-                            style="font-family: 'Noto Sans Thai', sans-serif; background-color: #f29779; font-weight: bold;">
+                            style="text-align: center; font-family: 'Noto Sans Thai', sans-serif; background-color: #f29779; font-weight: bold;">
                             อะไหล่ของทางร้าน</div>
                         <div class="mb-3 p-3 rounded" style="background-color: white; height: 300px;">
                             <!-- Set a fixed height for consistency -->
@@ -237,10 +238,10 @@
                     <!-- Left Side (2 divs) -->
                     <div class="col-md-3" style="padding-left: 0; padding-right: 0;">
                         <div class="mb-3 p-3 rounded" style="background-color: #f29779; width: 80%;">
-                            <p style="font-family: 'Noto Sans Thai', sans-serif; font-weight: bold;">PVC</p>
+                            <p style="text-align: center; font-family: 'Noto Sans Thai', sans-serif; font-weight: bold;">PVC</p>
                         </div>
                         <div class="mb-3 p-3 rounded" style="background-color: #f29779; width: 80%;">
-                            <p style="font-family: 'Noto Sans Thai', sans-serif; font-weight: bold;">ล้างเล็บ</p>
+                            <p style="text-align: center; font-family: 'Noto Sans Thai', sans-serif; font-weight: bold;">ล้างเล็บ</p>
                         </div>
 
                     </div>
