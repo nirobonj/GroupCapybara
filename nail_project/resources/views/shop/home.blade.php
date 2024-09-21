@@ -140,12 +140,6 @@
               @endforeach
 
               </div>
-                  <!-- เพิ่มจุด pagination -->
-                  <!-- <div class="pagination">
-                  <span class="dot active"></span>
-                  <span class="dot"></span>
-                  <span class="dot"></span>
-                  </div> -->
           </div>
       </div>
 
@@ -167,7 +161,7 @@
                         <img src="{{ asset('images/' . $home->images_name) }}" alt="Image">
                     </div>
 
-                    <div class="discount">-50%</div>
+                    <div class="discount" style="color: black; text: 16px;">promotion!</div>
 
                     <div style="font-size: 18px; text-align: left; margin-left: 10px;">
                         <a href="{{ route('shopDetail', ['id' => $home->shop_id]) }}" class="details-btn">Detail</a>
