@@ -48,6 +48,7 @@
                   <div class="carousels">
                   @foreach($homes->take(3) as $home)
                   <!-- Each Slide -->
+                  <a href="{{ route('shopDetail', ['id' => $home->shop_id]) }}" style="text-decoration: none; color: inherit;">
                   <div class="itemsecond">
                       <div class="image-placeholder">
                           <img src="{{ asset('images/' . $home->images_name) }}" alt="Shop Image">
@@ -85,6 +86,9 @@
                       </div>
 
                   </div>
+
+                  </a>
+                
                   @endforeach
                   </div>
           </div>
@@ -100,6 +104,7 @@
               <div class="items-wrapper">
               @foreach($tops as $home)
               <!-- Each Slide -->
+              <a href="{{ route('shopDetail', ['id' => $home->shop_id]) }}" style="text-decoration: none; color: inherit;">
               <div class="items">
                   <div class="image-placeholder">
                       <img src="{{ asset('images/' . $home->images_name) }}" alt="Shop Image">
@@ -137,6 +142,9 @@
                   </div>
 
               </div>
+
+              </a>
+            
               @endforeach
 
               </div>
@@ -156,6 +164,7 @@
           <div class="swiper-wrapper">
           @foreach($promotions as $home)
               <!-- Each Slide -->
+              <a href="{{ route('shopDetail', ['id' => $home->shop_id]) }}" style="text-decoration: none; color: inherit;">
               <div class="swiper-slide">
                     <div class="image-placeholder">
                         <img src="{{ asset('images/' . $home->images_name) }}" alt="Image">
@@ -196,6 +205,9 @@
                         <p><i class="fa-solid fa-location-dot" style="color: red;"></i> {{ $home->shop_address }}</p>
                   </div>
               </div>
+
+              </a>
+            
           @endforeach
           </div>
 
@@ -219,6 +231,7 @@
                         <div class="swiper-wrapper">
                             @foreach ($recomments as $home)
                                 <!-- Each Slide -->
+                                <a href="{{ route('shopDetail', ['id' => $home->shop_id]) }}" style="text-decoration: none; color: inherit;">
                                 <div class="swiper-slide">
                                     <div class="image-placeholder">
                                         <img src="{{ asset('images/' . $home->images_name) }}" alt="Shop Image">
@@ -261,6 +274,9 @@
                                             {{ $home->shop_address }}</p>
                                     </div>
                                 </div>
+
+                                </a>
+                            
                             @endforeach
                         </div>
 
