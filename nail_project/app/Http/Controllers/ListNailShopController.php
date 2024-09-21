@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shop;
-use Auth;
+// use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class ListNailShopController extends Controller
