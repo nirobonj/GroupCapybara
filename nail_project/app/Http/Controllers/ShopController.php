@@ -51,63 +51,59 @@ class ShopController extends Controller
     }
 
     public function booking(Request $request)
-{
-    // Get the authenticated user
-    $user = Auth::user();
+    {
+        // Get the authenticated user
+        $user = Auth::user();
 
-    // Validate the request
-    $request->validate([
-        'date' => 'required|date|after_or_equal:today',
-        'time' => 'required|date_format:H:i',
-    ]);
+        // Validate the request
+        $request->validate([
+            'date' => 'required|date|after_or_equal:today',
+            'time' => 'required|date_format:H:i',
+        ]);
 
-    // Combine date and time into a single Carbon instance
-    $bookingDateTime = Carbon::createFromFormat('Y-m-d H:i', $request->date . ' ' . $request->time);
+        // Combine date and time into a single Carbon instance
+        $bookingDateTime = Carbon::createFromFormat('Y-m-d H:i', $request->date . ' ' . $request->time);
 
-    // Check if there's a booking within the same hour range for the same shop
-    $existingBooking = BookingList::where('shop_id', $request->shop_id)
-        ->whereDate('date_booking', $request->date)
-        ->where(function($query) use ($bookingDateTime) {
-            $query->whereTime('time_booking', '>=', $bookingDateTime->subHour()->toTimeString())
-                  ->whereTime('time_booking', '<=', $bookingDateTime->addHour()->toTimeString());
-        })
-        ->get();
+        // Check if there's a booking within the same hour range for the same shop
+        $existingBooking = BookingList::where('shop_id', $request->shop_id)
+            ->whereDate('date_booking', $request->date)
+            ->where(function($query) use ($bookingDateTime) {
+                $query->whereTime('time_booking', '>=', $bookingDateTime->subHour()->toTimeString())
+                    ->whereTime('time_booking', '<=', $bookingDateTime->addHour()->toTimeString());
+            })
+            ->get();
 
-    // If there is an existing booking within that hour range
-    if ($existingBooking->isNotEmpty()) {
-        // Get the latest booking to suggest the next available time
-        $nextAvailableTime = null;
+        // If there is an existing booking within that hour range
+        if ($existingBooking->isNotEmpty()) {
+            // Get the latest booking to suggest the next available time
+            $nextAvailableTime = null;
 
-        foreach ($existingBooking as $booking) {
-            $bookingEndTime = Carbon::parse($booking->time_booking)->addHour();
+            foreach ($existingBooking as $booking) {
+                $bookingEndTime = Carbon::parse($booking->time_booking)->addHour();
 
-            // Check if the current request time is within the hour of this booking
-            if ($bookingEndTime >= $bookingDateTime) {
-                $nextAvailableTime = Carbon::parse($booking->time_booking)->addHour()->format('H:i');
-                break;
+                // Check if the current request time is within the hour of this booking
+                if ($bookingEndTime >= $bookingDateTime) {
+                    $nextAvailableTime = Carbon::parse($booking->time_booking)->addHour()->format('H:i');
+                    break;
+                }
             }
+
+            return redirect()->back()->withErrors(['error' => "การจองที่คุณเลือกถูกจองไปแล้ว โปรดเลือกเวลาใหม่ และทางร้านจะว่างอีกครั้งเวลา $nextAvailableTime."]);
         }
 
-        return redirect()->back()->withErrors(['error' => "การจองที่คุณเลือกถูกจองไปแล้ว โปรดเลือกเวลาใหม่ และทางร้านจะว่างอีกครั้งเวลา $nextAvailableTime."]);
+        // Create a new booking record
+        BookingList::create([
+            'shop_id' => $request->shop_id,
+            'user_id' => $user->id,
+            'date_booking' => $request->date,
+            'time_booking' => $request->time . ':00', // Ensure time format is hh:mm:ss
+            'date_transaction' => now()->toDateString(),
+            'time_transaction' => Carbon::now('Asia/Bangkok')->toTimeString(),
+        ]);
+
+        // Redirect or return a response
+        return redirect()->back()->with('success', 'Booking confirmed!');
     }
-
-    // Create a new booking record
-    BookingList::create([
-        'shop_id' => $request->shop_id,
-        'user_id' => $user->id,
-        'date_booking' => $request->date,
-        'time_booking' => $request->time . ':00', // Ensure time format is hh:mm:ss
-        'date_transaction' => now()->toDateString(),
-        'time_transaction' => Carbon::now('Asia/Bangkok')->toTimeString(),
-    ]);
-
-    // Redirect or return a response
-    return redirect()->back()->with('success', 'Booking confirmed!');
-}
-
-
-
-
 
     public function edit($shop_id)
     {
@@ -192,7 +188,65 @@ class ShopController extends Controller
          // Redirect ไปยังหน้าแสดงรายละเอียดร้าน
          return redirect()->route('editShop', $shop->shop_id)->with('success', 'ข้อมูลร้านค้าได้รับการอัปเดตแล้ว!');
 
-     }
+    }
+
+    public function create($user_id)
+    {
+        // Optional: Validate if the authenticated user matches the user_id
+        $user = Auth::user();
+
+        if ($user->id != $user_id) {
+            abort(403, 'Unauthorized action.');
+        }
+
+        // Initialize an empty Shop instance to avoid undefined variable errors in the view
+        $shop = new Shop();
+
+        return view('shop.createShop', compact('user', 'shop'));
+    }
+
+    public function store(Request $request, $user_id)
+    {
+        // Validate the incoming request data
+        $request->validate([
+            'shop_name' => 'required|string|max:100',
+            'shop_address' => 'required|string|max:100',
+            'shop_description' => 'required|string',
+            'images_name' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'color_img' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'parts_img' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'pvc' => 'required|string|max:255',
+            'clean_nail' => 'required|string|max:255',
+        ]);
+
+
+        // Handle file uploads
+        $imagePath = null;
+        $colorImgPath = null;
+        $partsImgPath = null;
+        if ($request->hasFile('images_name')) {
+            $imagePath = $request->file('images_name')->store('shop_images', 'public');
+        }
+         if ($request->hasFile('color_img')) {
+            $colorImgPath = $request->file('color_img')->store('shop_colors', 'public');
+        }
+         if ($request->hasFile('parts_img')) {
+            $partsImgPath = $request->file('parts_img')->store('shop_parts', 'public');
+        }
+         // Create the shop
+        $shop = Shop::create([
+            'user_id' => $user_id,
+            'shop_name' => $request->shop_name,
+            'shop_address' => $request->shop_address,
+            'shop_description' => $request->shop_description,
+            'images_name' => $imagePath,
+            'color_img' => $colorImgPath,
+            'parts_img' => $partsImgPath,
+            'pvc' => $request->pvc,
+            'clean_nail' => $request->clean_nail,
+        ]);
+        return redirect()->route('shop.create', ['user_id' => $user_id])->with('success', 'Shop created successfully!');
+    }
 
 
 

@@ -64,5 +64,11 @@ Route::post('/add_booking', [ShopController::class, 'booking'])->name('add_booki
 Route::get('/edit/{shop_id}', [ShopController::class, 'edit'])->name('editShop');
 Route::put('/update/{shop_id}', [ShopController::class, 'update'])->name('shop.update');
 
+// Display the create shop form
+Route::get('/createShop/{user_id}', [ShopController::class, 'create'])->name('shop.create');
+// Handle the form submission to store the new shop
+Route::post('/createShop/{user_id}', [ShopController::class, 'store'])->name('shop.store');
+
+
 
 
