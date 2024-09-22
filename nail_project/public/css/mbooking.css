@@ -2,27 +2,42 @@ body {
     font-family: 'Noto Sans Thai', sans-serif;
 }
 
+
 .container1 {
-    margin-left: 80px;
+    margin-top: 20px;
+    margin-left: 405px;
     display: flex; 
-    gap: 5px; 
+    gap: 10px; 
     flex-direction: row;
     justify-content: flex-start; 
 }
 
 .box1 {
-    margin-top: 80px;
-    margin-left: 115px;
+    margin-top: 120px;
+    margin-left: 445px;
     width: 650px;
     height: 50px;
     background-color: #fff;
     border-radius: 16px;
     padding-top: 10px;
     display: flex;
-    align-items: center; 
-    justify-content: center; 
+    align-items: center;
+    justify-content: center;
+}
+.table {
+    width: 100%; /* ให้ตารางเต็มความกว้างที่จำกัด */
+    max-width: 655px; /* จำกัดความกว้างสูงสุด */
+    margin: 0 auto; /* จัดให้อยู่กึ่งกลาง */
+    border-collapse: collapse;
+    background-color: white;
+    color: black;
 }
 
+.table th, .table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
 .box2 {
     margin-top: 20px;
     margin-left: 40px;

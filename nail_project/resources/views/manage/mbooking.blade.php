@@ -18,7 +18,7 @@
 
         @include('layouts.navbar_manicurist')
         <div class="box1">
-            <p class="text1" style="font-weight: bold;">{{ $shop->shop_name }}</p>
+            <p class="text1" style="font-weight: bold; ">{{ $shop->shop_name }}</p>
         </div>
         <div class="container1">
             <a href="{{ route('editShop', ['shop_id' => $shop->shop_id]) }}" class="btn">
@@ -45,7 +45,7 @@
                     </tr>
                 </thead>
             </table>
-            <p class="text-center" style="font-size: 20px;">วันนี้ไม่มีรายการจอง</p>
+            <p class="text-center" style="font-size: 20px; margin-top: 20px;" >วันนี้ไม่มีรายการจอง</p>
         @else
             <table class="table">
                 <thead>
