@@ -31,14 +31,10 @@
 
 
     <div style="height: 100%;background-color: rgb(255, 234, 189);">
-        <p class="text-center fs-3 pt-3" style="color:#f29779;">
-            <br>
-            <i class="bi bi-flower3"></i><i class="bi bi-flower3"></i><i class="bi bi-flower3"></i>
-        </p>
 
         <div class="mx-auto" style="background-color: rgb(255, 234, 189); max-width: 80%;">
             <!-- Banner Div -->
-            <div class="mx-auto rounded" style="background-color: white; width: 80%; height: 150px;">
+            <div class="mx-auto rounded mt-5" style="background-color: white; width: 80%; height: 150px;">
                 <div class="pd-5" style="max-width: 100%; height: 100%;">
                     <img src="{{ asset('images/' . $shop->images_name) }}" alt="Image"
                         style="width: 100%; height: 100%; object-fit: cover; object-position: center; border-radius: 10px;">
@@ -200,7 +196,7 @@
                             data-bs-target="#bookNowModal"
                             style="background-color: #f29779; color: #fff; border: none; text-transform: uppercase;
                 transition: background-color 0.3s ease, transform 0.3s ease;">
-                            <p class="mb-0" style="font-family: 'Noto Sans Thai', sans-serif; ">จองเลย !</p>
+                            <p class="mb-0 fw-bold fs-5" style="font-family: 'Noto Sans Thai', sans-serif;">จองเลย !</p>
                         </button>
 
                     </div>

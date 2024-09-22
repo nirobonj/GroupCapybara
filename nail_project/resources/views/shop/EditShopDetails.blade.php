@@ -35,17 +35,19 @@
 
 
     <div style="height: 100%;background-color: rgb(255, 234, 189);">
-        <p class="text-center fs-3 pt-3" style="color:#f29779;">
+        {{-- <p class="text-center fs-3 pt-3" style="color:#f29779;">
             <br>
-            <i class="bi bi-flower3"></i><i class="bi bi-flower3"></i><i class="bi bi-flower3"></i>
+            <p class="text font-weight-bold">แก้ไขร้าน</p>
             <p class="text-center fs-3" style="font-family: 'Noto Sans Thai', sans-serif; color:#f29779;">แก้ไขร้าน</p>
-        </p>
+        </p> --}}
 
         <div class="mx-auto" style="background-color: rgb(255, 234, 189); max-width: 80%;">
 
 
             <!-- Content Div -->
-            <div class="container" style="width: 80%; margin-top: 30px;">
+            <div class="container" style="width: 80%; margin-top: 10%;">
+                <p class="fs-1 fw-bold mb-4" style="font-family: 'Noto Sans Thai', sans-serif; color:#f29779;">แก้ไขร้าน</p>
+
                 <div class="row d-flex align-items-stretch">
                     <!-- Left Side (3 divs) -->
                     <div class="col-md-6" style="padding-right: 0.5rem; padding-left: 0;">
@@ -94,7 +96,7 @@
             </div>
 
             <!-- Detail Div -->
-            <div class="container" style="width: 80%; margin-top: 30px;">
+            <div class="container" style="width: 80%; margin-top: 5%;">
                 <div class="row">
                     <!-- Left Side (3 divs) -->
                     <div class="col-md-6" style="padding-right: 0.5rem; padding-left: 0;">
@@ -126,7 +128,7 @@
 
 
             <!-- Detail Div -->
-            <div class="container" style="width: 80%; margin-top: 30px;">
+            <div class="container" style="width: 80%; margin-top: 5%;">
                 <div class="row">
                     <!-- Left Side (2 divs) -->
                     <div class="col-md-3" style="padding-left: 0; padding-right: 0;">
@@ -155,7 +157,7 @@
                         <button type="submit" class="mt-5 btn p-3 rounded"
                             style="background-color: #f29779; color: #fff; border: none; text-transform: uppercase;
                 transition: background-color 0.3s ease, transform 0.3s ease;">
-                            <p class="mb-0" style="font-family: 'Noto Sans Thai', sans-serif;">อัปเดตข้อมูล</p>
+                            <p class="mb-0 fw-bold fs-5" style="font-family: 'Noto Sans Thai', sans-serif;">อัปเดตข้อมูล</p>
                         </button>
 
                     </div>

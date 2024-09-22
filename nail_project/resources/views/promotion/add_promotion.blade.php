@@ -30,7 +30,7 @@
                         <textarea name="promotion_detail" rows="8" cols="50" class="form-control">{{ $shop->promotion_detail }}</textarea>
                     </div>
             </div>
-            <div class="btn-container">
+            <div class="btn-container mb-4" >
                 <button type="submit" class="btn btn-confirm">
                     <p class="text2">ยืนยัน</p>
                 </button>
