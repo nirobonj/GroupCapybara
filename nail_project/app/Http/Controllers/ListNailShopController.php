@@ -9,45 +9,49 @@ use Illuminate\Http\Request;
 
 class ListNailShopController extends Controller
 {
-    public function nearbyShops()
-    {
-        $user = Auth::user(); // ดึงข้อมูลผู้ใช้ที่ล็อกอินอยู่
-        $userDistrictId = $user->district_id; // ดึง district_id ของผู้ใช้ที่ล็อกอิน
+    public function nearbyShops(Request $request)
+{
+    $user = Auth::user(); // ดึงข้อมูลผู้ใช้ที่ล็อกอินอยู่
+    $userDistrictId = $user->district_id; // ดึง district_id ของผู้ใช้ที่ล็อกอิน
 
-        // ดึงข้อมูลร้านค้า โดยเชื่อมกับตาราง users ผ่าน user_id
-        $shops = Shop::select('shop.*') // เลือกข้อมูลร้านค้า
-            ->addSelect(\DB::raw("ABS(users.district_id - $userDistrictId) as distance")) // คำนวณระยะห่างระหว่าง district_id
-            ->join('users', 'users.id', '=', 'shop.user_id') // เชื่อม shop.user_id กับ users.id
-            ->orderBy('distance') // เรียงลำดับตามระยะห่าง
-            ->with('reviews') // ดึงข้อมูลรีวิว
-            ->get();
+    // ดึงข้อมูลร้านค้า โดยเชื่อมกับตาราง users ผ่าน user_id
+    $shopsQuery = Shop::select('shop.*')
+        ->addSelect(\DB::raw("ABS(users.district_id - $userDistrictId) as distance"))
+        ->join('users', 'users.id', '=', 'shop.user_id')
+        ->orderBy('distance')
+        ->with('reviews');
 
-        return view('listShop.nearby', compact('shops', 'user'));
+    // ตรวจสอบว่ามีการค้นหาหรือไม่
+    if ($request->has('search') && $request->input('search') !== '') {
+        $search = $request->input('search');
+        $shopsQuery->where('shop.shop_name', 'LIKE', "$search%"); // ค้นหาตามชื่อร้านที่ขึ้นต้นด้วยอักษร
     }
 
+    $shops = $shopsQuery->get();
 
-    public function recomentShops()
-    {
-        $user = Auth::user();
+    return view('listShop.nearby', compact('shops', 'user'));
+}
+
+public function recomentShops(Request $request)
+{
+    $user = Auth::user();
+
     // ดึงข้อมูลร้านค้าพร้อมคำนวณค่าเฉลี่ยรีวิว และเรียงลำดับจากมากไปน้อย
-        $shops = Shop::with('reviews')
-            ->withAvg('reviews', 'rating') // คำนวณค่าเฉลี่ย rating จาก reviews
-            ->orderByDesc('reviews_avg_rating') // เรียงจากค่าเฉลี่ยสูงสุดไปต่ำสุด
-            ->get();
+    $shopsQuery = Shop::with('reviews')
+        ->withAvg('reviews', 'rating')
+        ->orderByDesc('reviews_avg_rating');
 
-        return view('listShop.recoment', compact('shops','user'));
+    // ตรวจสอบว่ามีการค้นหาหรือไม่
+    if ($request->has('search') && $request->input('search') !== '') {
+        $search = $request->input('search');
+        $shopsQuery->where('shop.shop_name', 'LIKE', "$search%"); // ค้นหาตามชื่อร้านที่ขึ้นต้นด้วยอักษร
     }
 
-    public function allShops()
-    {
-        $user = Auth::user();
-    // ดึงข้อมูลร้านค้าพร้อมคำนวณค่าเฉลี่ยรีวิว และเรียงลำดับจากมากไปน้อย
-        $shops = Shop::with('reviews')
-            ->withAvg('reviews', 'rating') // คำนวณค่าเฉลี่ย rating จาก reviews
-            ->orderByDesc('reviews_avg_rating') // เรียงจากค่าเฉลี่ยสูงสุดไปต่ำสุด
-            ->get();
+    $shops = $shopsQuery->get();
 
-        return view('listShop.allshop', compact('shops','user'));
-    }
+    return view('listShop.recoment', compact('shops', 'user'));
+}
+
+
 }
 
