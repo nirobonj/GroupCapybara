@@ -57,7 +57,7 @@
                             </div>
                             <div class="mb-2 p-1 ml-5 rounded">
                                 <i class="bi bi-star-fill"
-                                    style="font-family: 'Noto Sans Thai', sans-serif; margin-left: 0.3rem; margin-right: 0.5rem; color:#f29779;"></i>
+                                    style="font-family: 'Noto Sans Thai', sans-serif; margin-left: 0.3rem; margin-right: 0.5rem; color: Violet;"></i>
                                 {{ number_format($shop->reviews->avg('rating') ?? 0, 1) }}
                             </div>
                             <div class="p-3 rounded flex-grow-1" style="background-color: white;">
@@ -111,7 +111,7 @@
                                                 style="background-color: #f8ccbe; width: 100%; border: 1px solid #ccc;">
                                                 <div style="display: flex; align-items: center;">
                                                     <i class="bi bi-star-fill"
-                                                        style="color:#f29779; margin-right: 0.5rem;"></i>
+                                                        style="color: Violet; margin-right: 0.5rem;"></i>
                                                     <p style="font-family: 'Noto Sans Thai', sans-serif; margin: 0;">
                                                         {{ $review->rating }}</p>
                                                 </div>

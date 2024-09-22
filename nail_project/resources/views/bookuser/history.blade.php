@@ -48,7 +48,7 @@
                             <div class="boxsection">
                                 <div class="boxtext">
                                     <h3>{{ $booking->shop_name }}</h3>
-                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="display: flex; gap: 75px; align-items: center;">
                                         <table style="width: 65%; table-layout: auto;">
                                             <tr>
                                                 <td style="width: 140px; line-height: 3;">Date Transaction:</td>

@@ -158,7 +158,7 @@
           <div class="swiper-container">
           <div class="header-container">
               <h2 class="header-title">โปรโมชั่น⚡⚡⚡</h2>
-              <a href="/" class="view-more-link">ดูเพิ่มเติม</a>
+              <a href="/allShops" class="view-more-link">ดูเพิ่มเติม</a>
           </div>
               <!-- Swiper Wrapper carousel -->
           <div class="swiper-wrapper">
@@ -224,7 +224,7 @@
                     <div class="swiper-container">
                         <div class="header-container">
                             <h2 class="header-title">ร้านแนะนำ</h2>
-                            <a href="/" class="view-more-link">ดูเพิ่มเติม</a>
+                            <a href="/allShops" class="view-more-link">ดูเพิ่มเติม</a>
                         </div>
 
                         <!-- Swiper Wrapper carousel -->
