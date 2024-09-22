@@ -51,31 +51,63 @@ class ShopController extends Controller
     }
 
     public function booking(Request $request)
-    {
-        // Get the authenticated user
-        $user = Auth::user();
+{
+    // Get the authenticated user
+    $user = Auth::user();
 
-        // Validate the request
+    // Validate the request
+    $request->validate([
+        'date' => 'required|date|after_or_equal:today',
+        'time' => 'required|date_format:H:i',
+    ]);
 
-        $request->validate([
-            'date' => 'required|date|after_or_equal:today',
-            'time' => 'required|date_format:H:i',
-        ]);
+    // Combine date and time into a single Carbon instance
+    $bookingDateTime = Carbon::createFromFormat('Y-m-d H:i', $request->date . ' ' . $request->time);
 
+    // Check if there's a booking within the same hour range for the same shop
+    $existingBooking = BookingList::where('shop_id', $request->shop_id)
+        ->whereDate('date_booking', $request->date)
+        ->where(function($query) use ($bookingDateTime) {
+            $query->whereTime('time_booking', '>=', $bookingDateTime->subHour()->toTimeString())
+                  ->whereTime('time_booking', '<=', $bookingDateTime->addHour()->toTimeString());
+        })
+        ->get();
 
-        // Create a new booking record
-        BookingList::create([
-            'shop_id' => $request->shop_id,
-            'user_id' => $user->id, // Use user ID instead of the user object
-            'date_booking' => $request->date,
-            'time_booking' => $request->time . ':00', // Ensure time format is hh:mm:ss
-            'date_transaction' => now()->toDateString(), // Store current date
-            'time_transaction' => Carbon::now('Asia/Bangkok')->toTimeString(),
-        ]);
+    // If there is an existing booking within that hour range
+    if ($existingBooking->isNotEmpty()) {
+        // Get the latest booking to suggest the next available time
+        $nextAvailableTime = null;
 
-        // Redirect or return a response
-        return redirect()->back()->with('success', 'Booking confirmed!');
+        foreach ($existingBooking as $booking) {
+            $bookingEndTime = Carbon::parse($booking->time_booking)->addHour();
+
+            // Check if the current request time is within the hour of this booking
+            if ($bookingEndTime >= $bookingDateTime) {
+                $nextAvailableTime = Carbon::parse($booking->time_booking)->addHour()->format('H:i');
+                break;
+            }
+        }
+
+        return redirect()->back()->withErrors(['error' => "การจองที่คุณเลือกถูกจองไปแล้ว โปรดเลือกเวลาใหม่ และทางร้านจะว่างอีกครั้งเวลา $nextAvailableTime."]);
     }
+
+    // Create a new booking record
+    BookingList::create([
+        'shop_id' => $request->shop_id,
+        'user_id' => $user->id,
+        'date_booking' => $request->date,
+        'time_booking' => $request->time . ':00', // Ensure time format is hh:mm:ss
+        'date_transaction' => now()->toDateString(),
+        'time_transaction' => Carbon::now('Asia/Bangkok')->toTimeString(),
+    ]);
+
+    // Redirect or return a response
+    return redirect()->back()->with('success', 'Booking confirmed!');
+}
+
+
+
+
 
     public function edit($shop_id)
     {

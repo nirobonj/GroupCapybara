@@ -172,10 +172,14 @@
                     <!-- Left Side (2 divs) -->
                     <div class="col-md-3" style="padding-left: 0; padding-right: 0;">
                         <div class="mb-3 p-3 rounded" style="background-color: #f29779; width: 80%;">
-                            <p style="text-align: center; font-family: 'Noto Sans Thai', sans-serif; font-weight: bold;">PVC</p>
+                            <p
+                                style="text-align: center; font-family: 'Noto Sans Thai', sans-serif; font-weight: bold;">
+                                PVC</p>
                         </div>
                         <div class="mb-3 p-3 rounded" style="background-color: #f29779; width: 80%;">
-                            <p style="text-align: center; font-family: 'Noto Sans Thai', sans-serif; font-weight: bold;">ล้างเล็บ</p>
+                            <p
+                                style="text-align: center; font-family: 'Noto Sans Thai', sans-serif; font-weight: bold;">
+                                ล้างเล็บ</p>
                         </div>
                     </div>
 
@@ -196,7 +200,8 @@
                             data-bs-target="#bookNowModal"
                             style="background-color: #f29779; color: #fff; border: none; text-transform: uppercase;
                 transition: background-color 0.3s ease, transform 0.3s ease;">
-                            <p class="mb-0 fw-bold fs-5" style="font-family: 'Noto Sans Thai', sans-serif;">จองเลย !</p>
+                            <p class="mb-0 fw-bold fs-5" style="font-family: 'Noto Sans Thai', sans-serif;">จองเลย !
+                            </p>
                         </button>
 
                     </div>
@@ -223,27 +228,46 @@
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="date" class="form-label">Select Date</label>
-                                <input type="date" class="form-control" id="date" name="date" required min="{{ date('Y-m-d') }}">
+                                <input type="date" class="form-control @error('date') is-invalid @enderror"
+                                    id="date" name="date" required min="{{ date('Y-m-d') }}">
+                                @error('date')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="time" class="form-label">Select Time</label>
-                                <input type="time" class="form-control" id="time" name="time" required>
+                                <input type="time" class="form-control @error('time') is-invalid @enderror"
+                                    id="time" name="time" required>
+                                @error('time')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn" style="background-color: #f29779">Confirm Booking</button>
+                            <button type="submit" class="btn" style="background-color: #f29779;">Confirm Booking</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
 
+        <!-- Success Alert -->
         @if (session('success'))
             <script>
                 alert('{{ session('success') }}');
             </script>
         @endif
+
+        <!-- Error Alert -->
+        @if ($errors->any())
+            <script>
+                alert('{{ $errors->first() }}');
+            </script>
+        @endif
+
+
+
 
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
