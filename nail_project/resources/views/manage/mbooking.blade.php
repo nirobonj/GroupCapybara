@@ -18,7 +18,7 @@
 
         @include('layouts.navbar_manicurist')
         <div class="box1">
-            <p class="text1">{{ $shop->shop_name }}</p>
+            <p class="text1" style="font-weight: bold;">{{ $shop->shop_name }}</p>
         </div>
         <div class="container1">
             <a href="{{ route('editShop', ['shop_id' => $shop->shop_id]) }}" class="btn">
@@ -34,29 +34,39 @@
             </div>
             <input class="btn" type="date" id="start" name="trip-start" value="{{ request('date', now()->format('Y-m-d')) }}" onchange="filterBookings()" />
         </div>
-
         <div class="container mt-5">
+        @if ($bookings->isEmpty())
             <table class="table">
                 <thead>
-                    <tr>
+                    <tr style="font-size: 20px;">
                         <th>ชื่อ</th>
                         <th>เบอร์โทร</th>
-                        <!-- <th>วันที่</th> -->
+                        <th>เวลา</th>
+                    </tr>
+                </thead>
+            </table>
+            <p class="text-center" style="font-size: 20px;">วันนี้ไม่มีรายการจอง</p>
+        @else
+            <table class="table">
+                <thead>
+                    <tr style="font-size: 20px;">
+                        <th>ชื่อ</th>
+                        <th>เบอร์โทร</th>
                         <th>เวลา</th>
                     </tr>
                 </thead>
                 <tbody>
                 @foreach ($bookings as $booking)
-                    <tr>
+                    <tr style="font-size: 20px;">
                         <td>{{ $booking->user->name ?? 'N/A' }}</td>
                         <td>{{ $booking->user->phone_number ?? 'N/A' }}</td>
-                        <!-- <td>{{ $booking->date_booking->format('Y-m-d') }}</td> -->
                         <td>{{ $booking->time_booking->format('H:i:s') }}</td>
                     </tr>
                 @endforeach
-            </tbody>
+                </tbody>
             </table>
-        </div>
+        @endif
+    </div>
 
         <script>
             function filterBookings() {
