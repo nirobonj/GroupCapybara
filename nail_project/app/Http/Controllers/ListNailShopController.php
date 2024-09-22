@@ -11,12 +11,20 @@ class ListNailShopController extends Controller
 {
     public function nearbyShops()
     {
-        $user = Auth::user();
-        // ดึงข้อมูลร้านค้าและรีวิวที่เกี่ยวข้อง
-        $shops = Shop::with('reviews')->get();
+        $user = Auth::user(); // ดึงข้อมูลผู้ใช้ที่ล็อกอินอยู่
+        $userDistrictId = $user->district_id; // ดึง district_id ของผู้ใช้ที่ล็อกอิน
 
-        return view('listShop.nearby', compact('shops','user'));
+        // ดึงข้อมูลร้านค้า โดยเชื่อมกับตาราง users ผ่าน user_id
+        $shops = Shop::select('shop.*') // เลือกข้อมูลร้านค้า
+            ->addSelect(\DB::raw("ABS(users.district_id - $userDistrictId) as distance")) // คำนวณระยะห่างระหว่าง district_id
+            ->join('users', 'users.id', '=', 'shop.user_id') // เชื่อม shop.user_id กับ users.id
+            ->orderBy('distance') // เรียงลำดับตามระยะห่าง
+            ->with('reviews') // ดึงข้อมูลรีวิว
+            ->get();
+
+        return view('listShop.nearby', compact('shops', 'user'));
     }
+
 
     public function recomentShops()
     {
