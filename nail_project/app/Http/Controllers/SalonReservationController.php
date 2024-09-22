@@ -19,9 +19,14 @@ class SalonReservationController extends Controller
         $date = $request->query('date', now()->format('Y-m-d'));
 
         // ดึงข้อมูลการจองตาม shop_id และวันที่
+        // $bookings = BookingList::where('shop_id', $shop->shop_id)
+        //                         ->whereDate('date_booking', $date)
+        //                         ->get();
         $bookings = BookingList::where('shop_id', $shop->shop_id)
-                                ->whereDate('date_booking', $date)
-                                ->get();
+                            ->whereDate('date_booking', $date)
+                            ->orderBy('time_booking', 'asc') // เรียงตามเวลา
+                            ->get();
+                
         // dd($bookings);
         // แปลงวันที่และเวลาของการจองให้เป็น Carbon instance
         $bookings->transform(function ($booking) {
