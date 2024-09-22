@@ -56,10 +56,12 @@ class ShopController extends Controller
         $user = Auth::user();
 
         // Validate the request
+
         $request->validate([
-            'date' => 'required|date',
+            'date' => 'required|date|after_or_equal:today',
             'time' => 'required|date_format:H:i',
         ]);
+
 
         // Create a new booking record
         BookingList::create([

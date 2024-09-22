@@ -223,7 +223,7 @@
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="date" class="form-label">Select Date</label>
-                                <input type="date" class="form-control" id="date" name="date" required>
+                                <input type="date" class="form-control" id="date" name="date" required min="{{ date('Y-m-d') }}">
                             </div>
                             <div class="mb-3">
                                 <label for="time" class="form-label">Select Time</label>
@@ -232,7 +232,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Confirm Booking</button>
+                            <button type="submit" class="btn" style="background-color: #f29779">Confirm Booking</button>
                         </div>
                     </form>
                 </div>
