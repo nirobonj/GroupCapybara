@@ -27,6 +27,7 @@ class Shop extends Model
     protected $keyType = 'string';  // or 'int' if it's an intege
 
     protected $fillable = [
+        'user_id',
         'shop_id',
         'shop_name',
         'promotion_detail',

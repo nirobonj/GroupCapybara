@@ -9,6 +9,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Shop;
+
 
 class RegisterController extends Controller
 {
@@ -19,10 +21,11 @@ class RegisterController extends Controller
         $roles = ['user' => 'User', 'admin' => 'Admin'];
 
         return view('auth.register', compact('provinces', 'districts', 'roles'));
-    }    
+    }
 
     public function register(Request $request)
     {
+        // Validate the incoming request data
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -38,20 +41,38 @@ class RegisterController extends Controller
             'password.min' => 'กรุณากรอกรหัสผ่านขั้นต่ำ 8 ตัวอักษร',
             'password.confirmed' => 'การยืนยันรหัสผ่านไม่ตรงกัน',
         ]);
-        
+
+        // Create the user
         $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone_number' => $request->phone_number, // ใช้ `phone_number` ตามที่ตั้งในฐานข้อมูล
-            'province_id' => $request->province_id,
-            'district_id' => $request->district_id,
-            'role' => $request->role,
-            'password' => Hash::make($request->password),
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'phone_number' => $validated['phone_number'],
+            'province_id' => $validated['province_id'],
+            'district_id' => $validated['district_id'],
+            'role' => $validated['role'],
+            'password' => Hash::make($validated['password']),
         ]);
-    
+
+        // If the role is admin, create a corresponding shop
+        if ($validated['role'] === 'admin') {
+            Shop::create([
+                'user_id' => $user->id,
+                'shop_name' => 'ชื่อร้านของคุณ', // You can set a default name or collect it via the registration form
+                'shop_description' => 'รายละเอียดร้าน', // Similarly, set default or collect via form
+                'promotion_detail' => 'โปรโมชั่นของร้าน',
+                'shop_address' => 'ที่อยู่ของร้าน',
+                'pvc' => 'ราคา PVC',
+                'clean_nail' => 'ราคาล้างเล็บ',
+            ]);
+        }
+
+        // Log the user in
         Auth::login($user);
-        return redirect()->route('login');
+
+        // Redirect to the desired route after registration
+        return redirect()->route('login'); // Change 'dashboard' to your desired route
     }
+
     protected function validator(array $data)
     {
         return Validator::make($data, [

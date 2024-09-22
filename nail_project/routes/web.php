@@ -66,7 +66,6 @@ Route::put('/update/{shop_id}', [ShopController::class, 'update'])->name('shop.u
 
 // Display the create shop form
 Route::get('/createShop/{user_id}', [ShopController::class, 'create'])->name('shop.create');
-// Handle the form submission to store the new shop
 Route::post('/createShop/{user_id}', [ShopController::class, 'store'])->name('shop.store');
 
 

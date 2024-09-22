@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
     <style>
-        
+
         .form-container {
             border: 2px solid #FFE4F8;
             background-color: #FFE4F8;
@@ -61,7 +61,7 @@
             color: #FF0000;
             font-size: 14px;
             font-family: 'Noto Sans Thai', sans-serif;
-            display: block; 
+            display: block;
             text-align: left;
             margin-top: 5px;
         }
