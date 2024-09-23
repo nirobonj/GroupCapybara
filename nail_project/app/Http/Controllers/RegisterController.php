@@ -59,7 +59,7 @@ class RegisterController extends Controller
                 'user_id' => $user->id,
                 'shop_name' => 'ชื่อร้านของคุณ', // You can set a default name or collect it via the registration form
                 'shop_description' => 'รายละเอียดร้าน', // Similarly, set default or collect via form
-                'promotion_detail' => 'โปรโมชั่นของร้าน',
+                'promotion_detail' => 'โปรโมชันของร้าน',
                 'shop_address' => 'ที่อยู่ของร้าน',
                 'pvc' => 'ราคา PVC',
                 'clean_nail' => 'ราคาล้างเล็บ',
