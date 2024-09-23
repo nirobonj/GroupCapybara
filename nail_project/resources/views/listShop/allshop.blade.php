@@ -102,16 +102,6 @@
                                                 <i class="fa-solid fa-location-dot" style="color: red;"></i> {{ $shop->shop_address }}
                                             </p>
                                         </div>
-                                        
-                                        
-                                        
-                                        {{-- <div class="rating mb-2">
-                                <span style="color: green;">★ {{ number_format($shop->reviews->avg('rating') ?? 1, 1) }}</span>
-                                <span style="color: green;">({{ $shop->reviews->count() }})</span>
-                            </div>
-                            @if ($shop->promotion_detail)
-                            <button class="btn btn-warning">promo</button>
-                            @endif --}}
                                     </div>
                                 </div>
 

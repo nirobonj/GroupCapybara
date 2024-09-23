@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\History;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class HistoryController extends Controller

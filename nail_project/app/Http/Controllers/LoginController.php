@@ -3,14 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Province;
-use App\Models\District;
 use App\Models\User;
-use App\Models\Shop;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\ValidationException;
+
 
 class LoginController extends Controller
 {
@@ -40,7 +36,6 @@ class LoginController extends Controller
             $user = Auth::user();
             $shop = $user->shop;
             if ($user->role == 'admin') {
-                // return redirect()->intended('/mbooking/S0001');
                 if ($shop) {
                     return redirect()->intended('/mbooking/' . $shop->shop_id);
                 }

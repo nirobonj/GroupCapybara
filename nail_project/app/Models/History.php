@@ -7,11 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class History extends Model
 {
-    // use HasFactory;
-    // protected $table = 'shop';
-    // protected $primaryKey = 'shop_id';
-    // public $timestamps = false; // กรณีไม่มี `created_at` และ `updated_at`
-    // protected $fillable = ['shop_id', 'shop_name', 'promotion_detail', 'shop_address', 'shop_description', 'pvc', 'clean_nail'];
+   
     use HasFactory;
     
     protected $table = 'booking_list';

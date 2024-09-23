@@ -35,12 +35,6 @@
 
 
     <div style="height: 100%;background-color: rgb(255, 234, 189);">
-        {{-- <p class="text-center fs-3 pt-3" style="color:#f29779;">
-            <br>
-            <p class="text font-weight-bold">แก้ไขร้าน</p>
-            <p class="text-center fs-3" style="font-family: 'Noto Sans Thai', sans-serif; color:#f29779;">แก้ไขร้าน</p>
-        </p> --}}
-
         <div class="mx-auto" style="background-color: rgb(255, 234, 189); max-width: 80%;">
 
 

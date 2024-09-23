@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NailySlay Booking</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
@@ -96,43 +95,6 @@
                         <button class="details-btn">รายละเอียด</button>
                     </div>
                 @endforeach
-                <!-- <div class="item">
-                        <div class="image-placeholder"></div>
-                        <button class="details-btn">รายละเอียด</button>
-                    </div>
-                    <div class="item">
-                        <div class="image-placeholder"></div>
-                        <button class="details-btn">รายละเอียด</button>
-                    </div>
-                    <div class="item">
-                        <div class="image-placeholder"></div>
-                        <button class="details-btn">รายละเอียด</button>
-                    </div>
-                    <div class="item">
-                        <div class="image-placeholder"></div>
-                        <button class="details-btn">รายละเอียด</button>
-                    </div>
-                    <div class="item">
-                        <div class="image-placeholder"></div>
-                        <button class="details-btn">รายละเอียด</button>
-                    </div>
-                    <div class="item">
-                        <div class="image-placeholder"></div>
-                        <button class="details-btn">รายละเอียด</button>
-                    </div>
-                    <div class="item">
-                        <div class="image-placeholder"></div>
-                        <button class="details-btn">รายละเอียด</button>
-                    </div>
-                    <div class="item">
-                        <div class="image-placeholder"></div>
-                        <button class="details-btn">รายละเอียด</button>
-                    </div>
-                    <div class="item">
-                        <div class="image-placeholder"></div>
-                        <button class="details-btn">รายละเอียด</button>
-                    </div> -->
-
                 </div>
                  
                     <button class="next">&#10095;</button>

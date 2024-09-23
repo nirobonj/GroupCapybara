@@ -10,7 +10,6 @@ class Province extends Model
     use HasFactory;
 
     protected $table = 'province';
-    //protected $fillable = ['province_name'];
 
     protected $primaryKey = 'province_id'; // ใช้ primary key ที่ถูกต้อง
 

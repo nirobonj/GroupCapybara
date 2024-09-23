@@ -10,7 +10,7 @@ class District extends Model
     use HasFactory;
 
     protected $table = 'district';
-    //protected $fillable = ['district_name', 'province_id'];
+
     protected $primaryKey = 'district_id'; // ใช้ primary key ที่ถูกต้อง
     public $timestamps = false; // ตั้งค่าเป็น false ถ้าไม่มี timestamps
 

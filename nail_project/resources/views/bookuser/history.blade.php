@@ -168,20 +168,6 @@
     });
 }
 
-
-
-        // function submitReview() {
-        //     const reviewText = document.querySelector('textarea').value;
-        //     const reviewData = new FormData();
-        //     reviewData.append('booking_list_id', currentBookingId);
-        //     reviewData.append('shop_id', currentShopId);
-        //     reviewData.append('rating', currentRating);
-        //     reviewData.append('detail', reviewText); // ใช้ 'detail' แทน 'review_text'
-        //     reviewData.append('user_id', '{{ Auth::id() }}');
-
-        //     console.log('ส่งข้อมูลรีวิว:', Object.fromEntries(reviewData));
-
-        // }
     </script>
 </body>
 

@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Models\BookingList;
 use App\Models\Shop;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
+
 
 class PromotionController extends Controller
 {
@@ -69,7 +67,6 @@ class PromotionController extends Controller
         // ส่งกลับไปยังหน้าที่ผู้ใช้มาหรือแสดงข้อความสำเร็จ
         session()->flash('success', 'โปรโมชันได้รับการอัปเดตเรียบร้อยแล้ว');
         return redirect()->route('mbooking', [$shop->shop_id, 'user', 'bookings']);
-
     }
 }
 

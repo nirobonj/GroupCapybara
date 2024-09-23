@@ -6,10 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Province;
 use App\Models\District;
 use App\Models\User;
-use App\Models\Shop;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 
 class EditProfileUserController extends Controller
 {
@@ -53,7 +50,6 @@ class EditProfileUserController extends Controller
         $user->save();
         $shop = $user->shop;
         if ($user->role == 'admin') {
-            // return redirect()->intended('/mbooking/S0001');
             if ($shop) {
                 return redirect()->intended('/mbooking/' . $shop->shop_id)->with('success', 'ข้อมูลโปรไฟล์ถูกอัปเดตเรียบร้อยแล้ว');
             }
@@ -61,5 +57,4 @@ class EditProfileUserController extends Controller
             return redirect()->intended('/home/' . $user->id)->with('success', 'ข้อมูลโปรไฟล์ถูกอัปเดตเรียบร้อยแล้ว');
         }
     }
-
 }

@@ -5,15 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NailySlay Booking</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
     <title>NailySlay - ประวัติการจอง</title>
-    <!-- <link rel="stylesheet" href="{{ asset('css/history.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/icons.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/navbar.css') }}"> -->
-   
+
 </head>
 <body>
     <div class="container">

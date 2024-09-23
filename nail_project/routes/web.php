@@ -1,19 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\homeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\DistrictController;
 use App\Http\Controllers\ShopController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\SalonReservationController;
 use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\EditProfileUserController;
-use App\Http\Controllers\AddPromotionController;
-use App\Http\Controllers\ShowPromotionController;
-use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\ListNailShopController;
 use App\Http\Controllers\ReviewController;
 
@@ -33,10 +27,7 @@ Route::group(['middleware' => ['role:user']], function () {
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 
-
-//Route::get('/admin', [SalonReservationController::class, 'index'])->middleware('role:admin');
 Route::get('/home/{id}', [ShopController::class, 'index'])->name('home');
-// Route::get('/home', [ShopController::class, 'index'])->name('home');
 Route::get('/bookinguser/{id}', [HistoryController::class, 'booking'])->name('bookinguser');
 Route::post('/submit_review', [ReviewController::class, 'submitReview'])->name('submit-review');
 

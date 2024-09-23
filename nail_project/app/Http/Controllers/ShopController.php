@@ -247,7 +247,4 @@ class ShopController extends Controller
         ]);
         return redirect()->route('shop.create', ['user_id' => $user_id])->with('success', 'Shop created successfully!');
     }
-
-
-
 }
