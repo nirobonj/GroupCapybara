@@ -51,7 +51,15 @@ class EditProfileUserController extends Controller
         $user->district_id = $request->district_id;
 
         $user->save();
-
-        return redirect()->route('home', ['id' => $user->id])->with('success', 'ข้อมูลโปรไฟล์ถูกอัปเดตเรียบร้อยแล้ว');
+        $shop = $user->shop;
+        if ($user->role == 'admin') {
+            // return redirect()->intended('/mbooking/S0001');
+            if ($shop) {
+                return redirect()->intended('/mbooking/' . $shop->shop_id)->with('success', 'ข้อมูลโปรไฟล์ถูกอัปเดตเรียบร้อยแล้ว');
+            }
+        } else {
+            return redirect()->intended('/home/' . $user->id)->with('success', 'ข้อมูลโปรไฟล์ถูกอัปเดตเรียบร้อยแล้ว');
+        }
     }
+
 }

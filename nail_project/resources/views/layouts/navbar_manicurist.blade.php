@@ -69,8 +69,8 @@
         color: black;
     }
     .fa-pen-to-square:hover {
-        color: #f5c70a; /* เปลี่ยนสีเมื่อเมาส์ชี้ */
-        cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นมือเมื่อชี้ */
+        color: #f5c70a; 
+        cursor: pointer; 
     }
     .fa-house-chimney{
         font-size: 45px; 
